@@ -1,0 +1,73 @@
+.reviews
+
+  &:before
+    background-image url(../img/backgrounds/reviews.jpg)
+
+  &__video
+    padding-top 40px
+    padding-bottom 40px
+
+    color $c-white
+
+    @media (max-width 768px)
+      padding-left 20px
+      padding-right @padding-left
+      padding-top 46px
+      padding-bottom 30px
+
+  &__title
+    padding 0
+    margin 0 0 .47em
+    border none
+
+    color inherit
+    font-size 56px
+    font-weight 300
+    line-height 1.2
+    letter-spacing -2.2px
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 24px
+      margin-bottom 0
+
+  &__comments
+    margin-top -92px
+    padding-top - @margin-top + 40px
+    padding-bottom 110px
+
+    @media (max-width 768px)
+      margin-top -14px
+      padding-top 14px + 25px
+      padding-left 20px
+      padding-right @padding-left
+
+    &:before
+      background-color $c-dark-bg
+
+    &-add
+      display flex
+
+      > *:not(:last-child)
+        margin-right 25px
+
+    &-header
+      margin-bottom 48px
+      padding 0 20px
+
+      @media (max-width 768px)
+        margin-bottom 35px
+
+    &-footer
+      justify-content center
+
+  &__container
+    max-width 876px
+    margin 0 auto
+
+  &__comment
+    margin-bottom 26px
+
+  &__pagination
+    margin-bottom 35px

@@ -1,0 +1,156 @@
+{{#> layout page-name="Disclaimer"}}
+{{#> header page-name="disclaimer"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+
+<section class="disclaimer__banner">
+    <div class="main-block__breadcrumb">
+        <div class="breadcrumb breadcrumb--big breadcrumb--left">
+
+
+            <div class="breadcrumb__item">
+                <a href="/" title="Главная" itemprop="url" class="bread-crumbs-link">
+                    Услуги
+                </a>
+            </div>
+            <div class="breadcrumb__item">
+                <a href="/articles/" title="Статьи" itemprop="url" class="bread-crumbs-link">
+                    Отказ от взаимодействия с коллекторами
+                </a>
+            </div>
+            <div class="breadcrumb__item">
+                Заявление
+            </div>
+        </div>
+    </div>
+    <form class="statement new-form">
+        <h1 class="statement__title">Заявление об отказе от взаимодействия</h1>
+
+        <div class="new-form__row new-form__fieldset statement__promocode">
+            <label class="new-form__item">
+                <span class="new-form__label">Промокод</span>
+                <input type="text" class="new-form__input">
+            </label>
+
+            <span class="statement__price">
+                <small>Цена</small>
+                <b>1050</b>
+                <small>руб.</small>
+            </span>
+        </div>
+
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <div class="new-form__item">
+                    <span class="new-form__label">ФИО</span>
+                    <input type="text" class="new-form__input">
+                </div>
+                <div class="new-form__item">
+                    <span class="new-form__label">Контактный телефон</span>
+                    <input type="text" class="new-form__input">
+                </div>
+                <div class="new-form__item">
+                    <span class="new-form__label">E-mail</span>
+                    <input type="text" class="new-form__input">
+                    <span class="new-form__help-text">на данную почту вам придет уведомление</span>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Серия и номер паспорта</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Кем выдан паспорт</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата выдачи</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес проживания Завителя</span>
+                    <input type="text" class="new-form__input">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Наименование Кредитора или ИНН</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Номер кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес Кредитора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+            </div>
+        </fieldset>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Наименование Кредитора или ИНН</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Номер кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес Кредитора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="new-form__repeater">
+            <button type="button" class="button _secondary new-form__repeater-add">
+                <i class="icon icon-plus"></i>Добавить кредитора
+                <small>(+50 руб.)</small>
+            </button>
+
+            <span class="statement__price">
+                <small>Цена</small>
+                <b>1050</b>
+                <small>руб.</small>
+            </span>
+
+            <button type="button" class="button _secondary new-form__repeater-del">
+                <i class="icon icon-minus"></i>Убрать
+            </button>
+
+        </div>
+
+        <footer class="new-form__footer">
+            <label class="new-form__checkbox checkbox">
+                <input type="checkbox" checked class="checkbox__input">
+                <span class="checkbox__label">
+                Я согласен с&nbsp; <a href="javascript:void(0);">Политикой конфиденциальности</a>
+            </span>
+            </label>
+
+            <button type="submit" class="button _primary">Оплатить</button>
+        </footer>
+
+    </form>
+</section>
+
+<!--Warning! end-->
+{{/header}}
+
+{{/layout}}

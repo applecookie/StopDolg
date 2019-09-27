@@ -1,0 +1,22 @@
+{
+    "nav": "Home",
+    "title": "Welcome to SiteConveyer!",
+    "menu": [
+        {
+            "title": "Description",
+            "id": "descr"
+        },
+        {
+            "title": "Install",
+            "id": "install"
+        },
+        {
+            "title": "How it works",
+            "id": "work"
+        },
+        {
+            "title": "Disclaimer",
+            "id": "disclaimer"
+        }
+    ]
+}

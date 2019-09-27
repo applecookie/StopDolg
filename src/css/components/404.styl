@@ -1,0 +1,58 @@
+.error-404
+
+  &:before
+    background-image url(../img/backgrounds/404.jpg)
+
+  &__banner
+    padding-top 53px
+    padding-bottom 20vw
+    margin 0 auto
+    max-width 596px
+
+    color $c-white
+    text-align center
+
+    @media (max-width 768px)
+      padding 40px 20px 165px
+
+    img
+      display block
+      height auto
+      margin: 0 auto 28px
+
+      @media (max-width 768px)
+        width 51%
+
+  &__title
+    padding 0
+    margin 0 0 .375em
+    border none
+
+    color inherit
+    font-size 48px
+    font-weight 300
+    line-height 1.2
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 24px
+      margin-bottom 16px
+      margin-bottom .76em
+
+  &__description
+    margin-bottom 1.417em
+
+    font-size 24px
+    font-weight 300
+    letter-spacing -1.1px
+
+    @media (max-width 768px)
+      margin-bottom 1.2em
+
+      font-size 14px
+      letter-spacing 0
+
+  &__modal-toggle
+    @media (max-width 768px)
+      margin 0 25px

@@ -1,0 +1,222 @@
+.footer:before
+  //легаси
+  display none
+
+.annulment
+
+  &:before
+    background-image url(../img/backgrounds/annulment.jpg)
+
+    @media (max-width 640px)
+      background-image url(../img/backgrounds/annulment_mobile.jpg)
+
+  &__banner
+    padding-top 22px
+    padding-bottom 183px
+
+    color $c-white
+
+    @media (max-width 768px)
+      padding 6px 20px 44px
+
+  &__title
+    padding 0
+    margin 0 0 41px
+    border none
+
+    color inherit
+    font-size 56px
+    font-weight 300
+    line-height 1.2
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 23px
+      margin-bottom 18px
+
+  &__about
+    padding-left 28px
+    margin-bottom 30px
+
+    @media (max-width 768px)
+      padding-left 5px
+      margin-bottom 27px
+
+    &-list
+      margin-bottom 24px
+      list-style none
+
+      font-size 20px
+      font-weight 700
+
+      @media (max-width 768px)
+        margin-bottom 17px
+
+        font-size 16px
+        font-weight 400
+        line-height 21px
+        letter-spacing -.1px
+
+      &-item
+        display flex
+        align-items center
+        position relative
+        margin-bottom 11px
+
+        @media (max-width 768px)
+          margin-bottom 9px
+
+        &:before
+          flex 0 0 auto
+          content ''
+          display inline-block
+          margin-right 8px
+          width 24px
+          height @width
+          vertical-align middle
+
+          background url("../img/annulment/hammer.svg") no-repeat center
+          background-size contain
+
+          @media (max-width 768px)
+            width 32px
+            height @width
+
+    &-description
+      margin-bottom 16px
+
+      font-size 20px
+      font-weight 700
+
+      @media (max-width 768px)
+        font-size 16px
+        text-align center
+
+
+    &-footnote
+      text-align right
+      padding 0 16px
+
+      @media (max-width 768px)
+        text-align left
+        display none
+
+  &__heading
+    padding 0
+    margin-bottom 15px
+
+    color $c-white
+    font-size 29px
+    font-weight 400
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 23px
+      letter-spacing -.3px
+
+      br
+        display none
+
+    &._condensed
+      @media (max-width 768px)
+        letter-spacing -1.5px
+
+  &__how
+
+    &-description
+      padding-left 45px
+      margin-bottom 38px
+
+      font-size 18px
+      font-weight 400
+      line-height 26px
+      letter-spacing .2px
+
+      @media (max-width 768px)
+        margin-bottom 20px
+        padding-left 0
+
+        font-size 14px
+        line-height 20px
+        letter-spacing 0
+
+    &-list
+      list-style none
+      max-width 596px
+      margin 24px auto 47px
+
+      @media (max-width 768px)
+        margin-top -6px
+        margin-bottom 22px
+
+      &-item
+        position relative
+        margin-bottom 29px
+
+        font-size 14px
+
+        @media (max-width 768px)
+          margin-bottom 25px
+
+        &:not(:last-child)
+          &:after
+            content ''
+            display block
+            position absolute
+            top calc(100% + 5px)
+            left 52px
+            width 1px
+            height 19px
+
+            background-color $c-white
+
+            @media (max-width 768px)
+              left 41px
+              top calc(100% + 3px)
+
+        figure
+          display flex
+          align-items center
+
+      &-img
+        flex 0 0 auto
+        margin-right 12px
+        width 105px
+        height @width
+
+        @media (max-width 768px)
+          margin-right 9px
+          width 83px
+          height @width
+          align-self flex-start
+
+        img
+          width 100%
+          height auto
+
+      &-title
+        margin-bottom 8px
+
+        font-size 18px
+        font-weight 700
+
+        @media (max-width 768px)
+          font-size 16px
+
+    &-footer
+      padding-top 28px
+      text-align center
+
+      @media (max-width 768px)
+        padding-top 11px
+
+
+
+
+
+
+
+
+

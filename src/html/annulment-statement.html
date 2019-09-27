@@ -1,0 +1,135 @@
+{{#> layout page-name="annulment-statement"}}
+{{#> header page-name="annulment-statement"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="annulment-statement__banner">
+    <form class="new-form statement">
+        <h1 class="statement__title _condensed">Заявление об отмене судебного приказа</h1>
+
+        <div class="new-form__row new-form__fieldset _row statement__promocode">
+            <label class="new-form__item">
+                <span class="new-form__label">Промокод</span>
+                <input type="text" class="new-form__input">
+            </label>
+
+            <span class="statement__price">
+                <span>Цена</span>
+                <b>1000</b>
+                <span>руб.</span>
+            </span>
+        </div>
+
+        <fieldset class="new-form__fieldset _row">
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">ФИО должника (кому был выдан)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес должника (по прописке)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Телефон</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">E-mail (на него будет отправлено заполненное заявление)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+        </fieldset>
+
+        <fieldset class="new-form__fieldset _row">
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Тип суда</span>
+                    <select class="new-form__input _select">
+                        <option value="" class="select__placeholder">Выберите суд</option>
+                        <option value="">Lorem ipsum.</option>
+                        <option value="">Lorem ipsum dolor sit amet.</option>
+                    </select>
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Полное наименование судебного участка</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Полный адрес судебного участка</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Номер судебного приказа (судебного дела, производства)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата вынесения судебного приказа</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата получения судебного приказа</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+        </fieldset>
+
+        <fieldset class="new-form__fieldset _row">
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Наименование взыскателя</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+            <div class="new-form__row _reference">
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес взыскателя</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                {{> reference}}
+            </div>
+        </fieldset>
+
+        <footer class="new-form__footer">
+            <label class="new-form__checkbox checkbox">
+                <input type="checkbox" checked class="checkbox__input">
+                <span class="checkbox__label">
+                Я согласен с&nbsp; <a href="javascript:void(0);">Политикой конфиденциальности</a>
+            </span>
+            </label>
+
+            <button type="submit" class="button _primary">Оплатить</button>
+        </footer>
+
+    </form>
+</section>
+<!--Warning! end-->
+{{/header}}
+
+{{/layout}}

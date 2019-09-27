@@ -1,0 +1,97 @@
+.pagination
+  display flex
+
+  @media (max-width 768px)
+    flex-wrap wrap
+    justify-content center
+
+  &__toggles-wrap
+    display flex
+    flex 1
+    justify-content flex-end
+
+    @media (max-width 768px)
+      flex-basis 100%
+      order 1
+
+  &__toggle
+    display inline-flex
+    align-items center
+    padding .5625em
+    border 1px solid $c-secondary
+
+    color $c-secondary
+    font-size 16px
+    line-height 1
+    font-weight 400
+    text-decoration none
+
+    background-color $c-white
+    border-radius 2px
+
+    transition $d-transition
+
+    @media (max-width 768px)
+      font-size 14px
+
+    &:disabled
+      opacity .5
+
+    &:not(:disabled):hover
+      color $c-white
+
+      background-color $c-secondary
+
+      cursor pointer
+
+    &._prev
+      margin-right 10px
+
+      text-align right
+
+      .icon
+        margin-right .5em
+
+        transform rotate(180deg)
+
+    &._next
+      text-align left
+
+      .icon
+        margin-left .5em
+
+    .icon
+      font-size 1.5em
+
+  &__counter
+    margin-left 35px
+
+    color $c-secondary
+
+    @media (max-width 768px)
+      order 0
+      margin-left 0
+      margin-bottom 20px
+
+  &__input
+    margin-left 8px
+    margin-right @margin-left
+
+    input
+      width 32px
+      height @width
+      border 1px solid $c-secondary
+
+      color $c-secondary
+      font-size 16px
+      line-height @width
+      text-align center
+
+      background-color $c-white
+      border-radius 2px
+
+      &::-webkit-inner-spin-button
+      &::-webkit-outer-spin-button
+        margin 0
+
+        -webkit-appearance none

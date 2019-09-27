@@ -1,0 +1,88 @@
+.button
+  display inline-block
+  border none
+
+  position relative
+  z-index 1
+
+  color $c-white
+  font-weight 400
+  letter-spacing .5px
+  line-height 1.25
+  text-align center
+  text-decoration none
+
+  background-image linear-gradient(to top,rgba($c-black,15%),rgba($c-white,15%))
+  background-blend-mode multiply
+  box-shadow 0 0 15px rgba($c-black,25%)
+
+  cursor pointer
+
+  &:before
+    content ''
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index -1
+
+    border-radius inherit
+    opacity 0
+
+    transition $d-transition
+
+  &:hover
+
+    &:before
+      opacity 1
+
+  &._primary
+    padding .8em 1.82em
+
+    font-size 22px
+    text-transform uppercase
+
+    background-color $c-primary
+    border-radius 16px
+
+    @media (max-width 768px)
+      padding-top .5em
+      padding-bottom @padding-top
+
+      font-size 18px
+      letter-spacing -.6px
+
+    &:before
+      background linear-gradient(to top,#e02f24,#ff7d05)
+
+  &._secondary
+    padding .5em .61em
+
+    font-size 18px
+
+    background-color $c-secondary-3
+    border-radius 5px
+
+    @media (max-width 768px)
+      font-size 14px
+
+    &:before
+      background linear-gradient(to top,$c-secondary,$c-semi-secondary-light)
+
+    .icon
+      margin-right .25em
+
+      font-size 1.78em
+      vertical-align middle
+
+  &._submit
+  &._sm
+    padding 10px 1em
+    font-size 16px
+
+    border-radius 5px
+    box-shadow 0 0 10px rgba($c-black,20%)
+
+  &._block
+    width 100%

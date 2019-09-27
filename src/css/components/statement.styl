@@ -1,0 +1,67 @@
+.statement
+  padding 23px 40px
+
+  color $c-secondary-3
+
+  background-color $c-light-bg
+  border 8px solid $c-dark-bg
+  border-radius 20px
+
+  @media (max-width 768px)
+    padding 15px 14px
+    border-width 6px
+
+  &__promocode
+    justify-content space-between
+
+    @media (max-width 768px)
+      flex-direction column-reverse
+
+      .new-form__item
+        flex none
+
+    .statement__price
+      flex 1
+      padding-left 44px
+
+      @media (max-width 768px)
+        margin-bottom 2em
+        padding-left 0
+
+  &__price
+    align-self flex-end
+    font-size 18px
+    line-height 1
+    text-align right
+
+    @media (max-width 768px)
+      padding-left 0
+      width 100%
+
+      font-size 12px
+      text-align center
+
+    b
+      font-size 2em
+
+  &__title
+    width 100%
+    padding 0
+    margin 0 0 25px
+
+    color $c-secondary-3
+    font-size 30px
+    font-weight 400
+    text-align center
+
+    border none
+
+    @media (max-width 768px)
+      font-size 18px
+
+    &._condensed
+      letter-spacing -.7px
+
+      @media (max-width 768px)
+        letter-spacing 0
+

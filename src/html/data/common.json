@@ -1,0 +1,27 @@
+{
+    "nav": [
+        {
+            "title": "Home",
+            "page": "index"
+        },
+        {
+            "title": "Examples",
+            "page": "examples"
+        },
+        {
+            "title": "Browser",
+            "page": "browser",
+            "disabled": true
+        },
+        {
+            "title": "Settings",
+            "page": "settings",
+            "disabled": true
+        },
+        {
+            "title": "Deploy",
+            "page": "deploy",
+            "disabled": true
+        }
+    ]
+}

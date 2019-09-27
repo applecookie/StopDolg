@@ -1,0 +1,59 @@
+.checkbox
+  position relative
+  display inline-block
+
+  font-size 16px
+  font-weight 400
+  line-height 1.1
+
+  cursor pointer
+
+  @media (max-width 768px)
+    font-size 10px
+
+  &__label
+    display inline-block
+
+    color inherit
+
+    &:before
+      flex none
+      margin-right .625em
+      display inline-block
+      width 24px
+      height @width
+      content ''
+
+      m-icomoon()
+      color $c-primary
+      font-size 14px
+      line-height @width
+      text-align center
+      vertical-align middle
+
+      background-color rgba($c-white, .9)
+      border 2px solid $c-secondary
+      border-radius 5px
+
+      @media (max-width 768px)
+        width 15px
+        height @width
+
+        font-size 10px
+        line-height @width
+
+
+  input[type='checkbox']
+    position absolute
+    width 0
+    height @width
+
+    opacity 0
+
+    &:checked
+      ~span
+        &:before
+          content icon-check
+
+  a
+    color inherit

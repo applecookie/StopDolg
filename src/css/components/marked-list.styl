@@ -1,0 +1,28 @@
+.marked-list
+  margin 0
+
+  list-style none
+
+  &__item
+    position relative
+    padding-left .8em
+    margin-bottom .8em
+
+    font-size 20px
+
+    @media (max-width 768px)
+      font-size 14px
+
+    &:before
+      content ''
+      position absolute
+      left 0
+      top 4px
+      width 0
+      height @width
+
+      border 7px solid transparent
+      border-left 10px solid $c-primary
+
+      @media (max-width 768px)
+        top 2px

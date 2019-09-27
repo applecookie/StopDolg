@@ -1,0 +1,30 @@
+.collapse-toggle
+  display inline-block
+  padding .5em 1em
+  border none
+
+  color $c-white
+  font-size 16px
+  line-height 1
+  font-weight 400
+  text-decoration none
+
+  background-color $c-semi-secondary-light
+  border-radius 5px
+
+  cursor pointer
+
+  @media (max-width 768px)
+    font-size 14px
+
+  &._less
+    .icon
+      transform scaleY(-1)
+
+  .icon
+    margin-left .75em
+
+    font-size .875em
+    vertical-align middle
+
+    transition $d-transition

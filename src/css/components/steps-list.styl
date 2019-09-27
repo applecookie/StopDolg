@@ -1,0 +1,85 @@
+.steps-list
+  item-border-width = 10px
+  item-margin-bottom = 30px
+  dash-height = 20px
+  dash-gap = (item-margin-bottom - dash-height) / 2
+
+  media-item-border-width = 6px
+  media-item-margin-bottom = 12px
+  media-dash-height = 10px
+  media-dash-gap = (media-item-margin-bottom - media-dash-height) / 2
+
+  list-style none
+
+  &__item
+    position relative
+    max-width 450px
+    display flex
+    align-items center
+    min-height 124px
+    padding 5px 16px
+
+    color $c-secondary
+    font-size 18px
+
+    background-color $c-light-bg
+    border item-border-width solid $c-white
+    border-radius 20px
+    box-shadow 0 0 17px rgba($c-black,10%)
+
+    @media (max-width 768px)
+      min-height 70px
+      padding 2px 8px
+
+      font-size 12px
+
+      border-width media-item-border-width
+
+    &:not(:last-of-type)
+      margin-bottom item-margin-bottom
+
+      @media (max-width 768px)
+        margin-bottom media-item-margin-bottom
+
+      &:after
+        position absolute
+        top "calc(100% + %s + %s)" % (item-border-width dash-gap)
+        left 50%
+        content ''
+        width 4px
+        height dash-height
+
+        background $c-dark-bg
+        transform translateX(-50%)
+
+        @media (max-width 768px)
+          top "calc(100% + %s + %s)" % (media-item-border-width media-dash-gap)
+          height media-dash-height
+
+  .icon
+    display flex
+    align-items center
+    justify-content center
+    flex none
+    margin-right 16px
+    width 80px
+    height @width
+
+    color $c-white
+    font-size 64px
+
+    background-color $c-semi-secondary
+    background-image linear-gradient(to top,rgba($c-black,5%),rgba($c-white,5%))
+    background-blend-mode multiply
+    border-radius 50%
+    border 2px solid $c-white
+    box-shadow inset 0 0 15px rgba($c-black,10%), 0 0 10px rgba($c-black,15%)
+
+    @media (max-width 768px)
+      width 42px
+      height @width
+      margin-right 8px
+
+      font-size 36px
+
+

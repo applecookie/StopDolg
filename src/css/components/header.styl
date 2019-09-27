@@ -1,0 +1,134 @@
+.header
+  z-index 1
+
+  m-polygon()
+
+  filter drop-shadow(4px 4px 5px rgba($c-black,15%))
+
+  &:before
+    background-color $c-black
+
+    clip-path polygon(0% 0%, 100% 0%, 112% 91%, 35% 100%, 0% 92%)
+
+    @media (max-width 768px)
+      clip-path polygon(0% 0%, 100% 0%, 255% 91%, 35% 100%, 0% 98%)
+
+  &__container
+    padding-top 33px
+
+  &__info
+    padding-top 0
+    //margin-bottom 52px
+
+    display flex
+    justify-content space-between
+    align-items center
+
+    @media (max-width 768px)
+      justify-content center
+
+  &__logo
+    float none
+    width auto
+    margin 0
+    padding-right 0
+
+    max-width 200px
+
+    img
+      height 100%
+
+  &__tel
+    width auto
+    height auto
+    float none
+    margin 0
+
+    display inline-block
+    padding .4em 1.5em
+    border 1px solid $c-white
+
+    color $c-white
+    font-size 20px
+    line-height 1
+    text-decoration none
+
+    border-radius 10px
+    transition $d-transition
+
+    @media (max-width 768px)
+      font-size 10px
+
+    &:hover
+      background-color rgba($c-white,10%)
+
+    &:before
+      opacity 0
+
+  &__nav
+    margin-bottom 58px
+
+    &-toggle
+      display none
+
+      border none
+      padding 0
+      width 40px
+      height @width
+
+      text-align center
+
+      background-color red
+
+      cursor pointer
+
+      &:hover
+        span
+
+          &:first-child
+          &:last-child
+            margin 0
+
+            &:after
+              top 0
+
+              opacity 0
+
+          &:first-child
+            transform rotate(45deg)
+
+          &:last-child
+            transform translateY(-3px) rotate(-45deg)
+
+      span
+        position relative
+        display block
+        width 24px
+        height 3px
+        margin @height 0
+
+        background-color $c-white
+        border-radius 1px
+
+        transition $d-transition
+
+        &:first-child
+          &:after
+            top -6px
+
+        &:last-child
+          &:after
+            top 6px
+
+        &:after
+          position absolute
+          content ''
+          display block
+
+          width 24px
+          height 3px
+
+          background-color $c-primary
+          border-radius 1px
+
+          transition $d-transition

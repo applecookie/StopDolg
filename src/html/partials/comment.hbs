@@ -1,0 +1,17 @@
+<article class="comment reviews__comment">
+    <picture class="comment__avatar">
+        <source srcset="img/reviews/JohnDoe@2x.png 2x">
+        <img src="img/reviews/JohnDoe.png" alt="JohnDoe">
+    </picture>
+    <div class="comment__body">
+        <span class="comment__created">10.10.19</span>
+        <blockquote class="comment__blockquote">
+            {{> @partial-block}}
+        </blockquote>
+        <div class="comment__footnote">Орфография и пунктуация автора сохранены.</div>
+    </div>
+    <footer class="comment__footer _hide">
+        <button type="button" class="collapse-toggle">
+            <span>Развернуть</span><i class="icon icon-chevron"></i></button>
+    </footer>
+</article>

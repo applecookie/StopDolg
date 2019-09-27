@@ -1,0 +1,10 @@
+{
+    "nav": "Examples",
+    "title": "Examples",
+    "menu": [
+        {
+            "title": "Carousel",
+            "id": "carousel"
+        }
+    ]
+}

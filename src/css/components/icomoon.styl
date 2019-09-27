@@ -1,0 +1,70 @@
+icomoon-font-path ?= "../fonts"
+
+icon-arrow = "\e90a"
+icon-chevron = "\e908"
+icon-file-copy = "\e909"
+icon-check = "\e900"
+icon-file = "\e901"
+icon-file-check = "\e902"
+icon-file-edit = "\e903"
+icon-envelope-open = "\e904"
+icon-folder-open = "\e905"
+icon-minus = "\e906"
+icon-plus = "\e907"
+
+
+@font-face
+  font-family 'icomoon-new'
+  src url(icomoon-font-path + '/icomoon-new.ttf?1kpcb5') format('truetype'), url(icomoon-font-path + '/icomoon-new.woff?1kpcb5') format('woff'), url(icomoon-font-path + '/icomoon-new.svg?1kpcb5#icomoon-new') format('svg')
+  font-weight normal
+  font-style normal
+  font-display block
+
+i
+.icon
+  display inline-block
+  font-family 'icomoon-new' !important
+  speak none
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.icon-arrow
+  &:before
+    content icon-arrow
+.icon-chevron
+  &:before
+    content icon-chevron
+.icon-file-copy
+  &:before
+    content icon-file-copy
+.icon-check
+  &:before
+    content icon-check
+.icon-file
+  &:before
+    content icon-file
+.icon-file-check
+  &:before
+    content icon-file-check
+.icon-file-edit
+  &:before
+    content icon-file-edit
+.icon-envelope-open
+  &:before
+    content icon-envelope-open
+.icon-folder-open
+  &:before
+    content icon-folder-open
+.icon-minus
+  &:before
+    content icon-minus
+.icon-plus
+  &:before
+    content icon-plus
