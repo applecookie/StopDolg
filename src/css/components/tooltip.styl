@@ -1,0 +1,110 @@
+$tooltip-max-width = 222px
+
+sqrt(x)
+  return math(math(x, 'sqrt'), 'round')
+
+$tooltip-arrow-cathetus = 16px
+$tooltip-arrow-size = sqrt(($tooltip-arrow-cathetus**2)/2)
+$tooltip-arrow-gap = 5px
+$c-tooltip-arrow = $c-primary
+
+$tooltip-bg-gap = 14px
+$c-tooltip-bg = rgba($c-secondary,90%)
+
+$tooltip-border-width = 1px
+$tooltip-border-stop = sqrt(2*(($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width)**2)) - sqrt(2*($tooltip-border-width**2))
+$c-tooltip-border = $c-white
+
+tooltipArrow($c-border)
+  background-image linear-gradient(45deg, $c-tooltip-arrow, $c-tooltip-arrow $tooltip-arrow-size, transparent $tooltip-arrow-size, transparent ($tooltip-arrow-size + $tooltip-arrow-gap), $c-border ($tooltip-arrow-size + $tooltip-arrow-gap), $c-border ($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width), transparent ($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width), transparent)
+tooltipBorderFull(agle, color)
+  linear-gradient(angle, color $tooltip-border-width, transparent $tooltip-border-width)
+tooltipBorderCut(agle, color)
+  repeating-linear-gradient(angle, color, color $tooltip-border-width)
+
+$tooltip-border-top = linear-gradient(180deg, $c-tooltip-border $tooltip-border-width, transparent $tooltip-border-width)
+$tooltip-border-right = linear-gradient(-90deg, $c-tooltip-border $tooltip-border-width, transparent $tooltip-border-width)
+$tooltip-border-bottom = repeating-linear-gradient(0, $c-tooltip-border, $c-tooltip-border $tooltip-border-width)
+$tooltip-border-left = repeating-linear-gradient(90deg, $c-tooltip-border, $c-tooltip-border $tooltip-border-width)
+
+.tooltip
+  position absolute
+  bottom 100%
+  left 100%
+  z-index 1000
+  padding $tooltip-border-width + $tooltip-arrow-gap
+
+  max-width $tooltip-max-width
+  width max-content
+  box-sizing border-box
+
+  color $c-white
+  font-size 18px
+  font-weight 100
+  line-height 1.33
+  text-align left
+
+  visibility hidden
+  -webkit-backface-visibility hidden
+
+  @media (max-width $container-width + $tooltip-max-width*2)
+    right 100%
+    left auto
+
+    &:before
+    &:after
+      transform scaleX(-1)
+
+    .tooltip__content
+
+      &:after
+        transform scaleX(-1)
+
+  &._visible
+    visibility visible
+
+  &._light
+
+    .tooltip__content
+      &:after
+        background-color rgba($c-white,25%)
+
+  &:before
+  &:after
+    content ''
+    position absolute
+    top 0
+    left @top
+    bottom @top
+    right @top
+
+  // arrow
+  &:before
+    tooltipArrow($c-tooltip-border)
+
+  // borders
+  &:after
+    background-image $tooltip-border-top, $tooltip-border-right, $tooltip-border-bottom, $tooltip-border-left
+    background-size auto, auto, 'calc(100% - %s)' % $tooltip-border-stop $tooltip-border-width, $tooltip-border-width 'calc(100% - %s)' % $tooltip-border-stop
+    background-position 0 0, 0 0, 100% 100%, 0 0
+    background-repeat no-repeat
+
+  &__content
+    position relative
+    padding 20px
+
+    &:after
+      content ''
+      position absolute
+      top 0
+      left @top
+      bottom @top
+      right @top
+      z-index -1
+
+      background-image linear-gradient(45deg,transparent,transparent $tooltip-bg-gap,$c-tooltip-bg $tooltip-bg-gap,$c-tooltip-bg)
+
+  &__reference
+    position relative
+
+    cursor help

@@ -1,26 +1,30 @@
 .checkbox
-  position relative
   display inline-block
 
-  font-size 16px
-  font-weight 400
-  line-height 1.1
-
-  cursor pointer
-
-  @media (max-width 768px)
-    font-size 10px
-
   &__label
-    display inline-block
+    // legacy
+    display inline
+    // end
+    position relative
+    padding-left 2.5em
 
     color inherit
+    font-size 16px
+    font-weight 400
+    line-height 1.1
+
+    cursor pointer
+
+    @media (max-width 768px)
+      font-size 10px
 
     &:before
+      position absolute
+      top - 4px
+      left 0
       flex none
-      margin-right .625em
       display inline-block
-      width 24px
+      width 20px
       height @width
       content ''
 
@@ -29,17 +33,17 @@
       font-size 14px
       line-height @width
       text-align center
-      vertical-align middle
 
       background-color rgba($c-white, .9)
       border 2px solid $c-secondary
-      border-radius 5px
+      border-radius 3px
 
       @media (max-width 768px)
-        width 15px
+        top -2px
+        width 11px
         height @width
 
-        font-size 10px
+        font-size 8px
         line-height @width
 
 
