@@ -1,6 +1,6 @@
 .contacts
 
-  &:before
+  .header:before
     background-image url(../img/backgrounds/contacts.jpg)
 
   &__form
@@ -20,7 +20,7 @@
     margin 0 0 .9em
     border none
 
-    color inherit
+    color $c-white
     font-size 56px
     font-weight 300
     line-height 1.2
@@ -41,7 +41,10 @@
       font-size 14px
       text-align center
 
-  &__search
+    a
+      display block
+
+  &__form
     align-items center
 
     max-width 596px
