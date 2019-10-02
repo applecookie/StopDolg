@@ -1,22 +1,22 @@
 $tooltip-max-width = 222px
+$tooltip-gap = 5px
+$c-tooltip-bg = rgba($c-secondary,90%)
 
 sqrt(x)
   return math(math(x, 'sqrt'), 'round')
 
 $tooltip-arrow-cathetus = 16px
 $tooltip-arrow-size = sqrt(($tooltip-arrow-cathetus**2)/2)
-$tooltip-arrow-gap = 5px
 $c-tooltip-arrow = $c-primary
 
-$tooltip-bg-gap = 14px
-$c-tooltip-bg = rgba($c-secondary,90%)
-
 $tooltip-border-width = 1px
-$tooltip-border-stop = sqrt(2*(($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width)**2)) - sqrt(2*($tooltip-border-width**2))
+$tooltip-border-stop = sqrt(2*(($tooltip-arrow-size + $tooltip-gap + $tooltip-border-width)**2)) - sqrt(2*($tooltip-border-width**2))
 $c-tooltip-border = $c-white
 
+$tooltip-polygon-stop = ($tooltip-arrow-size + $tooltip-gap*2 + $tooltip-border-width) - sqrt(2*(($tooltip-border-width + $tooltip-gap)**2))
+
 tooltipArrow($c-border)
-  background-image linear-gradient(45deg, $c-tooltip-arrow, $c-tooltip-arrow $tooltip-arrow-size, transparent $tooltip-arrow-size, transparent ($tooltip-arrow-size + $tooltip-arrow-gap), $c-border ($tooltip-arrow-size + $tooltip-arrow-gap), $c-border ($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width), transparent ($tooltip-arrow-size + $tooltip-arrow-gap + $tooltip-border-width), transparent)
+  background-image linear-gradient(45deg, $c-tooltip-arrow, $c-tooltip-arrow $tooltip-arrow-size, transparent $tooltip-arrow-size, transparent ($tooltip-arrow-size + $tooltip-gap), $c-border ($tooltip-arrow-size + $tooltip-gap), $c-border ($tooltip-arrow-size + $tooltip-gap + $tooltip-border-width), transparent ($tooltip-arrow-size + $tooltip-gap + $tooltip-border-width), transparent)
 tooltipBorderFull(agle, color)
   linear-gradient(angle, color $tooltip-border-width, transparent $tooltip-border-width)
 tooltipBorderCut(agle, color)
@@ -32,7 +32,7 @@ $tooltip-border-left = repeating-linear-gradient(90deg, $c-tooltip-border, $c-to
   bottom 100%
   left 100%
   z-index 1000
-  padding $tooltip-border-width + $tooltip-arrow-gap
+  padding $tooltip-border-width + $tooltip-gap
 
   max-width $tooltip-max-width
   width max-content
@@ -47,7 +47,7 @@ $tooltip-border-left = repeating-linear-gradient(90deg, $c-tooltip-border, $c-to
   visibility hidden
   -webkit-backface-visibility hidden
 
-  @media (max-width $container-width + $tooltip-max-width*2)
+  &._reverse
     right 100%
     left auto
 
@@ -102,7 +102,7 @@ $tooltip-border-left = repeating-linear-gradient(90deg, $c-tooltip-border, $c-to
       right @top
       z-index -1
 
-      background-image linear-gradient(45deg,transparent,transparent $tooltip-bg-gap,$c-tooltip-bg $tooltip-bg-gap,$c-tooltip-bg)
+      background-image linear-gradient(45deg, transparent, transparent $tooltip-polygon-stop, $c-tooltip-bg $tooltip-polygon-stop, $c-tooltip-bg)
 
   &__reference
     position relative

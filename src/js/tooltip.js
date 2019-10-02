@@ -69,7 +69,13 @@ tooltip.show = (el, opts, isAuto) => {
 
         el.appendChild(tooltipEl);
 
-        tooltipEl.className += ' _visible';
+        const tooltipRight = tooltipEl.getBoundingClientRect().right;
+        const pageRight = document.body.clientWidth;
+
+        if (tooltipRight > pageRight - 15) {
+            tooltipEl.classList.add('_reverse');
+        }
+        tooltipEl.classList.add('_visible');
 
         return tooltipEl;
     }
