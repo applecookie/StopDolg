@@ -1,0 +1,72 @@
+// не забыть вложить в .contacts
+// слайдер с сотрудниками
+.team
+
+  &-block
+
+    &:after
+      display none
+
+    &__title
+      max-width $container-width
+      margin 0 auto 45px
+      padding 0
+
+      color $c-secondary
+      font-size 32px
+      font-weight 300
+      text-transform uppercase
+      text-align right
+
+    &__content
+      max-width 1024px
+      margin 0 auto
+
+  &-list
+    &__item
+      flex 1 1 50%
+      box-sizing border-box
+      padding 12px 13px
+
+      text-align center
+
+      &:first-child
+        margin-bottom 15px
+
+      &-img
+        max-width 170px
+        margin 0 auto 25px
+
+        div
+          box-sizing border-box
+          position relative
+          padding-bottom 100%
+          width @padding-bottom
+
+          border-radius 50%
+          box-shadow 0 0 0 4px #FBFBFB, 0 0 19px rgba($c-black,25%)
+
+        img
+          position absolute
+          top 0
+
+          display block
+          width 100%
+          // для img не типичного размера
+          height 100%
+          object-fit cover
+
+          border-radius 50%
+
+      &-name
+        margin-bottom 5px
+        overflow hidden
+
+        color $c-secondary
+        font-size 20px
+        // на случай переполнения контентом а-ля Иннокентиевна
+        text-overflow ellipsis
+
+      &-position
+        color $c-secondary
+        font-size 16px

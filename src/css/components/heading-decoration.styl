@@ -1,0 +1,24 @@
+.heading-decoration
+  position relative
+
+  &:before
+  &:after
+    position absolute
+    top 50%
+    content ''
+    display block
+
+    background-color $c-heading-decoration
+    transform translateY(-50%)
+
+  &:before
+    left calc(100% + 24px)
+    width 100vw
+    height 2px
+
+  &:after
+    left calc(100% + 24px)
+    width 16px
+    height @width
+
+    border-radius 50%

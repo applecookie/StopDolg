@@ -104,11 +104,11 @@ body.loading div#disAjax_indicator {
 	cursor:move;
 }*/
 .disAjaxWin div.dis-CL {
-    background: url("/local/js/disAjaxWin/images/LR.png") repeat-y scroll 0 0 transparent;
+    /*background: url("/local/js/disAjaxWin/images/LR.png") repeat-y scroll 0 0 transparent;*/
     padding-left: 6px;
 }
 .disAjaxWin div.dis-CR {
-    background: url("/local/js/disAjaxWin/images/LR.png") repeat-y scroll right 0 transparent;
+    /*background: url("/local/js/disAjaxWin/images/LR.png") repeat-y scroll right 0 transparent;*/
     padding-right: 6px;
 }
 .disAjaxWin div.dis-CC {
@@ -126,15 +126,15 @@ body.loading div#disAjax_indicator {
     color:#000;
 }
 .disAjaxWin div.dis-BL {
-    background: url("/local/js/disAjaxWin/images/coners_L.png") no-repeat scroll 0 bottom transparent;
+    /*background: url("/local/js/disAjaxWin/images/coners_L.png") no-repeat scroll 0 bottom transparent;*/
     padding-left: 6px;
 }
 .disAjaxWin div.dis-BR {
-    background: url("/local/js/disAjaxWin/images/coners_R.png") no-repeat scroll right bottom transparent;
+    /*background: url("/local/js/disAjaxWin/images/coners_R.png") no-repeat scroll right bottom transparent;*/
     padding-right: 6px;
 }
 .disAjaxWin div.dis-BC {
-    background: url("/local/js/disAjaxWin/images/TB.png") repeat-x scroll 0 bottom transparent;
+    /*background: url("/local/js/disAjaxWin/images/TB.png") repeat-x scroll 0 bottom transparent;*/
     font-size: 0;
     line-height: 0;
     overflow: hidden;
@@ -180,7 +180,7 @@ body.loading div#disAjax_indicator {
     z-index: 10000;
     width:41px;
     height:41px;
-    background: url("/local/js/disAjaxWin/images/ajax_bg.png") 0 0 transparent no-repeat;
+    /*background: url("/local/js/disAjaxWin/images/ajax_bg.png") 0 0 transparent no-repeat;*/
 
     border:0px solid #97afcd;
     border-radius: 2px 2px 2px 2px;
@@ -193,7 +193,7 @@ body.loading div#disAjax_indicator {
 #disAjaxWinWait div {
     width:41px;
     height:41px;
-    background: url("/local/js/disAjaxWin/images/ajax.gif") 5px 5px transparent no-repeat;
+    /*background: url("/local/js/disAjaxWin/images/ajax.gif") 5px 5px transparent no-repeat;*/
 }
 
 body div#disAjax_indicator {
@@ -207,7 +207,7 @@ body div#disAjax_indicator {
 }
 body div#disAjax_indicator div {
     position: absolute;
-    background: url("/local/js/disAjaxWin/images/loader.svg") center center rgba(255, 255, 255, 0.9) no-repeat;
+    /*background: url("/local/js/disAjaxWin/images/loader.svg") center center rgba(255, 255, 255, 0.9) no-repeat;*/
     background-size: 110px;
     border-radius: 100%;
     left: 50%;
@@ -1095,7 +1095,7 @@ template {
 /* Slider */
 .slick-loading .slick-list
 {
-    background: #fff url('/local/templates/main2019/libs/slick/./ajax-loader.gif') center center no-repeat;
+    /*background: #fff url('/local/templates/main2019/libs/slick/./ajax-loader.gif') center center no-repeat;*/
 }
 
 /* Icons */
@@ -1105,8 +1105,8 @@ template {
     font-weight: normal;
     font-style: normal;
 
-    src: url('/local/templates/main2019/libs/slick/./fonts/slick.eot');
-    src: url('/local/templates/main2019/libs/slick/./fonts/slick.eot?#iefix') format('embedded-opentype'), url('/local/templates/main2019/libs/slick/./fonts/slick.woff') format('woff'), url('/local/templates/main2019/libs/slick/./fonts/slick.ttf') format('truetype'), url('/local/templates/main2019/libs/slick/./fonts/slick.svg#slick') format('svg');
+    /*src: url('/local/templates/main2019/libs/slick/./fonts/slick.eot');*/
+    /*src: url('/local/templates/main2019/libs/slick/./fonts/slick.eot?#iefix') format('embedded-opentype'), url('/local/templates/main2019/libs/slick/./fonts/slick.woff') format('woff'), url('/local/templates/main2019/libs/slick/./fonts/slick.ttf') format('truetype'), url('/local/templates/main2019/libs/slick/./fonts/slick.svg#slick') format('svg');*/
 }
 /* Arrows */
 .slick-prev,
@@ -4307,7 +4307,7 @@ input.error {
     margin: 0 auto;
 }
 .slick-prev, .slick-next {
-    background: url(/local/templates/main2019/css/../img/svg/arrow-next.svg) no-repeat center;
+    /*background: url(/local/templates/main2019/css/../img/svg/arrow-next.svg) no-repeat center;*/
     -webkit-background-size: contain;
     background-size: contain;
     -webkit-border-radius: 50%;
@@ -4322,19 +4322,19 @@ input.error {
     height: 122px;
 }
 .slick-prev {
-    background-image: url(/local/templates/main2019/css/../img/svg/arrow-prev.svg);
+    /*background-image: url(/local/templates/main2019/css/../img/svg/arrow-prev.svg);*/
     left: -57px;
 }
 .slick-prev:hover, .slick-next:hover {
     opacity: 0.8;
 }
 .slick-prev:hover, .slick-next:hover, .slick-prev:focus, .slick-next:focus {
-    background: url(/local/templates/main2019/css/../img/svg/arrow-next.svg) no-repeat center;
+    /*background: url(/local/templates/main2019/css/../img/svg/arrow-next.svg) no-repeat center;*/
     -webkit-background-size: contain;
     background-size: contain;
 }
 .slick-prev:hover, .slick-prev:hover, .slick-prev:focus, .slick-prev:focus {
-    background-image: url(/local/templates/main2019/css/../img/svg/arrow-prev.svg);
+    /*background-image: url(/local/templates/main2019/css/../img/svg/arrow-prev.svg);*/
 }
 .slick-next {
     right: -57px;
@@ -5357,7 +5357,7 @@ iframe{
 }
 .slick-prev,
 .slick-next {
-    background: url(/local/templates/main/css/../img/svg/arrow-next.svg) no-repeat center;
+    /*background: url(/local/templates/main/css/../img/svg/arrow-next.svg) no-repeat center;*/
     -webkit-background-size: contain;
     background-size: contain;
     -webkit-border-radius: 50%;
@@ -5371,7 +5371,7 @@ iframe{
 .slick-next:hover,
 .slick-prev:focus,
 .slick-next:focus {
-    background: url(/local/templates/main/css/../img/svg/arrow-next.svg) no-repeat center;
+    /*background: url(/local/templates/main/css/../img/svg/arrow-next.svg) no-repeat center;*/
     -webkit-background-size: contain;
     background-size: contain;
 }
@@ -5391,12 +5391,12 @@ iframe{
     right: -47px;
 }
 .slick-prev {
-    background-image: url(/local/templates/main/css/../img/svg/arrow-prev.svg);
+    /*background-image: url(/local/templates/main/css/../img/svg/arrow-prev.svg);*/
     left: -47px;
 }
 .slick-prev:hover,
 .slick-prev:focus {
-    background-image: url(/local/templates/main/css/../img/svg/arrow-prev.svg);
+    /*background-image: url(/local/templates/main/css/../img/svg/arrow-prev.svg);*/
 }
 @media (max-width: 1200px) {
     .slick-prev,

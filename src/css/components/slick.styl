@@ -1,0 +1,70 @@
+// не забыть вложить в .contacts
+$slider-toggle-size = 64px
+$slider-margin = 42px
+$slider-toggle-offset = $slider-toggle-size - $slider-margin
+
+.slick
+
+  &-arrow
+    margin-top 0
+    width $slider-toggle-size
+    height @width
+
+    background linear-gradient(90deg, rgba(#fff,30%), #fff, rgba(#fff,30%))
+    border-radius 50%
+    box-shadow 0 0 15px rgba($c-black,10%)
+
+    transition .24s ease-in-out
+
+    &:hover
+      //background transparent
+
+    &:before
+      position absolute
+      top 4px
+      right @top
+      bottom @top
+      left @top
+      content ''
+
+      background-color $c-white
+      border-radius inherit
+
+    // arrow
+    &:after
+      position absolute
+      top 50%
+      content ''
+      width 20px
+      height @width
+      border-style solid
+      border-color $c-secondary
+
+      transform translate(-50%, -50%) rotate(45deg)
+
+  &-next
+    right 0
+    transform translate("calc(100% - %s)" % $slider-toggle-offset, -50%)
+
+    &:after
+      left calc(50% - 4px)
+
+      border-width 2px 2px 0 0
+
+  &-prev
+    left 0
+    transform translate("calc(-100% + %s)" % $slider-toggle-offset, -50%)
+
+    &:after
+      left calc(50% + 4px)
+      border-width 0 0 2px 2px
+
+.slikparnt
+  margin 0 $slider-margin
+
+  &cont
+    display flex
+    flex-direction column
+
+  .child
+    // = team-list-item
