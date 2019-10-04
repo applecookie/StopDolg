@@ -1,6 +1,5 @@
 $tooltip-max-width = 222px
-$tooltip-gap = 5px
-$c-tooltip-bg = rgba($c-secondary,90%)
+$tooltip-gap = $reference-gap
 
 sqrt(x)
   return math(math(x, 'sqrt'), 'round')
@@ -9,9 +8,9 @@ $tooltip-arrow-cathetus = 16px
 $tooltip-arrow-size = sqrt(($tooltip-arrow-cathetus**2)/2)
 $c-tooltip-arrow = $c-primary
 
-$tooltip-border-width = 1px
+$tooltip-border-width = $reference-border-width
 $tooltip-border-stop = sqrt(2*(($tooltip-arrow-size + $tooltip-gap + $tooltip-border-width)**2)) - sqrt(2*($tooltip-border-width**2))
-$c-tooltip-border = $c-white
+$c-tooltip-border = $c-reference-border
 
 $tooltip-polygon-stop = ($tooltip-arrow-size + $tooltip-gap*2 + $tooltip-border-width) - sqrt(2*(($tooltip-border-width + $tooltip-gap)**2))
 

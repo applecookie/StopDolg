@@ -1,0 +1,59 @@
+.popover
+  box-sizing border-box
+  position relative
+  max-width 714px
+  max-height 90vh
+  overflow auto
+  padding $reference-gap
+  border $reference-border-width solid $c-reference-border
+
+  text-align center
+
+  &__content
+    height 100%
+    padding 26px 0
+
+    background-color $c-reference-bg
+
+  &__title
+    padding 0 44px
+    margin-bottom 1em
+
+    color $c-white
+    font-size 18px
+    font-weight 300
+
+    @media (max-width 768px)
+      font-size 16px
+
+  &__img
+    display block
+    padding 0 50px
+
+    @media (max-width 768px)
+      padding 0
+
+    img
+      width 100%
+      height auto
+      display block
+
+  &__times
+    display none
+    margin-top 16px
+
+    @media (max-width 768px)
+      display inline-block
+
+  &__backdrop
+    position fixed
+    top 0
+    right @top
+    bottom @top
+    left @top
+    z-index 1001
+    display flex
+    align-items center
+    justify-content center
+
+    background-color rgba(#243c3b,50%)
