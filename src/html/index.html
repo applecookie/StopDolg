@@ -13,13 +13,17 @@
 </nav>
 <style>
     .cat {
-        padding: 100px;
+        padding: 40px;
         text-align: center;
         background-color: #999;
     }
 </style>
 
-<div class="cat">{{>reference}}</div>
-{{>popover}}
+<div class="cat">
+    {{>reference popover=true}}
+</div>
+<div class="cat">
+    {{>reference}}
+</div>
 
 {{/layout}}

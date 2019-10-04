@@ -1,22 +1,42 @@
-.popover
-  box-sizing border-box
-  position relative
-  max-width 714px
-  max-height 90vh
-  overflow auto
-  padding $reference-gap
-  border $reference-border-width solid $c-reference-border
+.body-overflow
+  overflow hidden
 
-  text-align center
+.popover
+  position fixed
+  top 0
+  right @top
+  bottom @top
+  left @top
+  z-index 1001
+  display flex
+  align-items center
+  justify-content center
+
+  opacity 0
+  visibility hidden
+
+  &._shown
+    opacity 1
+    visibility visible
+
+  &__wrap
+    overflow auto
+    max-width 714px
+    max-height 90vh
+    padding $reference-gap
+    margin 10px
+    border $reference-border-width solid $c-reference-border
 
   &__content
-    height 100%
+    position relative
     padding 26px 0
+
+    text-align center
 
     background-color $c-reference-bg
 
   &__title
-    padding 0 44px
+    padding 0 40px
     margin-bottom 1em
 
     color $c-white
@@ -28,7 +48,7 @@
 
   &__img
     display block
-    padding 0 50px
+    padding 0 52px
 
     @media (max-width 768px)
       padding 0
@@ -38,22 +58,31 @@
       height auto
       display block
 
-  &__times
-    display none
+  &__close
     margin-top 16px
 
-    @media (max-width 768px)
-      display inline-block
+  &__times
+    position absolute
+    top 0
+    right @top
+    border 0
+    width 30px
+    height @width
+
+    color $c-white
+
+    background-color $c-black
+    border-radius 50%
+
+    cursor pointer
 
   &__backdrop
-    position fixed
+    position absolute
     top 0
     right @top
     bottom @top
     left @top
-    z-index 1001
-    display flex
-    align-items center
-    justify-content center
+    z-index -1
 
     background-color rgba(#243c3b,50%)
+    transition .2s ease-in

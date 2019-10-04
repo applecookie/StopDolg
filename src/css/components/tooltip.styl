@@ -101,9 +101,7 @@ $tooltip-border-left = repeating-linear-gradient(90deg, $c-tooltip-border, $c-to
       right @top
       z-index -1
 
-      background-image linear-gradient(45deg, transparent, transparent $tooltip-polygon-stop, $c-tooltip-bg $tooltip-polygon-stop, $c-tooltip-bg)
+      background-image linear-gradient(45deg, transparent, transparent $tooltip-polygon-stop,$c-reference-bg $tooltip-polygon-stop, $c-reference-bg)
 
   &__reference
     position relative
-
-    cursor help

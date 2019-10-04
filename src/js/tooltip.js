@@ -1,5 +1,5 @@
 function tooltip(getTooltipOpts) {
-    document.addEventListener('mouseover', e => {
+    const handler = e => {
         let el = e.target;
         let opts = getTooltipOpts(el);
 
@@ -9,7 +9,9 @@ function tooltip(getTooltipOpts) {
         }
 
         opts && tooltip.show(el, opts, true);
-    });
+    };
+    document.addEventListener('mouseover', handler);
+    document.addEventListener('click', handler);
 }
 
 tooltip.show = (el, opts, isAuto) => {
@@ -23,7 +25,7 @@ tooltip.show = (el, opts, isAuto) => {
         let showTimer;
         let text;
 
-        el.addEventListener('mousedown', autoHide);
+        // el.addEventListener('mousedown', autoHide);
         el.addEventListener('mouseleave', autoHide);
 
         function show() {
