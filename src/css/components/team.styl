@@ -5,6 +5,7 @@
   &-block
 
     &:after
+      // legacy
       display none
 
     &__title
@@ -18,23 +19,26 @@
       text-transform uppercase
       text-align right
 
-    &__content
-      max-width 1024px
-      margin 0 auto
-
   &-list
+
     &__item
-      flex 1 1 50%
+      flex 0 0 50%
       box-sizing border-box
+      // высота империческая
+      min-height 340px
       padding 12px 13px
+      overflow auto
 
       text-align center
+
+      @media (max-width 480px)
+        min-height auto
 
       &:first-child
         margin-bottom 15px
 
       &-img
-        max-width 170px
+        max-width 168px
         margin 0 auto 25px
 
         div

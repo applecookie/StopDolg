@@ -1,19 +1,19 @@
 .reviews
 
-  &:before
+  .header:before
     background-image url(../img/backgrounds/reviews.jpg)
 
   &__video
-    padding-top 40px
-    padding-bottom 40px
+    padding-top 0
+    padding-bottom 80px
 
     color $c-white
 
     @media (max-width 768px)
-      padding-left 20px
+      padding-left 0
       padding-right @padding-left
-      padding-top 46px
-      padding-bottom 30px
+      //padding-top 46px
+      padding-bottom 20px
 
   &__title
     padding 0
@@ -30,7 +30,7 @@
 
     @media (max-width 768px)
       font-size 24px
-      margin-bottom 0
+      margin-bottom .35em
 
   &__comments
     margin-top -92px

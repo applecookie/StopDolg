@@ -1,0 +1,21 @@
+.video
+
+  &-list
+
+    &__item
+      flex 0 0 50%
+      box-sizing border-box
+      // высота империческая
+      min-height 340px
+      overflow auto
+
+      @media (max-width 768px)
+        min-height auto
+        margin-right 20px
+        margin-left @margin-right
+
+      &:first-child
+        margin-bottom 22px
+
+        @media (max-width 768px)
+          margin-bottom 2px

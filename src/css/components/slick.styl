@@ -1,23 +1,39 @@
 // не забыть вложить в .contacts
-$slider-toggle-size = 64px
-$slider-margin = 42px
-$slider-toggle-offset = $slider-toggle-size - $slider-margin
+$carousel-toggle-size = 64px
+$carousel-gap = 42px
+$carousel-toggle-offset = $carousel-toggle-size - $carousel-gap
+
+
 
 .slick
 
+  &-list
+    display flex
+
+  &-track
+    display flex
+
   &-arrow
+    top 50%
+    bottom auto
     margin-top 0
-    width $slider-toggle-size
+    width $carousel-toggle-size
     height @width
 
-    background linear-gradient(90deg, rgba(#fff,30%), #fff, rgba(#fff,30%))
+    background linear-gradient(90deg, #e5e5e6, #fff, #e5e5e6)
+    background-size auto !important
     border-radius 50%
     box-shadow 0 0 15px rgba($c-black,10%)
 
+    transform translateY(-50%)
     transition .24s ease-in-out
 
     &:hover
-      //background transparent
+      //
+
+    @media (max-width 480px)
+      width $carousel-toggle-size*.5
+      height @width
 
     &:before
       position absolute
@@ -42,25 +58,67 @@ $slider-toggle-offset = $slider-toggle-size - $slider-margin
 
       transform translate(-50%, -50%) rotate(45deg)
 
+      @media (max-width 480px)
+        width 10px
+        height @width
+
   &-next
     right 0
-    transform translate("calc(100% - %s)" % $slider-toggle-offset, -50%)
+
+    @media (max-width 480px)
+      right 10px
 
     &:after
       left calc(50% - 4px)
 
       border-width 2px 2px 0 0
 
+      @media (max-width 480px)
+        left calc(50% - 2px)
+
   &-prev
     left 0
-    transform translate("calc(-100% + %s)" % $slider-toggle-offset, -50%)
+
+    @media (max-width 480px)
+      left 10px
 
     &:after
       left calc(50% + 4px)
       border-width 0 0 2px 2px
 
+      @media (max-width 480px)
+        left calc(50% + 2px)
+
+  &-initialized
+    .slick
+      &-slide
+        display flex
+        flex-direction column
+        flex 1
+
 .slikparnt
-  margin 0 $slider-margin
+  $slikparnt-width = 1024px
+  max-width $slikparnt-width
+  margin 0 auto
+  padding 0 $carousel-gap
+
+  @media (max-width 480px)
+    padding 0
+
+  &._offset-arrow
+
+    .slick
+      &-next
+        right -($carousel-toggle-size*.5)
+
+        @media (max-width $slikparnt-width + $carousel-toggle-size)
+          right 10px
+
+      &-prev
+        left -($carousel-toggle-size*.5)
+
+        @media (max-width $slikparnt-width + $carousel-toggle-size)
+          left 10px
 
   &cont
     display flex
