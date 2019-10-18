@@ -1,0 +1,26 @@
+{{#> layout page-name="Банкротство" block-name="insolvency" script=true}}
+{{#> header header-name="polygon" reviews=true}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="insolvency__banner">
+    <h1 class="insolvency__title">Банкротство</h1>
+
+</section>
+<!--Warning! end-->
+{{/header}}
+<section class="section polygon insolvency__stages-block">
+    <div class="section__container">
+        <h2 class="section__title">Этапы процедуры банкротства</h2>
+        <div class="insolvency__stages">
+            <ul class="stage">
+                {{#each stages}}
+                {{> stage data=this}}
+                {{/each}}
+            </ul>
+
+            <button type="button" class="button _primary _sm">Записаться на&nbsp;консультацию <br> с юристом</button>
+        </div>
+    </div>
+</section>
+<!--Warning! end-->
+{{/layout}}

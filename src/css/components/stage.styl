@@ -1,0 +1,256 @@
+.stage
+  display flex
+  flex-wrap wrap
+
+  list-style none
+
+  counter-reset step
+
+  &__card
+    box-sizing border-box
+    position relative
+    display flex
+    flex-direction column
+    flex 0 0 calc(20% - 22px)
+    min-width 166px
+    min-height 178px
+    margin 25px 11px
+    border 2px solid #ababab
+
+    color $c-secondary
+    text-align left
+
+    background-color $c-white
+    border-radius 15px
+    box-shadow 0 0 10px rgba($c-black,15%)
+
+    transition $d-transition
+    cursor default
+
+    @media (max-width 768px)
+      flex 1
+      flex-direction column-reverse
+      min-height auto
+      margin 0 0 12px
+
+      text-align center
+
+      &:not(:last-child)
+        &:after
+          content ''
+          display block
+          position absolute
+          top calc(100% + 3px)
+          left 50%
+
+          border-style solid
+          border-width 10px 30px 0 30px
+          border-color $c-stage-bg transparent transparent transparent
+
+          transform translateX(-50%)
+
+    &:hover
+      color $c-white
+
+      background-color $c-stage-bg
+      border-color $c-white
+
+      .stage
+        &__arrow
+          background-color $c-primary
+
+          &:before
+            background-color $c-primary
+
+          &:after
+            border-left-color $c-primary
+
+        &__more
+          opacity 1
+
+  &__name
+    margin 0
+    padding 12px
+    flex 1
+
+    color inherit
+    font-size 13px
+    text-transform uppercase
+
+    @media (max-width 768px)
+      padding-right 8px
+      padding-left @padding-right
+
+  &__arrow
+    position relative
+    display flex
+    align-items center
+    justify-content space-between
+    margin 0 -5px 30px
+    padding 0 16px 0 8px
+
+    background-color $c-stage-bg
+
+    @media (max-width 768px)
+      flex-direction column-reverse
+      margin 0
+      padding 12px 0 0
+
+      background-color transparent
+
+    &:after
+      display block
+      content ''
+      position absolute
+      left 100%
+      top 0
+      bottom @top
+      border-style solid
+      border-width 16px 0 16px 10px
+      border-color transparent transparent transparent $c-stage-bg
+
+      @media (max-width 768px)
+        display none
+
+    &:before
+      display block
+      content ''
+      position absolute
+      right 100%
+      top 0
+      bottom @top
+      width 12px
+
+      background-color $c-stage-bg
+      clip-path polygon(0 0, 100% 0, 100% 100%, 0 100%, 82% 50%)
+
+      @media (max-width 768px)
+        display none
+
+  &__counter
+    &:after
+      counter-increment step
+      content "Шаг " counter(step)
+
+      color $c-white
+      font-size 14px
+      font-weight 700
+
+      @media (max-width 768px)
+        color $c-secondary
+        font-size 12px
+
+  &__image
+    position relative
+    z-index 1
+    display flex
+    align-items center
+    justify-content center
+    width 44px
+    height @width
+    margin -6px 0
+
+    background $c-primary linear-gradient(90deg,lighten($c-primary,20%),darken($c-primary,20%))
+    border-radius 50%
+
+    @media (max-width 768px)
+      width 30px
+      height @width
+      margin 0
+
+    &:before
+      content ''
+      display block
+      position absolute
+      top 1px
+      right @top
+      bottom @top
+      left @top
+
+      background-color $c-primary
+      border-radius inherit
+
+    &:after
+      $stage-image-shadow = 32px
+      content ''
+      display block
+      width $stage-image-shadow
+      position absolute
+      top 6px
+      bottom @top
+      left "calc(50% + %s/2)" % $stage-image-shadow
+      z-index -1
+
+      background linear-gradient(90deg,rgba($c-black,20%), transparent)
+      clip-path polygon(0 0, 0% 100%, 100% 100%)
+
+      @media (max-width 768px)
+        display none
+
+    img
+      display block
+      z-index 1
+      max-width 24px
+      max-height @max-width
+
+      @media (max-width 768px)
+        max-width 18px
+        max-height @max-width
+
+  &__more
+    position absolute
+    z-index 1
+    right 50%
+    bottom 10px
+    text-align center
+
+    color $c-white
+    font-size 12px
+    text-decoration underline
+
+    opacity 0
+    transition $d-transition
+    transform translateX(50%)
+
+    cursor help
+
+    &:hover
+
+      .stage
+
+        &__description
+          opacity 1
+          visibility visible
+
+  &__description
+    position absolute
+    z-index 1
+    top calc(100% + 24px)
+    right 50%
+    width 274px
+    padding 12px
+    border 1px solid $c-dark-bg
+
+    color $c-secondary
+    font-size 12px
+
+    background-color $c-white
+    border-radius 15px
+    box-shadow 0 0 10px rgba($c-black, 15%)
+    opacity 0
+    visibility hidden
+
+    transform translateX(50%)
+
+    &:before
+      content ''
+      position absolute
+      right 50%
+      bottom 100%
+      display block
+      border-style solid
+      border-width 0 6px 7px 6px
+      border-color transparent transparent $c-white transparent
+
+      transform translateX(50%)
+

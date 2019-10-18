@@ -1,0 +1,60 @@
+.section
+
+  &__container
+    max-width 1024px
+    margin 0 auto
+    padding 0 20px
+
+  &__title
+    $title-gap = 7%
+    $title-circle-size = 16px
+    margin-bottom 45px
+    margin-bottom 1.4em
+    // 7% = 74/1024px
+    padding 0 $title-gap
+    position relative
+
+    color $c-secondary
+    font-size 32px
+    font-weight 300
+    text-transform uppercase
+
+    @media (max-width 768px)
+      padding 0
+      margin-bottom .87em
+
+      font-size 23px
+      text-align center
+
+    &:before
+    &:after
+      position absolute
+      top 50%
+      // 40px
+      right "calc(100% - %s/2 - %s/2)" % ($title-gap $title-circle-size)
+      content ''
+      display block
+
+      background-color $c-heading-decoration
+      transform translateY(-50%)
+
+      @media (max-width 768px)
+        display none
+
+    &:before
+      width 100vw
+      height 2px
+
+    &:after
+      width $title-circle-size
+      height @width
+
+      border-radius 50%
+
+    &._to-right
+      text-align right
+
+      &:before
+      &:after
+        right auto
+        left "calc(100% - %s/2 -  %s/2)" % ($title-gap $title-circle-size)
