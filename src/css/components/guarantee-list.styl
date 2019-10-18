@@ -1,0 +1,49 @@
+.guarantee-list
+  box-sizing border-box
+  max-width 617px
+  margin 0 auto
+  padding 18px 36px
+  border 10px solid #f1f1f1
+
+  list-style none
+
+  background-color #e2e2e2
+  background-image url(../img/insolvency/stamp.png)
+  background-position 134% -33%
+  background-repeat no-repeat
+  border-radius 15px
+  box-shadow 0 0 25px rgba($c-black,10%)
+
+  @media (max-width 768px)
+    padding 16px 12px
+
+  &__item
+    display flex
+    align-items center
+
+    &:not(:last-child)
+      margin-bottom 10px
+
+  &__image
+    flex none
+    margin-right 14px
+    width 53px
+
+    @media (max-width 768px)
+      margin-right 10px
+      width 46px
+
+    img
+      display block
+      width 100%
+      height auto
+
+  &__text
+    margin 0
+
+    color $c-secondary-3
+    font-size 18px
+
+    @media (max-width 768px)
+      font-size 14px
+

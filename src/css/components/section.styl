@@ -51,8 +51,18 @@
 
       border-radius 50%
 
+    &._negative
+      color $c-white
+
+      &:before
+      &:after
+        background-color $c-white
+
     &._to-right
       text-align right
+
+      @media (max-width 768px)
+        text-align center
 
       &:before
       &:after
