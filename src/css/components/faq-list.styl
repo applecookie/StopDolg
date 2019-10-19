@@ -1,0 +1,88 @@
+.faq-list
+  $counter-width = 50px
+  max-width 735px
+  margin 0 auto
+
+  counter-reset faq-list
+
+  &__heading
+    margin 0 0 1.5em
+
+    font-size 19px
+    text-align center
+
+  &__accordion
+    list-style none
+
+  &__item
+    display flex
+    position relative
+
+    &:not(:last-child)
+      margin-bottom 18px
+
+    &:before
+      counter-increment faq-list
+      content counter(faq-list)
+
+      width 1.39em
+      width $counter-width
+      padding 8px 0
+
+      color $c-white
+      font-size 36px
+      font-weight 300
+      line-height 1
+      text-align center
+
+      background-color #d4d4d4
+      border-radius 15px 0 0 15px
+
+  &__content
+    flex 1
+    padding 15px 10px
+
+    color $c-secondary-3
+
+    background-color $c-white
+    border-radius 0 15px 15px 0
+    box-shadow 0 0 15px rgba($c-black,5%)
+
+  &__title
+    font-size 18px
+    font-weight 400
+
+  &__description
+    height 0
+    margin 0
+    overflow hidden
+
+    font-size 16px
+    font-weight 300
+
+    transition .3s max-height
+
+    &._is-shown
+      max-height 10000vw
+      height auto
+      padding-top .5em
+
+  &__toggle
+    flex none
+    border none
+    width 40px
+    height @width
+    margin-top 6px
+    margin-left 10px
+
+    background-image url(../img/insolvency/plus.svg)
+    background-color $c-primary
+    background-repeat no-repeat
+    background-position 50%
+    border-radius 50%
+
+    cursor pointer
+
+    &._less
+      background-image url(../img/insolvency/minus.svg)
+

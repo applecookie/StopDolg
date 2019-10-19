@@ -36,6 +36,14 @@ $(document)
                     },
                 }],
             });
+        // faq accordion
+        $('.faq-list__toggle').on('click', function () {
+            $(this)
+                .toggleClass('_less')
+                .siblings('.faq-list__content')
+                .find('.faq-list__description')
+                .toggleClass('_is-shown');
+        });
         // popover
         const $body = $('body');
         $('.popover__reference')

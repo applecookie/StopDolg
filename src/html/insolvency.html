@@ -66,5 +66,37 @@
         <!--Warning! end-->
     </div>
 </section>
+
+<section class="section polygon insolvency__managers">
+    <div class="section__container">
+        <h2 class="section__title">Наши арбитражные управляющие</h2>
+    </div>
+</section>
+
+<section class="section polygon insolvency__articles">
+    <div class="section__container">
+        <h2 class="section__title _to-right _negative">Наши дела</h2>
+    </div>
+</section>
+
+<section class="section polygon insolvency__mistakes">
+    <div class="section__container">
+        <h2 class="section__title">Ошибки, которые вы можете совершить при&nbsp;самостоятельном прохождении процедуры</h2>
+
+        <div class="faq-list">
+            <p class="faq-list__heading">Каждая ошибка увеличивает шанс того, что суд откажет в признании вас банкротом, а кредиторы успеют предпринять невыгодные для вас действия</p>
+
+            <ul class="faq-list__accordion insolvency__faq">
+                {{#each faq}}
+                    {{> faq data=this}}
+                {{/each}}
+            </ul>
+
+            <div class="insolvency__faq-btn">
+                <button type="button" class="button _primary _sm">Оставить заявку на бесплатную консультацию</button>
+            </div>
+        </div>
+    </div>
+</section>
 <!--Warning! end-->
 {{/layout}}
