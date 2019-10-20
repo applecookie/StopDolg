@@ -59,12 +59,22 @@
       background-image url(../img/insolvency/managers-bg.jpg)
 
   &__articles
+    z-index 4
     margin-top -140px
     padding-top 190px
     padding-bottom 122px
 
+    @media (max-width 768px)
+      padding-bottom 46px
+
     &:before
       background-image url(../img/insolvency/articles-bg.jpg)
+
+    &-list
+      margin-bottom 40px
+
+    &-btn
+      text-align center
 
   &__mistakes
     margin-top -140px
@@ -73,11 +83,22 @@
 
     color $c-secondary-3
 
+    @media (max-width 768px)
+      padding-bottom 41px
+
     &:before
-      background-image url(../img/insolvency/mistakes-bg.jpg)
+      background-image url(../img/insolvency/mistakes-bg.jpg), linear-gradient(0,#a9a9a9,transparent)
+
+      @media (max-width 768px)
+        background-image  url(../img/insolvency/mistakes-bg-320.png), linear-gradient(0,#a9a9a9,transparent)
 
   &__faq
     margin-bottom 52px
 
+    @media (max-width 768px)
+      margin-bottom 30px
+
     &-btn
+      margin 0 40px
+
       text-align center

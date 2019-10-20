@@ -86,3 +86,24 @@
 
   &._block
     width 100%
+
+  &._with-icon
+    display inline-flex
+    align-items center
+    padding 8px 24px 8px 16px
+
+    font-size 18px
+    text-align left
+
+    background-color $c-semi-secondary-light
+    border-radius 16px
+
+    @media (max-width 768px)
+      font-size 16px
+      letter-spacing -1px
+
+    &:before
+      background linear-gradient(to top,$c-semi-secondary-light,lighten($c-semi-secondary-light,15%))
+
+    .button__icon
+      margin-right 8px

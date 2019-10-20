@@ -1,0 +1,58 @@
+.articles-list
+  $side-gap = 12px
+  box-sizing border-box
+  max-width $container-width + $side-gap*2
+  margin-left auto
+  margin-right @margin-left
+  display flex
+  flex-wrap wrap
+  list-style none
+
+  &__item
+    box-sizing border-box
+    display flex
+    flex 0 1 "calc(50% - %s*2)" % $side-gap
+    align-items center
+    padding 7px 24px
+    margin 0 $side-gap 20px
+
+    color $c-secondary-3
+    font-size 18px
+
+    background-color $c-white
+    box-shadow 0 0 15px rgba($c-black,15%)
+
+    @media (max-width 768px)
+      flex 1 1 100%
+      padding 7px 10px
+      margin-right 0
+      margin-left @margin-right
+
+      font-size 14px
+
+  &__more
+    flex none
+    border none
+    margin-left 24px
+    padding 14px 16px
+
+    color $c-white
+    font-size 18px
+    font-weight 300
+    text-decoration none
+
+    background-color #008683
+    border-radius 10px
+
+    transition $d-transition
+
+    @media (max-width 768px)
+      margin-left 7px
+      padding-top 11px
+      padding-bottom @padding-top
+
+      font-size 14px
+
+    &:active
+    &:hover
+      background-color $c-secondary-3

@@ -14,7 +14,7 @@
         <div class="insolvency__stages">
             <ul class="stage">
                 {{#each stages}}
-                    {{> stage data=this}}
+                {{> stage data=this}}
                 {{/each}}
             </ul>
 
@@ -29,13 +29,14 @@
 
         <ul class="guarantee-list">
             {{#each guarantee}}
-                {{> guarantee data=this}}
+            {{> guarantee data=this}}
             {{/each}}
         </ul>
 
         <!-- Нужно вставить как на главной странице, а не этот кусок-->
         <form class="anti-collector__form new-form">
-            <h1 class="anti-collector__title">Чтобы записаться на&nbsp;бесплатную консультацию юриста заполните форму</h1>
+            <h1 class="anti-collector__title">Чтобы записаться на&nbsp;бесплатную консультацию юриста заполните
+                форму</h1>
 
             <div class="new-form__row _inline">
                 <label class="new-form__item">
@@ -60,7 +61,8 @@
         </span>
             </label>
 
-            <p class="anti-collector__description">Мы свяжемся с&nbsp;вами и поможем разобраться с&nbsp;вашей проблемой. Пришло
+            <p class="anti-collector__description">Мы свяжемся с&nbsp;вами и поможем разобраться с&nbsp;вашей проблемой.
+                Пришло
                 время цивилизованных решений!</p>
         </form>
         <!--Warning! end-->
@@ -76,24 +78,39 @@
 <section class="section polygon insolvency__articles">
     <div class="section__container">
         <h2 class="section__title _to-right _negative">Наши дела</h2>
+
+        <ul class="articles-list insolvency__articles-list">
+            {{#each articles}}
+            {{> articles-list data=this}}
+            {{/each}}
+        </ul>
+
+        <div class="insolvency__articles-btn">
+            <a href="javascript:void(0);" class="button _with-icon">
+                <img class="button__icon" src="img/insolvency/search-more.png" alt="" width="42" height="37">
+                Смотреть другие <br> завершённые процедуры
+            </a>
+        </div>
     </div>
 </section>
 
 <section class="section polygon insolvency__mistakes">
     <div class="section__container">
-        <h2 class="section__title">Ошибки, которые вы можете совершить при&nbsp;самостоятельном прохождении процедуры</h2>
+        <h2 class="section__title">Ошибки, которые вы можете совершить при&nbsp;самостоятельном прохождении
+            процедуры</h2>
 
         <div class="faq-list">
-            <p class="faq-list__heading">Каждая ошибка увеличивает шанс того, что суд откажет в признании вас банкротом, а кредиторы успеют предпринять невыгодные для вас действия</p>
+            <p class="faq-list__heading">Каждая ошибка увеличивает шанс того, что суд откажет в признании вас банкротом,
+                а кредиторы успеют предпринять невыгодные для вас действия</p>
 
             <ul class="faq-list__accordion insolvency__faq">
                 {{#each faq}}
-                    {{> faq data=this}}
+                {{> faq data=this}}
                 {{/each}}
             </ul>
 
             <div class="insolvency__faq-btn">
-                <button type="button" class="button _primary _sm">Оставить заявку на бесплатную консультацию</button>
+                <button type="button" class="button _primary _sm">Оставить заявку на&nbsp;бесплатную консультацию</button>
             </div>
         </div>
     </div>
