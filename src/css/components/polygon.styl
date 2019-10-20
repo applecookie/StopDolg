@@ -1,4 +1,8 @@
 .polygon
+  for num in (0..20)
+    &:nth-child({num})
+      z-index 20 - num
+
   m-polygon()
 
   filter drop-shadow(4px 4px 5px rgba($c-black,15%))

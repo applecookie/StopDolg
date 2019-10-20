@@ -1,5 +1,5 @@
 {{#> layout page-name="Банкротство" block-name="insolvency" script=true}}
-{{#> header header-name="polygon" reviews=true}}
+{{#> header header-name="polygon _reflected" reviews=true}}
 <!-- Нужно вставить этот кусок-->
 <!--Warning! start-->
 <section class="insolvency__banner">
@@ -72,10 +72,16 @@
 <section class="section polygon insolvency__managers">
     <div class="section__container">
         <h2 class="section__title">Наши арбитражные управляющие</h2>
+
+        <div class="profile-list slikparnt">
+            {{#each profileList}}
+            {{> profile-list-item data=this}}
+            {{/each}}
+        </div>
     </div>
 </section>
 
-<section class="section polygon insolvency__articles">
+<section class="section polygon _reflected insolvency__articles">
     <div class="section__container">
         <h2 class="section__title _to-right _negative">Наши дела</h2>
 
