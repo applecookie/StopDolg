@@ -1,0 +1,45 @@
+.expert
+  position relative
+  padding-left 24px
+
+  &__img
+    display block
+    margin-right -33px
+
+    @media (max-width 768px)
+      margin-right 0
+
+    img
+      display block
+      width 100%
+      height auto
+
+  &__card
+    position absolute
+    left 24px
+    bottom 53px
+    display inline-block
+    padding 11px 13px
+
+    // fefefe
+    color darken($c-white,1.8%)
+
+    background-color rgba(#005957,85%)
+
+    @media (max-width 768px)
+      left 0
+
+    @media (max-width 480px)
+      right -20px
+      left @right
+
+  &__position
+    margin-bottom .3em
+
+    font-size 12px
+
+  &__name
+    font-size 22px
+
+    @media (max-width 768px)
+      font-size 18px

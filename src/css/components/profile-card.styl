@@ -8,28 +8,28 @@
   background-color $c-white
   box-shadow 0 0 15px rgba($c-black,5%)
 
-  @media (max-width 768px)
+  @media (max-width 640px)
     flex-wrap wrap
     align-content flex-start
 
   &__left
   &__right
     box-sizing border-box
-    padding 20px
+    padding 20px 20px 25px
 
   &__left
-    flex 0 0 47%
+    flex 0 0 46%
 
     text-align center
 
-    @media (max-width 768px)
+    @media (max-width 640px)
       flex 1 1 100%
       padding-bottom 0
 
   &__right
     padding-left 0
 
-    @media (max-width 768px)
+    @media (max-width 640px)
       flex 1 1 100%
       padding 20px
 
@@ -51,7 +51,7 @@
     line-height 1.1
     text-decoration none
 
-    @media (max-width 768px)
+    @media (max-width 640px)
       br
         //display none
 
@@ -61,7 +61,9 @@
   &__name
     margin-bottom .2em
 
-    @media (max-width 768px)
+    line-height 1.1
+
+    @media (max-width 640px)
       text-align center
 
     &-first
@@ -92,7 +94,7 @@
       padding-left $profile-list-dot-size*2
 
       &:not(:last-child)
-        margin-bottom .5em
+        margin-bottom .3em
 
       &:before
         content ''

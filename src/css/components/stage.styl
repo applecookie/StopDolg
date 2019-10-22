@@ -14,21 +14,21 @@
     flex 0 0 calc(20% - 22px)
     min-width 166px
     min-height 178px
-    margin 25px 11px
+    margin 9px 5px 12px 11px
     border 2px solid #ababab
 
     color $c-secondary
     text-align left
 
     background-color $c-white
-    border-radius 15px
+    border-radius 20px
     box-shadow 0 0 10px rgba($c-black,15%)
 
     transition $d-transition
     cursor default
 
     @media (max-width 768px)
-      flex 1
+      flex 1 1 100%
       flex-direction column-reverse
       min-height auto
       margin 0 0 12px
@@ -70,11 +70,12 @@
 
   &__name
     margin 0
-    padding 12px
+    padding 8px 13px
     flex 1
 
     color inherit
     font-size 13px
+    line-height 1.3
     text-transform uppercase
 
     @media (max-width 768px)
@@ -86,8 +87,8 @@
     display flex
     align-items center
     justify-content space-between
-    margin 0 -5px 30px
-    padding 0 16px 0 8px
+    margin 0 -5px 30px 0
+    padding 0 14px 0 10px
 
     background-color $c-stage-bg
 

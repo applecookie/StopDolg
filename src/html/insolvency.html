@@ -2,9 +2,90 @@
 {{#> header header-name="polygon _reflected" reviews=true}}
 <!-- Нужно вставить этот кусок-->
 <!--Warning! start-->
-<section class="insolvency__banner">
-    <h1 class="insolvency__title">Банкротство</h1>
+<section class="section insolvency__banner">
+    <div class="section__container">
+        <h1 class="insolvency__title">Спишем ваш долг полностью или вернем деньги
+            <span class="insolvency__title-footnote">Гарантии прописаны в договоре</span>
+        </h1>
 
+        <div class="insolvency__form">
+            <div class="expert insolvency__expert">
+                <picture class="expert__img">
+                    <img src="/img/insolvency/Zubchenko.png" alt="" width="" height="">
+                </picture>
+                <div class="expert__card">
+                    <div class="expert__position">Наш партнёр <br> Арбитражный управляющий</div>
+                    <div class="expert__name">Зубченко Тарас Владимирович</div>
+                </div>
+            </div>
+            <div class="insolvency__calculator">
+                <form action="" class="calculator-form new-form">
+                    <h3 class="calculator-form__heading">Пройдите тест и узнайте, подходит ли вам процедура
+                        банкротства</h3>
+
+                    <div class="new-form__row _inline">
+                        <label class="new-form__item _inline">
+                            <span class="new-form__label">Размер задолженности</span>
+                            <input type="text" class="new-form__input">
+                        </label>
+                    </div>
+                    <div class="new-form__row _inline">
+                        <label class="new-form__item _inline">
+                            <span class="new-form__label">Сумма ежемесячного платежа</span>
+                            <input type="text" class="new-form__input">
+                        </label>
+                    </div>
+                    <div class="new-form__row _inline">
+                        <label class="new-form__item _inline">
+                            <span class="new-form__label">Официальный доход</span>
+                            <input type="text" class="new-form__input">
+                        </label>
+                    </div>
+
+                    <fieldset class="new-form__fieldset calculator-form__fieldset">
+                        <legend class="new-form__legend">Наличие имущества</legend>
+
+                        <div class="calculator-form__checkboxes">
+                            <label class="checkbox">
+                                <input type="checkbox" checked class="checkbox__input">
+                                <span class="checkbox__label">Квартира</span>
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input">
+                                <span class="checkbox__label">Машина</span>
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input">
+                                <span class="checkbox__label">Дача</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="new-form__fieldset calculator-form__fieldset">
+                        <legend class="new-form__legend">Наличие залоговых кредитов</legend>
+
+                        <div class="calculator-form__checkboxes">
+                            <label class="checkbox">
+                                <input type="checkbox" checked class="checkbox__input">
+                                <span class="checkbox__label">Ипотека</span>
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input">
+                                <span class="checkbox__label">Автокредит</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="calculator-form__footer">
+                        <button type="submit" class="button _primary">Рассчитать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 <!--Warning! end-->
 {{/header}}
@@ -12,7 +93,7 @@
     <div class="section__container">
         <h2 class="section__title">Этапы процедуры банкротства</h2>
         <div class="insolvency__stages">
-            <ul class="stage">
+            <ul class="stage insolvency__stages-list">
                 {{#each stages}}
                 {{> stage data=this}}
                 {{/each}}
@@ -27,44 +108,53 @@
     <div class="section__container">
         <h2 class="section__title _to-right _negative">Мы гарантируем</h2>
 
-        <ul class="guarantee-list">
+        <ul class="guarantee-list insolvency__guarantee-list">
             {{#each guarantee}}
             {{> guarantee data=this}}
             {{/each}}
         </ul>
 
-        <!-- Нужно вставить как на главной странице, а не этот кусок-->
-        <form class="anti-collector__form new-form">
-            <h1 class="anti-collector__title">Чтобы записаться на&nbsp;бесплатную консультацию юриста заполните
-                форму</h1>
-
-            <div class="new-form__row _inline">
-                <label class="new-form__item">
-                    <input type="text" placeholder="Имя" class="new-form__input">
-                </label>
-                <label class="new-form__item">
-                    <input type="text" placeholder="Фамилия" class="new-form__input">
-                </label>
-                <label class="new-form__item">
-                    <input type="text" placeholder="Телефон" class="new-form__input">
-                </label>
-                <div class="new-form__item">
-                    <button type="submit" class="button _primary _submit _block">Отправить</button>
-                </div>
+        <!-- Нужно вставить аналогичный блок с главной страницы-->
+        <div class="practice-block__form">
+            <div class="practice-block__form-title">ЗАПИШИТЕСЬ НА БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</div>
+            <div class="practice-block__form-wrapper">
+                <!--noindex-->
+                <form action="" method="post" data-form-request_consult=""
+                      data-sign="YToyOntzOjg6InRlbXBsYXRlIjtzOjE5OiJyZXF1ZXN0LmdldF9jb25zdWx0IjtzOjg6ImFyUGFyYW1zIjthOjM2OntzOjE0OiJFUlJPUl9SRVFVSVJFRCI7czo0NDoi0J7QsdGP0LfQsNGC0LXQu9GM0L3QvtC1INC/0L7Qu9C1IMKrI05BTUUjwrsiO3M6MTY6IkVWRU5UX01FU1NBR0VfSUQiO3M6MjoiMTAiO3M6OToiSUJMT0NLX0lEIjtzOjI6IjEyIjtzOjExOiJJQkxPQ0tfVFlQRSI7czo1OiJmb3JtcyI7czoxNDoiUEVSU09OX0NPTkZJUk0iO3M6MToiWSI7czoxMzoiUFJPUEVSVFlfQ09ERSI7YTo0OntpOjA7czo0OiJOQU1FIjtpOjE7czozOiJVUkwiO2k6MjtzOjU6IlBIT05FIjtpOjM7czo3OiJTVVJOQU1FIjt9czoyMjoiUkVRVUlSRURfUFJPUEVSVFlfQ09ERSI7YTozOntpOjA7czo0OiJOQU1FIjtpOjE7czo1OiJQSE9ORSI7aToyO3M6NzoiU1VSTkFNRSI7fXM6MTg6IkNPTVBPTkVOVF9URU1QTEFURSI7czo4OiIuZGVmYXVsdCI7czoxODoiUFJPUEVSVFlfTkFNRV9OQU1FIjtzOjY6ItCY0LzRjyI7czoxNzoiUFJPUEVSVFlfTkFNRV9VUkwiO3M6Mjc6ItCh0YLRgNCw0L3QuNGG0LAg0YTQvtGA0LzRiyI7czoxOToiUFJPUEVSVFlfTkFNRV9QSE9ORSI7czoxNDoi0KLQtdC70LXRhNC+0L0iO3M6MjE6IlBST1BFUlRZX05BTUVfU1VSTkFNRSI7czoxNDoi0KTQsNC80LjQu9C40Y8iO3M6MTk6IkVSUk9SX1JFUVVJUkVEX05BTUUiO3M6MDoiIjtzOjE4OiJFUlJPUl9SRVFVSVJFRF9VUkwiO3M6MDoiIjtzOjIwOiJFUlJPUl9SRVFVSVJFRF9QSE9ORSI7czo0NToi0J7QsdGP0LfQsNGC0LXQu9GM0L3QvtC1INC/0L7Qu9C1IMKrI1BIT05FI8K7IjtzOjIyOiJFUlJPUl9SRVFVSVJFRF9TVVJOQU1FIjtzOjQ3OiLQntCx0Y/Qt9Cw0YLQtdC70YzQvdC+0LUg0L/QvtC70LUgwqsjU1VSTkFNRSPCuyI7czo3OiJDVVJfVVJMIjtzOjE6Ii8iO3M6MTA6IkNBQ0hFX1RZUEUiO3M6MToiQSI7czoxNToifkVSUk9SX1JFUVVJUkVEIjtzOjQ0OiLQntCx0Y/Qt9Cw0YLQtdC70YzQvdC+0LUg0L/QvtC70LUgwqsjTkFNRSPCuyI7czoxNzoifkVWRU5UX01FU1NBR0VfSUQiO3M6MjoiMTAiO3M6MTA6In5JQkxPQ0tfSUQiO3M6MjoiMTIiO3M6MTI6In5JQkxPQ0tfVFlQRSI7czo1OiJmb3JtcyI7czoxNToiflBFUlNPTl9DT05GSVJNIjtzOjE6IlkiO3M6MTQ6In5QUk9QRVJUWV9DT0RFIjthOjQ6e2k6MDtzOjQ6Ik5BTUUiO2k6MTtzOjM6IlVSTCI7aToyO3M6NToiUEhPTkUiO2k6MztzOjc6IlNVUk5BTUUiO31zOjIzOiJ+UkVRVUlSRURfUFJPUEVSVFlfQ09ERSI7YTozOntpOjA7czo0OiJOQU1FIjtpOjE7czo1OiJQSE9ORSI7aToyO3M6NzoiU1VSTkFNRSI7fXM6MTk6In5DT01QT05FTlRfVEVNUExBVEUiO3M6ODoiLmRlZmF1bHQiO3M6MTk6In5QUk9QRVJUWV9OQU1FX05BTUUiO3M6Njoi0JjQvNGPIjtzOjE4OiJ+UFJPUEVSVFlfTkFNRV9VUkwiO3M6Mjc6ItCh0YLRgNCw0L3QuNGG0LAg0YTQvtGA0LzRiyI7czoyMDoiflBST1BFUlRZX05BTUVfUEhPTkUiO3M6MTQ6ItCi0LXQu9C10YTQvtC9IjtzOjIyOiJ+UFJPUEVSVFlfTkFNRV9TVVJOQU1FIjtzOjE0OiLQpNCw0LzQuNC70LjRjyI7czoyMDoifkVSUk9SX1JFUVVJUkVEX05BTUUiO3M6MDoiIjtzOjE5OiJ+RVJST1JfUkVRVUlSRURfVVJMIjtzOjA6IiI7czoyMToifkVSUk9SX1JFUVVJUkVEX1BIT05FIjtzOjQ1OiLQntCx0Y/Qt9Cw0YLQtdC70YzQvdC+0LUg0L/QvtC70LUgwqsjUEhPTkUjwrsiO3M6MjM6In5FUlJPUl9SRVFVSVJFRF9TVVJOQU1FIjtzOjQ3OiLQntCx0Y/Qt9Cw0YLQtdC70YzQvdC+0LUg0L/QvtC70LUgwqsjU1VSTkFNRSPCuyI7czo4OiJ+Q1VSX1VSTCI7czoxOiIvIjtzOjExOiJ+Q0FDSEVfVFlQRSI7czoxOiJBIjt9fQ==.5418bd5adca8c58205011eb2134e119b93ef30aaf04a94048693cbc7b6e3ccc5"
+                      class="form">
+                    <div class="form__item">
+                        <input type="text" id="NAME" name="NAME" placeholder="Имя">
+                    </div>
+                    <div class="form__item">
+                        <input type="text" id="SURNAME" name="SURNAME" placeholder="Фамилия">
+                    </div>
+                    <div class="form__item">
+                        <input type="text" id="PHONE" class="js__phone" name="PHONE" placeholder="Телефон"
+                               autocomplete="true">
+                    </div>
+                    <div class="form__item">
+                        <input type="submit" value="Отправить">
+                    </div>
+                    <div class="form__item form__item--wide">
+                        <input type="checkbox" class="test-bankruptcy-form__checkbox" id="checkbox-request_consult"
+                               name="person_confirm" value="Y" checked="">
+                        <label for="checkbox-request_consult" class="test-bankruptcy-form__label">
+                            Я даю согласие на обработку персональных данных
+                        </label>
+                    </div>
+                    <div class="form-res-msg-block">
+                        <div data-errors=""></div>
+                        <div data-msg=""></div>
+                    </div>
+                    <input type="hidden" name="sessid" id="sessid" value="9c04f4ab1c3679612ba181a7b35c1d02"> <input
+                        type="hidden" name="URL" id="URL" value="/">
+                </form>
+                <!--/noindex-->            </div>
+            <br>
+            <div class="practice-block__form-desc">
+                Мы свяжемся с вами и поможем разобраться с вашей проблемой. Пришло время цивилизованных решений!
             </div>
-
-
-            <label class="checkbox anti-collector__form-checkbox">
-                <input type="checkbox" checked>
-                <span class="checkbox__label">
-            Я даю согласие на обработку персональных данных
-        </span>
-            </label>
-
-            <p class="anti-collector__description">Мы свяжемся с&nbsp;вами и поможем разобраться с&nbsp;вашей проблемой.
-                Пришло
-                время цивилизованных решений!</p>
-        </form>
+        </div>
         <!--Warning! end-->
     </div>
 </section>
@@ -116,10 +206,37 @@
             </ul>
 
             <div class="insolvency__faq-btn">
-                <button type="button" class="button _primary _sm">Оставить заявку на&nbsp;бесплатную консультацию</button>
+                <button type="button" class="button _primary">Оставить заявку на&nbsp;бесплатную консультацию</button>
             </div>
         </div>
     </div>
 </section>
+<!--Warning! end-->
+<!-- Нужно вставить аналогичный блок с главной страницы-->
+<div class="main-block__content7 polygon _reflected">
+    <div class="media-block__info-partner">
+        <div class="media-block__info-partner-title">
+            <div>СТОПДОЛГ В СМИ</div>
+        </div>
+        <div class="media-block__info-partner-content">
+            <div class="media-block__info-partner-content-item">
+                <a href="https://lenta.ru/news/2017/12/08/out_of_cash/">
+                    <img src="/upload/mhm_areas/f9c/lenta.png">
+                </a>
+            </div>
+            <div class="media-block__info-partner-content-item">
+                <a href="https://www.youtube.com/watch?v=Yw1pETleohk&amp;t=1s">
+                    <img src="/upload/mhm_areas/e4a/ntv.png">
+                </a>
+            </div>
+            <div class="media-block__info-partner-content-item">
+                <a href="https://pro.rbc.ru/demo/5cb441af9a79470612d99261?from=center">
+                    <img src="/upload/mhm_areas/fc0/rbk.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
 <!--Warning! end-->
 {{/layout}}

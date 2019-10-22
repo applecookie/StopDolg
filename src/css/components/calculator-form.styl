@@ -1,0 +1,67 @@
+.calculator-form
+  $c-calculator-form-bg = #005957
+  box-sizing border-box
+  max-width 552px
+  padding 25px 38px 30px 36px
+  border 8px solid $c-white
+
+  color $c-white
+
+  background-color $c-calculator-form-bg
+  border-radius 15px
+
+  @media (max-width 768px)
+    padding 21px
+    border-width 4px
+
+  &__heading
+    margin-bottom 1em
+    //legacy
+    padding 0
+
+    color inherit
+    font-size 22px
+    font-weight 300
+    letter-spacing -.1px
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 18px
+
+  &__fieldset
+    padding 13px 13px 16px
+
+    background-color lighten($c-calculator-form-bg,3%)
+    border-radius inherit
+
+  &__checkboxes
+    display flex
+    flex-wrap wrap
+    justify-content center
+
+    @media (max-width 768px)
+
+      .checkbox
+        flex 1 1 100%
+        margin-left 0
+        margin-bottom 10px
+
+        &__label
+          font-size 14px
+          line-height 24px
+
+          &:before
+            top -4px
+            width 20px
+            height @width
+
+            font-size 14px
+            line-height @width
+
+  &__footer
+    text-align center
+
+    .button
+      padding-top .5em
+      padding-bottom @padding-top

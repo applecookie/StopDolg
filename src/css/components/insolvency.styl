@@ -1,17 +1,28 @@
+//legacy
+.menu__list.active2 {
+  margin-bottom: 86px;
+}
+
 .insolvency
 
   .header:before
     background-image url(../img/backgrounds/annulment.jpg)
 
   &__banner
-    padding-top 22px
-    padding-bottom 183px
+    padding-bottom 30px
 
     color $c-white
 
+    //overflow hidden
+    //clip-path polygon(0% 0%, 100% 0%, 100% 91%, 65% 100%, 0% 91%)
+
+    @media (max-width 768px)
+      padding-bottom 0
+      //clip-path polygon(0% 0%, 100% 0%, 280% 94%, 65% 100%, 0% 99%)
+
   &__title
     padding 0
-    margin 0 0 41px
+    margin 0 0 10px
     border none
 
     color inherit
@@ -21,8 +32,39 @@
     text-align center
     text-transform uppercase
 
+    @media (max-width 768px)
+      font-size 23px
+
+    &-footnote
+      display block
+      margin-top .8em
+
+      color inherit
+      font-size 19px
+      text-transform none
+
+      @media (max-width 768px)
+        font-size 14px
+
+  &__form
+    display flex
+
+    @media (max-width 768px)
+      align-items center
+      flex-direction column-reverse
+
+  &__expert
+    flex-basis 37.5%
+
+  &__calculator
+    flex-basis 62.5%
+    padding-top 24px
+
+    @media (max-width 768px)
+      margin-bottom 27px
+
   &__stages
-    padding 6px 28px 27px
+    padding 22px 28px 27px
     border 8px solid $c-white
 
     text-align center
@@ -34,24 +76,41 @@
       padding 12px 10px 21px
 
     &-block
-      margin-top -140px
+      margin-top -98px
       padding-top 190px
       padding-bottom 122px
 
       &:before
         background-color #dbdbdb
 
+    &-list
+      margin-bottom 10px
+
+    .button
+      padding-top 15px
+      padding-bottom @padding-top
+
+      border-radius 10px
+
   &__guarantee
-    margin-top -140px
-    padding-top 190px
-    padding-bottom 122px
+    margin-top -80px
+    padding-top 145px
+    padding-bottom 98px
 
     &:before
       background-image url(../img/insolvency/guarantee-bg.jpg)
 
+    &-list
+      margin-bottom 53px
+
+    // костыль
+    .practice-block__form
+      width auto
+      max-width $container-width
+
   &__managers
-    margin-top -140px
-    padding-top 190px
+    margin-top -98px
+    padding-top 160px
     padding-bottom 137px
 
     &:before
@@ -59,9 +118,9 @@
       background-image url(../img/insolvency/managers-bg.jpg)
 
   &__articles
-    margin-top -140px
-    padding-top 190px
-    padding-bottom 122px
+    margin-top -73px
+    padding-top 136px
+    padding-bottom 90px
 
     @media (max-width 768px)
       padding-bottom 46px
@@ -70,15 +129,15 @@
       background-image url(../img/insolvency/articles-bg.jpg)
 
     &-list
-      margin-bottom 40px
+      margin-bottom 20px
 
     &-btn
       text-align center
 
   &__mistakes
-    margin-top -140px
-    padding-top 190px
-    padding-bottom 122px
+    margin-top -56px
+    padding-top 126px
+    padding-bottom 96px
 
     color $c-secondary-3
 
@@ -86,13 +145,18 @@
       padding-bottom 41px
 
     &:before
+      background-size 100% auto
       background-image url(../img/insolvency/mistakes-bg.jpg), linear-gradient(0,#a9a9a9,transparent)
 
       @media (max-width 768px)
         background-image  url(../img/insolvency/mistakes-bg-320.png), linear-gradient(0,#a9a9a9,transparent)
 
+    .section__title
+      margin-bottom .6em
+
   &__faq
-    margin-bottom 52px
+    max-width 736px
+    margin 0 auto 52px
 
     @media (max-width 768px)
       margin-bottom 30px
@@ -101,3 +165,12 @@
       margin 0 40px
 
       text-align center
+
+      .button
+        padding-left .9em
+        padding-right @padding-left
+
+        letter-spacing .1px
+
+        @media (max-width 480px)
+          font-size 16px

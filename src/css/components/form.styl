@@ -66,7 +66,7 @@ $select-caret-size-sm = 12px
 
     &._inline
       align-items center
-      margin-bottom 20px
+      margin-bottom 18px
 
       @media (max-width 768px)
         flex-wrap wrap
@@ -90,6 +90,38 @@ $select-caret-size-sm = 12px
 
       &:not(:last-of-type)
         margin-bottom 20px
+
+    &._inline
+      display flex
+      align-items center
+      justify-content flex-end
+
+      @media (max-width 768px)
+        flex-wrap wrap
+        justify-content flex-start
+
+      .new-form
+
+        &__label
+          flex 0 1 auto
+          margin-right 12px
+          margin-bottom 0
+
+          color inherit
+          font-size 16px
+          letter-spacing -.8px
+          text-align right
+
+          @media (max-width 768px)
+            margin-bottom 1em
+
+            font-size 14px
+
+        &__input
+          flex 0 0 230px
+
+          @media (max-width 768px)
+            flex-basis 100%
 
   &__input
     &._select
@@ -210,6 +242,23 @@ $select-caret-size-sm = 12px
 
       @media (max-width 768px)
         order 2
+
+  &__legend
+    display block
+    margin 0 0 1.2em
+    padding 0
+    width 100%
+
+    color inherit
+    font-size 16px
+    text-align center
+    text-transform uppercase
+
+    //reset
+    float left
+
+    + *
+      clear both
 
 
 
