@@ -3,6 +3,8 @@
   max-width 782px
   margin 0 auto
 
+  color $c-secondary-3
+
   counter-reset faq-list
 
   &__header
@@ -10,7 +12,7 @@
     align-items center
     flex-basis 100%
 
-  &__heading
+  &__text
     margin 0 0 1.7em
 
     font-size 19px
@@ -24,7 +26,22 @@
       letter-spacing -.6px
 
   &__accordion
+    max-width 736px
+    margin 0 auto 53px
+
     list-style none
+
+    @media (max-width 768px)
+      margin-bottom 30px
+
+    &._no-counter
+      .faq-list
+
+        &__item
+          padding-left 27px
+
+          &:before
+            display none
 
   &__item
     box-sizing border-box
@@ -34,8 +51,6 @@
     max-width calc(100% - 50px)
     position relative
     padding 14px 10px 15px ($counter-width + 7px)
-
-    color $c-secondary-3
 
     background-color $c-white
     border-radius 15px
@@ -120,4 +135,18 @@
 
     &._less
       background-image url(../img/insolvency/minus.svg)
+
+  &__btn
+    margin 0 40px
+
+    text-align center
+
+    .button
+      padding-left .9em
+      padding-right @padding-left
+
+      letter-spacing .1px
+
+      @media (max-width 480px)
+        font-size 16px
 

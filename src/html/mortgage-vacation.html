@@ -1,0 +1,55 @@
+{{#> layout page-name="Ипотечные каникулы" block-name="mortgage-vacation"}}
+{{#> header header-name="polygon _reflected"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="section mortgage-vacation__banner">
+    <div class="section__container">
+        <h1 class="section-banner__title">Поможем оформить ипотечные каникулы в&nbsp;любом банке
+            <span class="section-banner__title-footnote">*На основании закона N 76-ФЗ от 31 июля 2019 года.</span>
+        </h1>
+
+        <div class="mortgage-vacation__calendar">
+            <p class="mortgage-vacation__calendar-title">Не платите ипотеку в&nbsp;течение 6&nbsp;месяцев без&nbsp;вреда для&nbsp;кредитной истории</p>
+            <picture class="mortgage-vacation__calendar-img">
+                <img src="img/mortgage-vacation/calendar.png" alt="">
+            </picture>
+        </div>
+    </div>
+</section>
+{{/header}}
+
+<section class="section polygon mortgage-vacation__conditions">
+    <div class="section__container">
+        <h2 class="section__title">Условия ипотечных каникул</h2>
+
+        <div class="faq-list">
+            <p class="faq-list__text">Заёмщики, оформившие кредит на покупку жилья и испытывающие сложности с его выплатой, смогут взять кредитную паузу продолжительностью до шести месяцев.</p>
+
+            <ul class="faq-list__accordion _no-counter">
+                {{#each mortgageVacationConditions}}
+                {{> faq data=this}}
+                {{/each}}
+            </ul>
+
+            <div class="faq-list__btn">
+                <button type="button" class="button _primary">Проконсультироваться <br> со&nbsp;специалистом</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section polygon _reflected">
+    <div class="section__container">
+        <h2 class="section__title _to-right _negative">Этапы процедуры банкротства</h2>
+    </div>
+</section>
+
+<section class="section polygon">
+    <div class="section__container">
+        <h2 class="section__title">Этапы процедуры банкротства</h2>
+    </div>
+</section>
+
+{{> mass-media}}
+<!--Warning! end-->
+{{/layout}}

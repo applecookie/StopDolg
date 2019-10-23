@@ -1,11 +1,11 @@
-{{#> layout page-name="Банкротство" block-name="insolvency" script=true}}
+{{#> layout page-name="Банкротство" block-name="insolvency"}}
 {{#> header header-name="polygon _reflected" reviews=true}}
 <!-- Нужно вставить этот кусок-->
 <!--Warning! start-->
 <section class="section insolvency__banner">
     <div class="section__container">
-        <h1 class="insolvency__title">Спишем ваш долг полностью или вернем деньги
-            <span class="insolvency__title-footnote">Гарантии прописаны в договоре</span>
+        <h1 class="section-banner__title">Спишем ваш долг полностью или вернем деньги
+            <span class="section-banner__title-footnote">Гарантии прописаны в договоре</span>
         </h1>
 
         <div class="insolvency__form">
@@ -196,27 +196,22 @@
             процедуры</h2>
 
         <div class="faq-list">
-            <p class="faq-list__heading">Каждая ошибка увеличивает шанс того, что суд откажет в признании вас банкротом,
+            <p class="faq-list__text">Каждая ошибка увеличивает шанс того, что суд откажет в признании вас банкротом,
                 а&nbsp;кредиторы успеют предпринять невыгодные для вас действия</p>
 
-            <ul class="faq-list__accordion insolvency__faq">
+            <ul class="faq-list__accordion">
                 {{#each faq}}
                 {{> faq data=this}}
                 {{/each}}
             </ul>
 
-            <div class="insolvency__faq-btn">
+            <div class="faq-list__btn">
                 <button type="button" class="button _primary">Оставить заявку на&nbsp;бесплатную консультацию</button>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section polygon _reflected mass-media">
-    <div class="section__container">
-        <h2 class="section__title _to-right">Стопдолг в СМИ</h2>
-        {{> mass-media-list}}
-    </div>
-</section>
+{{> mass-media}}
 <!--Warning! end-->
 {{/layout}}
