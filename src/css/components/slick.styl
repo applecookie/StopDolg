@@ -3,8 +3,6 @@ $carousel-toggle-size = 64px
 $carousel-gap = 42px
 $carousel-toggle-offset = $carousel-toggle-size - $carousel-gap
 
-
-
 .slick
 
   &-list
@@ -31,7 +29,8 @@ $carousel-toggle-offset = $carousel-toggle-size - $carousel-gap
     transition .24s ease-in-out
 
     &:hover
-      //
+      opacity 1
+      background linear-gradient(90deg, darken(#e5e5e6,5%), darken(#fff,5%), darken(#e5e5e6,5%))
 
     @media (max-width 480px)
       width $carousel-toggle-size*.5
