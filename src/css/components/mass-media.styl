@@ -1,0 +1,48 @@
+.mass-media
+  margin-top -78px
+  padding-top 123px
+  padding-bottom 112px
+
+  @media (max-width 768px)
+    padding-top 101px
+    padding-bottom 51px
+
+  &:before
+    background-image linear-gradient(0,rgba($c-black,15%),rgba($c-white,15%))
+
+  &__list
+    padding-left 73px
+    padding-right @padding-left
+
+    @media (max-width 480px)
+      padding-left 0
+      padding-right @padding-left
+
+    &.slick-initialized
+
+      .slick
+        &-slide
+          flex-direction row
+          flex 0 0 auto
+          justify-content center
+
+        @media (max-width 480px)
+          &-prev
+            left -10px
+          &-next
+            right -10px
+
+  &__img
+    box-sizing border-box
+    display flex
+    align-items center
+    height 100%
+    padding 11px 24px
+
+    img
+      display block
+      width 100%
+      height auto
+
+  .section__title
+    margin-bottom 1.5em

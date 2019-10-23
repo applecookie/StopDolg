@@ -1,6 +1,5 @@
 $(document)
     .ready(() => {
-        // video carousel
         $('.profile-list')
             .slick({
                 infinite: true,
@@ -13,7 +12,31 @@ $(document)
                     },
                 }],
             });
-        // video carousel
+        $('.mass-media__list')
+            .slick({
+                infinite: true,
+                slidesToShow: 5,
+                variableWidth: true,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        variableWidth: false,
+                    },
+                }, {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 2,
+                        variableWidth: false,
+                    },
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        variableWidth: false,
+                    },
+                }],
+            });
         $('.video-list')
             .slick({
                 infinite: true,
@@ -26,7 +49,6 @@ $(document)
                     },
                 }],
             });
-        // team carousel
         $('.team-list')
             .slick({
                 infinite: true,
