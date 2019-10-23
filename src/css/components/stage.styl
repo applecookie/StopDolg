@@ -35,6 +35,8 @@
 
       text-align center
 
+      border-radius 10px
+
       &:not(:last-child)
         &:after
           content ''
@@ -49,24 +51,25 @@
 
           transform translateX(-50%)
 
-    &:hover
-      color $c-white
+    @media (min-width 769px)
+      &:hover
+        color $c-white
 
-      background-color $c-stage-bg
-      border-color $c-white
+        background-color $c-stage-bg
+        border-color $c-white
 
-      .stage
-        &__arrow
-          background-color $c-primary
-
-          &:before
+        .stage
+          &__arrow
             background-color $c-primary
 
-          &:after
-            border-left-color $c-primary
+            &:before
+              background-color $c-primary
 
-        &__more
-          opacity 1
+            &:after
+              border-left-color $c-primary
+
+          &__more
+            opacity 1
 
   &__name
     margin 0
@@ -79,8 +82,9 @@
     text-transform uppercase
 
     @media (max-width 768px)
-      padding-right 8px
-      padding-left @padding-right
+      padding 10px 2px 12px
+
+      letter-spacing 1px
 
   &__arrow
     position relative
@@ -138,6 +142,9 @@
       font-weight 700
 
       @media (max-width 768px)
+        display block
+        margin-bottom .2em
+
         color $c-secondary
         font-size 12px
 
@@ -200,7 +207,7 @@
 
   &__more
     position absolute
-    z-index 1
+    z-index 2
     right 50%
     bottom 10px
     text-align center
@@ -215,17 +222,20 @@
 
     cursor help
 
-    &:hover
+    @media (max-width 768px)
+      display none
 
-      .stage
+    @media (min-width 769px)
+      &:hover
 
-        &__description
-          opacity 1
-          visibility visible
+        .stage
+
+          &__description
+            opacity 1
+            visibility visible
 
   &__description
     position absolute
-    z-index 1
     top calc(100% + 24px)
     right 50%
     width 274px

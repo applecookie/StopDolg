@@ -4,12 +4,15 @@
   position relative
   padding-left 24px
 
+  @media (max-width 768px)
+    padding-left 21px
+
   &__img
     display block
     margin-right -33px
 
     @media (max-width 768px)
-      margin-right 0
+      margin-right -9px
 
     img
       display block
@@ -29,7 +32,10 @@
     background-color rgba(#005957,85%)
 
     @media (max-width 768px)
+      bottom 27px
       left 0
+      padding-right 20px
+      padding-left @padding-right
 
     @media (max-width 480px)
       right -20px

@@ -55,7 +55,7 @@ $(document)
                 .toggleClass('_less')
                 .closest('.faq-list__header')
                 .siblings('.faq-list__description')
-                .slideToggle(300);
+                .toggleClass('_is-shown');
         });
         // popover
         const $body = $('body');

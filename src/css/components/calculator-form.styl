@@ -11,8 +11,10 @@
   border-radius 20px
 
   @media (max-width 768px)
-    padding 21px
+    padding 17px 12px 22px
     border-width 4px
+
+    border-radius 15px
 
   &__heading
     margin-bottom 1em
@@ -27,25 +29,46 @@
     text-transform uppercase
 
     @media (max-width 768px)
+      margin-bottom .9em
+
       font-size 18px
+      letter-spacing -1.1px
 
   &__fieldset
+    margin-bottom 20px
     padding 13px 13px 16px
 
     background-color lighten($c-calculator-form-bg,3%)
     border-radius 10px
 
-  &__checkboxes
+    @media (max-width 768px)
+      margin-right 10px
+      margin-left @margin-right
+      padding-bottom 4px
+
+  &__row
     display flex
     flex-wrap wrap
+    align-items center
+    margin-bottom 16px
+
+    @media (max-width 768px)
+      margin-right 10px
+      margin-left @margin-right
+
+  &__checkboxes
+    display flex
     justify-content center
 
     @media (max-width 768px)
+      flex-wrap wrap
+      max-width 124px
+      margin 0 auto
 
       .checkbox
         flex 1 1 100%
         margin-left 0
-        margin-bottom 10px
+        margin-bottom 6px
 
         &__label
           font-size 14px

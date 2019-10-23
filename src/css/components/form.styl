@@ -5,7 +5,7 @@ $select-caret-size-sm = 12px
 .new-form
 
   &__fieldset
-    margin-bottom 20px
+    margin-bottom 22px
 
     &._row
       margin-bottom 40px
@@ -66,7 +66,7 @@ $select-caret-size-sm = 12px
 
     &._inline
       align-items center
-      margin-bottom 18px
+      margin-bottom 25px
 
       @media (max-width 768px)
         flex-wrap wrap
@@ -113,7 +113,8 @@ $select-caret-size-sm = 12px
           text-align right
 
           @media (max-width 768px)
-            margin-bottom 1em
+            margin-right 0
+            margin-bottom .4em
 
             font-size 14px
 
@@ -256,6 +257,11 @@ $select-caret-size-sm = 12px
 
     //reset
     float left
+
+    @media (max-width 768px)
+      margin-bottom .6em
+
+      letter-spacing -1.1px
 
     + *
       clear both

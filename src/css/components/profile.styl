@@ -15,6 +15,16 @@
     &__item
       margin 0 11px
 
+      @media (max-width 480px)
+        margin 0
+
+    .slick
+      @media (max-width 480px)
+        &-prev
+          left -10px
+        &-next
+          right -10px
+
   &-card
     $c-profile-list = #006c69
     height 100%
@@ -50,12 +60,15 @@
 
       @media (max-width 640px)
         flex 1 1 100%
-        padding 20px
+        padding 12px 20px
 
     &__img
       display block
       max-width 160px
       margin 0 auto 13px
+
+      @media (max-width 480px)
+        margin-bottom 10px
 
       img
         width 100%
