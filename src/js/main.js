@@ -53,9 +53,9 @@ $(document)
         $('.faq-list__toggle').on('click', function () {
             $(this)
                 .toggleClass('_less')
-                .siblings('.faq-list__content')
-                .find('.faq-list__description')
-                .toggleClass('_is-shown');
+                .closest('.faq-list__header')
+                .siblings('.faq-list__description')
+                .slideToggle(300);
         });
         // popover
         const $body = $('body');

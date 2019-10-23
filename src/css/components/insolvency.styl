@@ -13,12 +13,15 @@
 
     color $c-white
 
-    //overflow hidden
-    //clip-path polygon(0% 0%, 100% 0%, 100% 91%, 65% 100%, 0% 91%)
+    overflow hidden
+    clip-path polygon(0% 0%, 100% 0%, 100% 91%, 65% 100%, 0% 91%)
+
+    @media (max-width 1024px)
+      padding-bottom 80px
 
     @media (max-width 768px)
       padding-bottom 0
-      //clip-path polygon(0% 0%, 100% 0%, 280% 94%, 65% 100%, 0% 99%)
+      clip-path polygon(0% 0%, 100% 0%, 280% 94%, 65% 100%, 0% 99%)
 
   &__title
     padding 0
@@ -37,7 +40,7 @@
 
     &-footnote
       display block
-      margin-top .8em
+      margin-top .9em
 
       color inherit
       font-size 19px
@@ -93,15 +96,21 @@
       border-radius 10px
 
   &__guarantee
-    margin-top -80px
-    padding-top 145px
+    margin-top -86px
+    padding-top 151px
     padding-bottom 98px
+
+    @media (max-width 1024px)
+      margin-top -121px
 
     &:before
       background-image url(../img/insolvency/guarantee-bg.jpg)
 
+    .section__title
+      margin-bottom 1em
+
     &-list
-      margin-bottom 53px
+      margin-bottom 48px
 
     // костыль
     .practice-block__form
@@ -109,17 +118,20 @@
       max-width $container-width
 
   &__managers
-    margin-top -98px
-    padding-top 160px
-    padding-bottom 137px
+    margin-top -78px
+    padding-top 142px
+    padding-bottom 135px
 
     &:before
       background-position 100% 50%
       background-image url(../img/insolvency/managers-bg.jpg)
 
+    .section__title
+      margin-bottom 1em
+
   &__articles
     margin-top -73px
-    padding-top 136px
+    padding-top 135px
     padding-bottom 90px
 
     @media (max-width 768px)
@@ -136,10 +148,13 @@
 
   &__mistakes
     margin-top -56px
-    padding-top 126px
+    padding-top 124px
     padding-bottom 96px
 
     color $c-secondary-3
+
+    @media (max-width 1024px)
+      margin-top -65px
 
     @media (max-width 768px)
       padding-bottom 41px
@@ -156,7 +171,7 @@
 
   &__faq
     max-width 736px
-    margin 0 auto 52px
+    margin 0 auto 53px
 
     @media (max-width 768px)
       margin-bottom 30px

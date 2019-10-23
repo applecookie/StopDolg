@@ -5,10 +5,16 @@
 
   counter-reset faq-list
 
+  &__header
+    display flex
+    align-items center
+    flex-basis 100%
+
   &__heading
-    margin 0 0 1.6em
+    margin 0 0 1.7em
 
     font-size 19px
+    letter-spacing .2px
     text-align center
 
     @media (max-width 768px)
@@ -18,16 +24,36 @@
     list-style none
 
   &__item
+    box-sizing border-box
     display flex
+    flex-wrap wrap
+    flex 1
+    max-width calc(100% - 50px)
     position relative
+    padding 14px 10px 15px ($counter-width + 7px)
+
+    color $c-secondary-3
+
+    background-color $c-white
+    border-radius 15px
+    box-shadow 0 0 15px rgba($c-black,5%)
+
+    @media (max-width 768px)
+      max-width 100%
+      padding 15px
+      padding-right 10px
 
     &:not(:last-child)
-      margin-bottom 18px
+      margin-bottom 19px
 
     &:before
       counter-increment faq-list
       content counter(faq-list)
 
+      position absolute
+      top 0
+      bottom @top
+      left @top
       width 1.39em
       width $counter-width
       padding 8px 0
@@ -44,17 +70,8 @@
       @media (max-width 768px)
         display none
 
-  &__content
-    flex 1
-    padding 15px 10px
-
-    color $c-secondary-3
-
-    background-color $c-white
-    border-radius 0 15px 15px 0
-    box-shadow 0 0 15px rgba($c-black,5%)
-
   &__title
+    flex 1
     font-size 18px
     font-weight 400
 
@@ -62,29 +79,26 @@
       font-size 16px
 
   &__description
-    height 0
+    //height 0
     margin 0
     overflow hidden
 
     font-size 16px
     font-weight 300
 
-    transition .3s max-height
-
     @media (max-width 768px)
       font-size 14px
 
     &._is-shown
-      max-height 10000vw
-      height auto
       padding-top .5em
 
   &__toggle
+    position absolute
+    left 100%
     flex none
     border none
     width 40px
     height @width
-    margin-top 6px
     margin-left 10px
 
     background-image url(../img/insolvency/plus.svg)
@@ -97,8 +111,7 @@
     cursor pointer
 
     @media (max-width 768px)
-      position absolute
-      right 10px
+      position static
       width 30px
       height @width
 

@@ -1,0 +1,126 @@
+.profile
+
+  &-list
+    padding-left 63px
+    padding-right @padding-left
+
+    @media (max-width 768px)
+      padding-left 40px
+      padding-right @padding-left
+
+    @media (max-width 480px)
+      padding-left 0
+      padding-right @padding-left
+
+    &__item
+      margin 0 11px
+
+  &-card
+    $c-profile-list = #006c69
+    height 100%
+    display flex
+
+    color $c-profile-list
+
+    background-color $c-white
+    box-shadow 0 0 15px rgba($c-black,5%)
+
+    @media (max-width 640px)
+      flex-wrap wrap
+      align-content flex-start
+
+    &__left
+    &__right
+      box-sizing border-box
+      padding 20px 20px 27px
+
+    &__left
+      flex 0 0 46.5%
+      padding-right 19px
+
+      text-align center
+
+      @media (max-width 640px)
+        flex 1 1 100%
+        padding-bottom 0
+
+    &__right
+      padding-top 18px
+      padding-left 0
+
+      @media (max-width 640px)
+        flex 1 1 100%
+        padding 20px
+
+    &__img
+      display block
+      max-width 160px
+      margin 0 auto 13px
+
+      img
+        width 100%
+        height auto
+
+    &__link
+      display inline-block
+      margin 0 auto
+
+      color inherit
+      font-size 14px
+      line-height 1.2
+      text-decoration none
+
+      &:hover
+        text-decoration underline
+
+    &__name
+      margin-bottom .4em
+
+      line-height 1.1
+
+      @media (max-width 640px)
+        text-align center
+
+      &-first
+        display block
+        font-size 22px
+        font-weight 900
+        letter-spacing -.5px
+
+      &-last
+        display block
+        font-size 18px
+        font-weight 700
+
+    &__position
+      display block
+      margin-bottom .5em
+
+    &__position
+    &__skills
+      color #5e5e5e
+      font-size 14px
+
+    &__skills
+      list-style none
+
+      &-item
+        $profile-list-dot-size = 3px
+        position relative
+        padding-left $profile-list-dot-size*2
+
+        &:not(:last-child)
+          margin-bottom .3em
+
+        &:before
+          content ''
+          display block
+          position absolute
+          top 7px
+          left 0
+          width $profile-list-dot-size
+          height @width
+
+          background-color $c-profile-list
+          border-radius 50%
+
