@@ -1,4 +1,5 @@
 .youtube-video
+  box-sizing border-box
   height 0
   position relative
   padding-bottom 56.25%
@@ -7,6 +8,10 @@
   background $c-black
   border-radius 5px
   box-shadow 0 0 0 2px $c-white
+
+  &._bold
+    border-radius 20px
+    box-shadow 0 0 0 5px $c-white
 
   iframe
     position absolute

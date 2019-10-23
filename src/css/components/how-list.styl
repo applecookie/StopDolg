@@ -1,0 +1,47 @@
+.how-list
+  $how-list-img-size = 84px
+  list-style none
+
+  &__item
+    position relative
+
+    color inherit
+    font-size 14px
+
+    &:not(:last-child)
+      margin-bottom 26px
+
+      @media (max-width 768px)
+        margin-bottom 20px
+
+      &:after
+        content ''
+        display block
+        position absolute
+        top calc(100% + 5px)
+        left $how-list-img-size*.5
+        width 1px
+        height 19px
+
+        background-color $c-white
+
+    figure
+      display flex
+      align-items center
+
+  &__img
+    flex 0 0 auto
+    margin-right 15px
+    width $how-list-img-size
+    height @width
+
+    img
+      display block
+      width 100%
+      height auto
+
+  &__text
+    font-size 18px
+
+    @media (max-width 768px)
+      font-size 16px

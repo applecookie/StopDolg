@@ -1,4 +1,5 @@
 .mortgage-vacation
+  $how-video-gap = 35px
   .header:before
     background-image url(../img/backgrounds/insolvency.jpg)
 
@@ -23,7 +24,7 @@
       color $c-secondary-3
       font-size 18px
       font-weight 700
-      letter-spacing -1.4px
+      //letter-spacing -1.4px
       text-transform uppercase
 
     &-img
@@ -47,3 +48,68 @@
       background-color #f2f2f2
       background-image url(../img/mortgage-vacation/conditions-bg.jpg)
       background-size 100% auto
+
+  &__how
+    margin-top -80px
+    padding-top 136px
+    padding-bottom 75px
+
+    color $c-white
+
+    @media (max-width 768px)
+      padding-top 98px
+      padding-bottom 46px
+
+    &:before
+      background-color $c-secondary
+
+    &-content
+      display flex
+
+    &-list
+      box-sizing border-box
+      flex 1 1 44%
+      padding-left 30px
+
+    &-video
+      box-sizing border-box
+      flex 1 1 56%
+      padding 2px $how-video-gap
+
+    &-text
+      margin-bottom 1.1em
+
+      font-size 18px
+
+    &-result
+      position relative
+
+      &:before
+        position absolute
+        left - $how-video-gap
+        content ''
+        border-style solid
+        border-width 33px 0 33px 13px
+        border-color transparent transparent transparent $c-primary
+
+      &-text
+        margin-top 3em
+        padding 12px 11px
+
+        color $c-secondary-3
+        font-size 18px
+        font-weight 700
+
+        background-color $c-white
+
+  &__profile
+    margin-top -80px
+    padding-top 146px
+    padding-bottom 75px
+
+    @media (max-width 768px)
+      padding-top 98px
+      padding-bottom 46px
+
+    &:before
+      background-image linear-gradient(0,#c6c6c6,#e2e2e2)
