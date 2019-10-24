@@ -1,12 +1,20 @@
 .mortgage-vacation
   $how-video-gap = 35px
+
   .header:before
+    background-color #3e5958
     background-image url(../img/backgrounds/insolvency.jpg)
+
+    @media (max-width 640px)
+      background-image none
 
   &__banner
     padding-bottom 10px
 
     color $c-white
+
+    @media (max-width 768px)
+      padding-bottom 32px
 
   &__calendar
     position relative
@@ -27,8 +35,18 @@
       //letter-spacing -1.4px
       text-transform uppercase
 
+      @media (max-width 640px)
+        top 12%
+        max-width 230px
+
+        font-size 12px
+
     &-img
       display inline-block
+
+      @media (max-width 640px)
+        margin-left -20px
+        margin-right @margin-left
 
       img
         display block
@@ -41,8 +59,8 @@
     padding-bottom 75px
 
     @media (max-width 768px)
-      padding-top 98px
-      padding-bottom 46px
+      padding-top 110px
+      padding-bottom 33px
 
     &:before
       background-color #f2f2f2
@@ -57,7 +75,7 @@
     color $c-white
 
     @media (max-width 768px)
-      padding-top 98px
+      padding-top 120px
       padding-bottom 46px
 
     &:before
@@ -66,23 +84,47 @@
     &-content
       display flex
 
+      @media (max-width 768px)
+        flex-wrap wrap
+
     &-list
       box-sizing border-box
       flex 1 1 44%
       padding-left 30px
 
+      @media (max-width 768px)
+        padding-left 0
+
     &-video
       box-sizing border-box
+      display flex
+      flex-direction column
       flex 1 1 56%
       padding 2px $how-video-gap
+
+      @media (max-width 768px)
+        padding 0
+
+    .youtube-video
+      @media (max-width 768px)
+        order 2
 
     &-text
       margin-bottom 1.1em
 
       font-size 18px
 
+      @media (max-width 768px)
+        order 1
+
+        font-size 14px
+        text-align center
+
     &-result
       position relative
+
+      @media (max-width 768px)
+        order 0
 
       &:before
         position absolute
@@ -91,6 +133,12 @@
         border-style solid
         border-width 33px 0 33px 13px
         border-color transparent transparent transparent $c-primary
+
+        @media (max-width 768px)
+          top 0
+          left 50%
+
+          transform translateX(-50%) rotate(90deg)
 
       &-text
         margin-top 3em
@@ -102,13 +150,18 @@
 
         background-color $c-white
 
+        @media (max-width 768px)
+
+          font-size 16px
+          text-align center
+
   &__profile
     margin-top -80px
     padding-top 139px
     padding-bottom 75px
 
     @media (max-width 768px)
-      padding-top 98px
+      padding-top 113px
       padding-bottom 46px
 
     &:before
@@ -118,10 +171,28 @@
     box-sizing border-box
     max-width 674px
     margin 0 auto
-    padding-right 30px
-    padding-left @padding-right
+
+    @media (min-width 769px)
+      padding-right 30px
+      padding-left @padding-right
 
     .new-form
+
+      &__fieldset
+
+        @media (max-width 768px)
+          padding 0
+          margin-bottom 0
+
+          background-color transparent
+          box-shadow none
+
+        &:last-of-type
+          margin-bottom 0
+
+      &__footer
+        @media (max-width 768px)
+          margin-top 0
 
       &__checkbox
         margin-bottom 30px
@@ -150,7 +221,8 @@
             margin-right 0
             margin-bottom .4em
 
-            font-size 14px
+            font-size 11px
+            letter-spacing normal
 
         &__input
           flex 0 0 370px
@@ -160,3 +232,6 @@
 
           &._select
             flex-basis 260px
+
+            @media (max-width 768px)
+              flex-basis 100%
