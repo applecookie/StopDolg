@@ -82,6 +82,7 @@ $select-caret-size-sm = 12px
 
 
   &__item
+    position relative
     flex 1
     display block
 
@@ -148,6 +149,14 @@ $select-caret-size-sm = 12px
 
       +placeholder()
         color inherit
+
+      &.error
+        color #f30f0f
+        border-bottom 2px solid @color
+
+      &.success
+        color #28a745
+        border-bottom 2px solid @color
 
     &._select
       padding-right $input-padding-x + $select-caret-size + $input-padding-x*.5
@@ -265,6 +274,27 @@ $select-caret-size-sm = 12px
 
     + *
       clear both
+
+  &__dropdown
+    position absolute
+    z-index 1000
+    top 100%
+    left 0
+    right 0
+    background-color #fff
+    list-style: none
+    border: 1px solid $c-border-input
+    li
+      color $c-secondary-3
+      font-size 16px
+      line-height 22px
+      padding 8px $input-padding-x
+      cursor pointer
+      transition background-color .2s
+      &:hover
+        background-color $c-light-bg
+      + li
+        border-top 1px solid $c-border-input
 
 
 
