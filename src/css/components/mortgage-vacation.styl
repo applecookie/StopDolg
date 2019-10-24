@@ -104,7 +104,7 @@
 
   &__profile
     margin-top -80px
-    padding-top 146px
+    padding-top 139px
     padding-bottom 75px
 
     @media (max-width 768px)
@@ -113,3 +113,50 @@
 
     &:before
       background-image linear-gradient(0,#c6c6c6,#e2e2e2)
+
+  &__form
+    box-sizing border-box
+    max-width 674px
+    margin 0 auto
+    padding-right 30px
+    padding-left @padding-right
+
+    .new-form
+
+      &__checkbox
+        margin-bottom 30px
+
+    &-row
+      margin-bottom 20px
+
+    &-item
+      display flex
+      align-items center
+
+      @media (max-width 768px)
+        flex-wrap wrap
+        justify-content flex-start
+
+      .new-form
+
+        &__label
+          flex 1
+          margin-right .5em
+          margin-bottom 0
+
+          letter-spacing -1.3px
+
+          @media (max-width 768px)
+            margin-right 0
+            margin-bottom .4em
+
+            font-size 14px
+
+        &__input
+          flex 0 0 370px
+
+          @media (max-width 768px)
+            flex-basis 100%
+
+          &._select
+            flex-basis 260px
