@@ -3,127 +3,134 @@ $carousel-toggle-size = 64px
 $carousel-gap = 42px
 $carousel-toggle-offset = $carousel-toggle-size - $carousel-gap
 
-.slick
+.mass-media__list
+.profile-list
+.team-list
+.video-list
+  .slick
 
-  &-list
-    display flex
+    &-list
+      display flex
 
-    border-radius 0
+      border-radius 0
 
-  &-track
-    display flex
+    &-track
+      display flex
 
-  &-arrow
-    top 50%
-    bottom auto
-    margin-top 0
-    width $carousel-toggle-size
-    height @width
-
-    background linear-gradient(90deg, #e5e5e6, #fff, #e5e5e6)
-    background-size auto !important
-    border-radius 50%
-    box-shadow 0 0 15px rgba($c-black,10%)
-
-    transform translateY(-50%)
-    transition .24s ease-in-out
-
-    &:hover
-      opacity 1
-      background linear-gradient(90deg, darken(#e5e5e6,5%), darken(#fff,5%), darken(#e5e5e6,5%))
-
-    @media (max-width 480px)
-      width $carousel-toggle-size*.5
-      height @width
-
-    &:before
-      position absolute
-      top 4px
-      right @top
-      bottom @top
-      left @top
-      content ''
-
-      background-color $c-white
-      border-radius inherit
-
-    // arrow
-    &:after
-      position absolute
+    &-arrow
       top 50%
-      content ''
-      width 20px
+      bottom auto
+      margin-top 0
+      width $carousel-toggle-size
       height @width
-      border-style solid
-      border-color $c-secondary
 
-      transform translate(-50%, -50%) rotate(45deg)
+      background linear-gradient(90deg, #e5e5e6, #fff, #e5e5e6)
+      background-size auto !important
+      border-radius 50%
+      box-shadow 0 0 15px rgba($c-black,10%)
+
+      transform translateY(-50%)
+      transition .24s ease-in-out
+
+      &:hover
+        opacity 1
+        background linear-gradient(90deg, darken(#e5e5e6,5%), darken(#fff,5%), darken(#e5e5e6,5%))
 
       @media (max-width 480px)
-        width 10px
+        width $carousel-toggle-size*.5
         height @width
 
-  &-next
-    right 0
+      &:before
+        position absolute
+        top 4px
+        right @top
+        bottom @top
+        left @top
+        content ''
 
-    @media (max-width 480px)
-      right 10px
+        background-color $c-white
+        border-radius inherit
 
-    &:after
-      left calc(50% - 4px)
+      // arrow
+      &:after
+        position absolute
+        top 50%
+        content ''
+        width 20px
+        height @width
+        border-style solid
+        border-color $c-secondary
 
-      border-width 2px 2px 0 0
+        transform translate(-50%, -50%) rotate(45deg)
+
+        @media (max-width 480px)
+          width 10px
+          height @width
+
+    &-next
+      right 0
 
       @media (max-width 480px)
-        left calc(50% - 2px)
+        right 10px
 
-  &-prev
-    left 0
+      &:after
+        left calc(50% - 4px)
 
-    @media (max-width 480px)
-      left 10px
+        border-width 2px 2px 0 0
 
-    &:after
-      left calc(50% + 4px)
-      border-width 0 0 2px 2px
+        @media (max-width 480px)
+          left calc(50% - 2px)
+
+    &-prev
+      left 0
 
       @media (max-width 480px)
-        left calc(50% + 2px)
+        left 10px
 
-  &-initialized
-    .slick
-      &-slide
-        display flex
-        flex-direction column
-        flex 1
+      &:after
+        left calc(50% + 4px)
+        border-width 0 0 2px 2px
 
-.slikparnt
-  $slikparnt-width = 1024px
-  max-width $slikparnt-width
-  margin 0 auto
-  padding 0 $carousel-gap
+        @media (max-width 480px)
+          left calc(50% + 2px)
 
-  @media (max-width 480px)
-    padding 0
+    &-initialized
+      .slick
+        &-slide
+          display flex
+          flex-direction column
+          flex 1
 
-  &._offset-arrow
 
-    .slick
-      &-next
-        right -($carousel-toggle-size*.5)
+.team-list
+.video-list
+  &.slikparnt
+    $slikparnt-width = 1024px
+    max-width $slikparnt-width
+    margin 0 auto
+    padding 0 $carousel-gap
 
-        @media (max-width $slikparnt-width + $carousel-toggle-size)
-          right 10px
+    @media (max-width 480px)
+      padding 0
 
-      &-prev
-        left -($carousel-toggle-size*.5)
+    &._offset-arrow
 
-        @media (max-width $slikparnt-width + $carousel-toggle-size)
-          left 10px
+      .slick
+        &-next
+          right -($carousel-toggle-size*.5)
 
-  &cont
-    display flex
-    flex-direction column
+          @media (max-width $slikparnt-width + $carousel-toggle-size)
+            right 10px
 
-  .child
-    // = team-list-item
+        &-prev
+          left -($carousel-toggle-size*.5)
+
+          @media (max-width $slikparnt-width + $carousel-toggle-size)
+            left 10px
+
+    &cont
+      display flex
+      flex-direction column
+
+    .child
+      // = team-list-item
