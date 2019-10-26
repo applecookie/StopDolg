@@ -20,6 +20,12 @@ $(document)
                 responsive: [{
                     breakpoint: 1024,
                     settings: {
+                        slidesToShow: 4,
+                        variableWidth: false,
+                    },
+                }, {
+                    breakpoint: 768,
+                    settings: {
                         slidesToShow: 3,
                         variableWidth: false,
                     },
