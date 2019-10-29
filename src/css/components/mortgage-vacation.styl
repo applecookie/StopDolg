@@ -16,6 +16,18 @@
     @media (max-width 768px)
       padding-bottom 32px
 
+    .section-banner
+
+      &__title
+        @media (max-width 768px)
+          margin-bottom .5em
+
+        &-footnote
+          margin-top 2em
+
+          @media (max-width 768px)
+            margin-top 1.2em
+
   &__calendar
     position relative
 
@@ -23,7 +35,7 @@
 
     &-title
       position absolute
-      top 15%
+      top 3.9em
       right 0
       left @right
       max-width 403px
@@ -32,11 +44,11 @@
       color $c-secondary-3
       font-size 18px
       font-weight 700
-      //letter-spacing -1.4px
+      letter-spacing -1.2px
       text-transform uppercase
 
       @media (max-width 640px)
-        top 12%
+        top 3.2em
         max-width 230px
 
         font-size 12px
@@ -55,11 +67,11 @@
 
   &__conditions
     margin-top -80px
-    padding-top 146px
-    padding-bottom 75px
+    padding-top 145px
+    padding-bottom 76px
 
     @media (max-width 768px)
-      padding-top 110px
+      padding-top 108px
       padding-bottom 33px
 
     &:before
@@ -70,32 +82,51 @@
       @media (max-width 640px)
         background-image none
 
+    .section__title
+      margin-bottom 1.7em
+
+      @media (max-width 768px)
+        margin-bottom .6em
+
+    .faq-list
+      &__accordion
+        margin-bottom 41px
+
+      .button
+        padding .7em 1.3em
+
   &__how
-    margin-top -80px
-    padding-top 136px
-    padding-bottom 75px
+    margin-top -107px
+    padding-top 162px
+    padding-bottom 106px
 
     color $c-white
 
     @media (max-width 768px)
-      padding-top 120px
-      padding-bottom 46px
+      padding-top 144px
+      padding-bottom 43px
 
     &:before
       background-color $c-secondary
 
+    .section__title
+      margin-bottom 1.2em
+
+      @media (max-width 768px)
+        margin-bottom .7em
+
     &-content
       display flex
 
-      @media (max-width 768px)
-        flex-wrap wrap
+      @media (max-width 640px)
+        flex-direction column
 
     &-list
       box-sizing border-box
       flex 1 1 44%
       padding-left 30px
 
-      @media (max-width 768px)
+      @media (max-width 640px)
         padding-left 0
 
     &-video
@@ -105,19 +136,19 @@
       flex 1 1 56%
       padding 2px $how-video-gap
 
-      @media (max-width 768px)
+      @media (max-width 640px)
         padding 0
 
     .youtube-video
-      @media (max-width 768px)
+      @media (max-width 640px)
         order 2
 
     &-text
-      margin-bottom 1.1em
+      margin-bottom 1.3em
 
       font-size 18px
 
-      @media (max-width 768px)
+      @media (max-width 640px)
         order 1
 
         font-size 14px
@@ -125,26 +156,33 @@
 
     &-result
       position relative
+      margin-top 52px
 
-      @media (max-width 768px)
+      @media (max-width 640px)
+        margin-bottom 30px
+
         order 0
+        margin-top 45px
 
       &:before
         position absolute
+        top 50%
         left - $how-video-gap
         content ''
         border-style solid
         border-width 33px 0 33px 13px
         border-color transparent transparent transparent $c-primary
 
-        @media (max-width 768px)
-          top 0
+        transform translateY(-50%)
+
+        @media (max-width 640px)
+          top -51px
           left 50%
 
           transform translateX(-50%) rotate(90deg)
 
       &-text
-        margin-top 3em
+        margin 0
         padding 12px 11px
 
         color $c-secondary-3
@@ -153,15 +191,15 @@
 
         background-color $c-white
 
-        @media (max-width 768px)
-
+        @media (max-width 640px)
           font-size 16px
+          line-height 1.4
           text-align center
 
   &__profile
     margin-top -80px
-    padding-top 139px
-    padding-bottom 75px
+    padding-top 123px
+    padding-bottom 85px
 
     @media (max-width 768px)
       padding-top 113px
@@ -169,6 +207,9 @@
 
     &:before
       background-image linear-gradient(0,#c6c6c6,#e2e2e2)
+
+    .section__title
+      margin-bottom .9em
 
   &__form
     box-sizing border-box
@@ -185,7 +226,7 @@
 
         @media (max-width 768px)
           padding 0
-          margin-bottom 0
+          margin-bottom 10px
 
           background-color transparent
           box-shadow none
@@ -196,6 +237,14 @@
       &__footer
         @media (max-width 768px)
           margin-top 0
+
+        .button
+          @media (max-width 768px)
+            margin-right 33px
+            margin-left @margin-right
+
+            padding-left 10px
+            padding-right @padding-left
 
       &__checkbox
         margin-bottom 30px
