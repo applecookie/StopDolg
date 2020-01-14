@@ -1,15 +1,24 @@
 .statement
-  padding 23px 40px
+  $statement-horizontal-gutter = 40px
+  $statement-horizontal-gutter-sm = 14px
+  $statement-border-radius = 20px
+  $statement-border-width = 8px
+  $statement-border-width-sm = 6px
+
+  padding 23px $statement-horizontal-gutter
 
   color $c-secondary-3
 
   background-color $c-light-bg
-  border 8px solid $c-dark-bg
-  border-radius 20px
+  border $statement-border-width solid $c-dark-bg
+  border-radius $statement-border-radius
 
   @media (max-width 768px)
     padding 15px 14px
     border-width 6px
+
+  &._with-header
+    padding-top 0
 
   &__promocode
     justify-content space-between
@@ -65,3 +74,41 @@
       @media (max-width 768px)
         letter-spacing 0
 
+  &__header
+    position relative
+    z-index 1
+    margin-bottom 1.33em
+    padding .87em 0
+
+    &:before
+      content ''
+      position absolute
+      z-index -1
+      top 0
+      right - $statement-horizontal-gutter
+      bottom 0
+      left @right
+
+      background-color #c3dddd
+      border-top-right-radius $statement-border-radius - $statement-border-width
+      border-top-left-radius @border-top-right-radius
+
+      @media (max-width 768px)
+        right -1*$statement-horizontal-gutter-sm
+        left @right
+        border-top-right-radius $statement-border-radius - $statement-border-width-sm
+        border-top-left-radius @border-top-right-radius
+
+  &__agreement
+    text-align left
+
+    &-checkbox
+      display block
+
+      text-align inherit
+
+      &:not(:last-child)
+        margin-bottom 1.6em
+
+      & + &
+        margin-left 0

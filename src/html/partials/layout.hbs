@@ -24,6 +24,12 @@
     {{> footer}}
 </div>
 
+{{#if popover}}
+    {{> popover popover-name="subpoena-plaintiff" image="/img/subpoena/plaintiff.png"}}
+    {{> popover popover-name="subpoena-date" image="/img/subpoena/date.png"}}
+    {{> popover popover-name="subpoena-court" image="/img/subpoena/court.png"}}
+{{/if}}
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
