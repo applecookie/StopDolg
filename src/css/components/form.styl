@@ -4,6 +4,11 @@ $select-caret-size-sm = 12px
 
 .new-form
 
+  &__personal-details
+    [data-order-sm="last"]
+      @media (max-width 768px)
+        order 100
+
   &__fieldset
     margin-bottom 22px
 
@@ -26,6 +31,13 @@ $select-caret-size-sm = 12px
       @media (max-width 768px)
         padding 15px 15px 5px
 
+      .new-form__row
+        &:last-of-type
+          margin-bottom 20px
+
+          @media (max-width 768px)
+            margin-bottom 10px
+
     &-name
       margin 0 0 1em
       padding 0
@@ -33,6 +45,9 @@ $select-caret-size-sm = 12px
       font-size 18px
       font-weight 400
       color $c-secondary-3
+
+      @media (max-width 768px)
+        font-size 11px
 
   &__row
     display flex

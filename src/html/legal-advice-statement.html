@@ -1,10 +1,10 @@
-{{#> layout page-name="Представительство в суде - Заявление" block-name="representation-in-court-statement" popover=true}}
+{{#> layout page-name="Персональная консультация ведущего юриста" block-name="legal-advice-statement"}}
 {{#> header header-name="polygon _reflected"}}
 <!-- Нужно вставить этот кусок-->
 <!--Warning! start-->
-<section class="representation-in-court-statement__banner">
+<section class="legal-advice__banner">
     <form class="statement new-form">
-        <h1 class="statement__title _condensed">Представительство в&nbsp;суде</h1>
+        <h1 class="statement__title _condensed">Персональная консультация ведущего юриста</h1>
 
         <div class="new-form__row new-form__fieldset statement__promocode">
             <label class="new-form__item">
@@ -14,7 +14,7 @@
 
             <span class="statement__price">
                 <small>Цена</small>
-                <b>20 000</b>
+                <b>2500</b>
                 <small>руб.</small>
             </span>
         </div>
@@ -22,7 +22,7 @@
         <h4 class="new-form__fieldset-name">Введите личные данные</h4>
 
         <fieldset class="new-form__fieldset _card">
-            <div class="new-form__row _col-2 new-form_personal-details">
+            <div class="new-form__row _col-2 new-form__personal-details">
                 <div class="new-form__item">
                     <span class="new-form__label">ФИО</span>
                     <input type="text" class="new-form__input">
@@ -30,44 +30,23 @@
                 <div class="new-form__item" data-order-sm="last">
                     <span class="new-form__label">E-mail</span>
                     <input type="text" class="new-form__input">
-                    <span class="new-form__help-text _to-right">на данную почту вам придет уведомление</span>
+                    <span class="new-form__help-text _to-right">на данную почту вам придёт письмо с&nbsp;подтверждением оплаты <br> и записи на&nbsp;консультацию</span>
                 </div>
                 <div class="new-form__item">
                     <span class="new-form__label">Контактный телефон</span>
                     <input type="text" class="new-form__input">
                 </div>
             </div>
-        </fieldset>
-
-        <h4 class="new-form__fieldset-name">Введите информацию о вашем деле</h4>
-
-        <fieldset class="new-form__fieldset _card">
-            <div class="new-form__row _col-2">
-                <label class="new-form__item _reference">
-                    <span class="new-form__label">Истец</span>
-                    <input type="text" class="new-form__input">
-                    {{> reference popover=true popover-name="subpoena-plaintiff"}}
-                </label>
-                <label class="new-form__item _reference">
-                    <span class="new-form__label">Дата заседания</span>
-                    <input type="text" class="new-form__input">
-                    {{> reference popover=true popover-name="subpoena-date"}}
-                </label>
-            </div>
-            <div class="new-form__row _reference">
-                <label class="new-form__item">
-                    <span class="new-form__label">Наименование и адрес суда</span>
-                    <input type="text" class="new-form__input">
-                </label>
-                {{> reference popover=true popover-name="subpoena-court"}}
-            </div>
-
             <div class="new-form__row ">
                 <label class="new-form__item">
-                    <span class="new-form__label">Опишите кратко вашу ситуацию</span>
+                    <span class="new-form__label">Кратко опишите суть проблемы</span>
                     <textarea class="new-form__input _textarea" rows="7"></textarea>
                 </label>
             </div>
+        </fieldset>
+
+        <fieldset class="schedule">
+            <h4 class="new-form__fieldset-name">Выберете удобные дату и время для консультации</h4>
         </fieldset>
 
         <footer class="new-form__footer">
