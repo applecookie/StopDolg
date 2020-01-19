@@ -1,0 +1,99 @@
+.schedule
+
+  &__title
+    text-align center
+
+    @media (max-width 768px)
+      text-align left
+
+    br
+      display none
+
+      @media (max-width 768px)
+        display initial
+
+  &__row
+    display flex
+    flex-wrap wrap
+    justify-content space-around
+    align-items flex-start
+
+  &__card
+    display inline-block
+    overflow hidden
+
+    background-color #fff
+    border 1px solid #e6e6e6
+    border-radius 20px
+    box-shadow 0 0 10px rgba($c-black,15%)
+
+    &-title
+      text-align center
+      padding 14px
+
+      color $c-secondary-3
+      font-size 16px
+      font-weight 400
+      line-height 1
+
+      background-color #dadada
+
+      @media (max-width 768px)
+        padding 0
+        margin-bottom .7em
+
+        font-size 11px
+        text-align left
+
+        background-color transparent
+
+    &-content
+      padding 24px 40px 30px
+
+      @media (max-width 768px)
+        padding 15px
+
+  &__calendar
+
+    @media (max-width 768px)
+      display none
+
+    &-mobile
+      display none
+      max-width 220px
+      margin-bottom 18px
+
+      @media (max-width 768px)
+        display block
+
+  &__time
+
+    @media (max-width 768px)
+      width 100%
+      padding 15px
+
+      .schedule
+
+        &__card
+          &-content
+            padding 0
+
+    &-list
+      list-style none
+
+      font-size 16px
+
+      li
+        &:not(:last-child)
+          margin-bottom .7em
+
+  &__footnote
+    margin 1.5em 0 0
+    padding-left 6px
+
+    font-size 14px
+
+    @media (max-width 768px)
+      padding-left 4px
+
+      font-size 11px

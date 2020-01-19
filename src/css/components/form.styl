@@ -39,13 +39,14 @@ $select-caret-size-sm = 12px
             margin-bottom 10px
 
     &-name
-      margin 0 0 1em
+      margin 0 0 1.1em
       padding 0
 
       font-size 18px
       font-weight 400
       color $c-secondary-3
 
+      //как label
       @media (max-width 768px)
         font-size 11px
 
@@ -175,6 +176,9 @@ $select-caret-size-sm = 12px
     &[type="email"]
     &[type="tel"]
     &[type="number"]
+    &[type="date"]
+      box-sizing border-box
+
       height 38px
       padding 9px $input-padding-x
       width 100%
@@ -232,6 +236,14 @@ $select-caret-size-sm = 12px
 
       .select__placeholder
         color #808080
+
+    &[type="date"]
+      //симуляция placeholder
+      &:invalid::-webkit-datetime-edit
+        color #808080
+        font-size 10px
+      &::-webkit-inner-spin-button
+        display none
 
     &._textarea
       box-sizing border-box

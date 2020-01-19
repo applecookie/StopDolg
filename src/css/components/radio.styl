@@ -1,0 +1,76 @@
+$radio-line-height = 1.2
+$radio-font-size = 16px
+$radio-font-size-sm = 12px
+$radio-box-outer = 20px
+$radio-box-outer-sm = 16px
+$radio-box-inner = 10px
+$radio-box-border-width = 2px
+$radio-box-border-width-sm = 1px
+$c-radio = $c-secondary-3
+
+.radio
+  display inline-block
+  position relative
+
+  font-size $radio-font-size
+  font-weight 400
+  line-height $radio-line-height
+
+  cursor pointer
+
+  @media (max-width 768px)
+    font-size $radio-font-size-sm
+
+  &__label
+    display block
+    vertical-align middle
+
+    padding-left 1.75em
+
+    &:before
+    &:after
+      position absolute
+      display inline-block
+      box-sizing border-box
+      content ''
+
+      vertical-align middle
+
+      border-radius 50%
+
+    &:before
+      width $radio-box-outer
+      height @width
+      top $radio-font-size*$radio-line-height*.5 - $radio-box-outer*.5
+      left 0
+
+      border $radio-box-border-width solid $c-radio
+
+      @media (max-width 768px)
+        width $radio-box-outer-sm
+        height @width
+        top $radio-font-size-sm*$radio-line-height*.5 - $radio-box-outer-sm*.5
+
+        border-width $radio-box-border-width-sm
+
+    &:after
+      width $radio-box-inner
+      height @width
+      top $radio-font-size*$radio-line-height*.5 - $radio-box-inner*.5
+      left $radio-box-outer*.5 - $radio-box-inner*.5
+
+      @media (max-width 768px)
+        top $radio-font-size-sm*$radio-line-height*.5 - $radio-box-inner*.5
+        left $radio-box-outer-sm*.5 - $radio-box-inner*.5
+
+  input[type='radio']
+    position absolute
+    width 0
+    height @width
+
+    opacity 0
+
+    &:checked
+      ~span
+        &:after
+          background-color $c-radio

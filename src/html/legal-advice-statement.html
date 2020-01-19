@@ -45,8 +45,46 @@
             </div>
         </fieldset>
 
-        <fieldset class="schedule">
-            <h4 class="new-form__fieldset-name">Выберете удобные дату и время для консультации</h4>
+        <fieldset class="new-form__fieldset schedule">
+            <h4 class="new-form__fieldset-name schedule__title">Выберете удобные <br>дату и время для консультации</h4>
+
+            <div class="schedule__row">
+                <div class="schedule__card schedule__calendar">
+                    <div class="calendar datepicker-here"></div>
+                </div>
+                <div class="schedule__card schedule__time">
+
+                    <label class="new-form__item schedule__calendar-mobile">
+                        <span class="new-form__label">Дата</span>
+                        <input type="date" class="new-form__input" required>
+                    </label>
+
+                    <h5 class="schedule__card-title">Время</h5>
+                    <div class="schedule__card-content">
+                        <ul class="schedule__time-list">
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="schedule">
+                                    <span class="radio__label">с 6:00 до 7:00</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="schedule">
+                                    <span class="radio__label">с 9:00 до 10:00</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="radio">
+                                    <input type="radio" name="schedule">
+                                    <span class="radio__label">с 13:00 до 14:00</span>
+                                </label>
+                            </li>
+                        </ul>
+                        <p class="schedule__footnote">* Время МОСКОВСКОЕ</p>
+                    </div>
+                </div>
+            </div>
         </fieldset>
 
         <footer class="new-form__footer">

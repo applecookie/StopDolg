@@ -1,0 +1,117 @@
+$c-calendar-primary = #777
+$c-calendar-disabled = #ccc
+$c-calendar-weekend = #ffccaa
+
+.calendar
+
+  .datepicker
+    box-sizing border-box
+    width 366px
+
+    font-family inherit
+    font-size 16px
+    color $c-calendar-primary
+
+    border none
+    border-radius 0
+
+    &--nav
+      justify-content center
+      padding 6px
+
+      color $c-secondary-3
+      font-size 16px
+
+      background-color #dadada
+      border-bottom-width 0
+
+      &-title
+
+        i
+          color inherit
+
+      &-action
+        position relative
+        width 28px
+
+        &:after
+          content ''
+          display block
+          width 0
+          height 0
+
+          border-style solid
+          border-width 6px 0 6px 10px
+          border-color transparent transparent transparent $c-secondary-3
+
+        svg
+          display none
+
+        &[data-action="prev"]
+          &:after
+            transform rotate(180deg)
+
+    &--content
+      padding 0 20px
+
+    &--days-names
+      display none
+
+    &--cell
+      position relative
+
+      &:before
+        content ''
+        display block
+        position absolute
+        bottom .4em
+        width 4px
+        height @width
+
+        border-radius 50%
+
+      &.-current-
+        color inherit
+
+        &:before
+          background-color $c-secondary-3
+
+      &-month
+      &-year
+
+        &.-selected-
+          background-color rgba($c-secondary-3, 30%)
+
+      &-day
+        height 2.5em
+
+        border-radius 0
+
+        &:not(:nth-last-child(-n + 7))
+          border-bottom 1px solid #cdcdcd
+
+        &:after
+          content ''
+          display block
+          position absolute
+          width 30px
+          height @width
+          box-sizing border-box
+
+          border-radius 50%
+          border 2px solid transparent
+
+        &.-selected-
+          color inherit
+
+          background-color transparent
+
+          &:after
+            border-color $c-secondary-3
+
+        &.-other-month-
+          color $c-calendar-disabled
+
+        &.-weekend-
+          color $c-calendar-weekend
+
