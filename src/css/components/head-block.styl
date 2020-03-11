@@ -1,0 +1,41 @@
+.head-block
+  color $c-white
+
+  &__title
+    padding 0
+    margin 0 0 10px
+    border none
+
+    color inherit
+    font-size 56px
+    font-weight 300
+    line-height 1.2
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      margin-bottom 0
+
+      font-size 23px
+
+  &__heading
+    padding 0
+    margin-bottom 15px
+
+    color $c-white
+    font-size 29px
+    font-weight 400
+    text-align center
+    text-transform uppercase
+
+    @media (max-width 768px)
+      font-size 23px
+      font-weight 300
+      letter-spacing -.3px
+
+      br
+        display none
+
+    &._condensed
+      @media (max-width 768px)
+        letter-spacing -1.5px

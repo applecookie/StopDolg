@@ -1,12 +1,71 @@
 .how-list
   $how-list-img-size = 84px
+  $how-list-img-size-lg = 112px
   list-style none
+
+  &._horizontal
+    display flex
+    justify-content center
+
+    @media (max-width 768px)
+      flex-wrap wrap
+
+    .how-list
+      &__item
+        flex 1
+        margin-bottom 0
+
+        @media (max-width 768px)
+          flex-basis 100%
+          margin-bottom 50px
+
+          &:last-child
+            margin-bottom 0
+
+        &:not(:last-child)
+          &:after
+            left 100%
+            width 24px
+            height @width
+            top $how-list-img-size-lg*.5 - @width*.5
+
+            background-color transparent
+            background-image url(../img/how-list__arrow_white.svg)
+            background-position 50%
+            background-size contain
+            background-repeat no-repeat
+
+            transform translate(-50%)
+
+            @media (max-width 768px)
+              top calc(100% + 15px)
+              left 50%
+              width 20px
+              height @width
+
+              transform translateX(-50%) rotate(90deg)
+
+        figure
+          flex-direction column
+
+      &__img
+        margin-right 0
+        margin-bottom 10px
+        width $how-list-img-size-lg
+        height @width
+
+        @media (max-width 768px)
+          width $how-list-img-size
+          height @width
+
+      &__text
+        font-weight 700
+        text-align center
 
   &__item
     position relative
 
     color inherit
-    font-size 14px
 
     &:not(:last-child)
       margin-bottom 26px
@@ -16,7 +75,7 @@
         display block
         position absolute
         top calc(100% + 5px)
-        left $how-list-img-size*.5
+        left $how-list-img-size* .5
         width 1px
         height 19px
 

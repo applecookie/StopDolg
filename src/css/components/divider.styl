@@ -1,13 +1,7 @@
 .divider
   position relative
 
-
   @media (max-width 768px)
+    section-divider(1px)
     &:after
-      content ''
-      display block
       margin-top 24px
-      height 1px
-      width 100%
-
-      background-image linear-gradient(90deg ,transparent, $c-white, transparent)

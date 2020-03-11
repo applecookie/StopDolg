@@ -1,0 +1,50 @@
+{{#> layout page-name="Защита заёмщиков в суде" block-name="borrows-protection"}}
+{{#> header header-name="polygon _reflected" reviews=true}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="borrows-protection__banner head-block section">
+    <div class="section__container">
+        <h1 class="borrows-protection__title head-block__title">Защита заёмщиков в&nbsp;суде</h1>
+        <div class="section__container-inner">
+            <article class="borrows-protection__about">
+                <ul class="hammer-list">
+                    <li class="hammer-list__item">
+                        Кредитор подал на вас в суд, а&nbsp;вы&nbsp;не&nbsp;знаете, как подготовиться к&nbsp;заседанию?
+                    </li>
+                    <li class="hammer-list__item">
+                        Кредитор завысил сумму взыскания, а вы с этим не&nbsp;согласны?
+                    </li>
+                    <li class="hammer-list__item">
+                        Вы погасили всю задолженность, но получили иск от кредитора?
+                    </li>
+                    <li class="hammer-list__item">
+                        Кредитор подал на вас в суд, но&nbsp;срок исковой давности уже&nbsp;прошёл?
+                    </li>
+                </ul>
+
+                <p class="borrows-protection__about-description">Мы обеспечим грамотную защиту ваших интересов в долговых спорах и добьёмся,
+                    <br class="_sm-hide"> чтобы суд вынес выгодное для вас решение.</p>
+            </article>
+
+            <article class="borrows-protection__how">
+                <h2 class="borrows-protection__heading head-block__heading">Как мы работаем</h2>
+
+                <ul class="how-list _horizontal borrows-protection__how-list">
+                    {{#each borrowsProtectionHow}}
+                    {{> how-list-item directory="borrows-protection" data=this}}
+                    {{/each}}
+                </ul>
+
+                <div class="borrows-protection__how-btn">
+                    <a href="javascript:void(0);" class="button _primary">Заполнить&nbsp;<br class="_sm-hide"> анкету для&nbsp;защиты в&nbsp;суде</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</section>
+<!--Warning! end-->
+{{/header}}
+
+{{/layout}}
+

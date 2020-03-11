@@ -1,0 +1,40 @@
+.hammer-list
+  $hammer-icon-size = 24px
+  $hammer-font-size = 20px
+  $hammer-font-size-sm = 14px
+  list-style none
+
+  &__item
+    display flex
+    margin-bottom 1em
+
+    font-size $hammer-font-size
+    font-weight 700
+
+    @media (max-width 768px)
+      margin-bottom .8em
+
+      font-size 14px
+      font-weight 400
+
+    &:last-child
+      margin-bottom 0
+
+    &:before
+      flex 0 0 auto
+      content ''
+      //margin-top $hammer-font-size*.5 - $hammer-icon-size*.5
+      margin-right 16px
+      margin-left 2px
+      width $hammer-icon-size
+      height @width
+
+      background url("../img/annulment/hammer.svg") no-repeat center
+      background-size contain
+
+      @media (max-width 768px)
+        margin-right 7px
+
+        margin-top $hammer-font-size-sm*.5 - $hammer-icon-size*.5
+
+

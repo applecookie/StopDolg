@@ -10,21 +10,7 @@
       margin 0 auto
 
   &-banner__title
-    padding 0
-    margin 0 0 10px
-    border none
-
-    color inherit
-    font-size 56px
-    font-weight 300
-    line-height 1.2
-    text-align center
-    text-transform uppercase
-
-    @media (max-width 768px)
-      margin-bottom 0
-
-      font-size 23px
+    @extend .head-block__title
 
     &-footnote
       display block
@@ -43,7 +29,7 @@
   &__title
     $title-gap = 7%
     $title-circle-size = 16px
-    margin-bottom 45px
+    //margin-bottom 45px
     margin-bottom 1.3em
     // 7% = 74/1024px
     padding 0 $title-gap

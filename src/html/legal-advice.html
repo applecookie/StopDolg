@@ -1,0 +1,73 @@
+{{#> layout page-name="Юридическая консультация" block-name="legal-advice"}}
+{{#> header header-name="polygon _reflected" reviews=true}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="legal-advice__banner head-block section">
+    <div class="section__container">
+        <h1 class="legal-advice__title head-block__title">Юридическая консультация</h1>
+
+        <div class="section__container-inner">
+            <article class="legal-advice__features">
+                <picture class="legal-advice__features-img">
+                    <img src="img/legal-advice/team.png" alt="">
+                </picture>
+
+                <ul class="hammer-list legal-advice__features-list">
+                    <li class="hammer-list__item">
+                        От ведущих юристов с&nbsp;опытом&nbsp;<br class="_sm-hide"> защиты прав заемщиков&nbsp;от&nbsp;3&nbsp;лет.
+                    </li>
+                    <li class="hammer-list__item">
+                        Дистанционно. <br>Доступность юридической помощи независимо от&nbsp;вашего местоположения.
+                    </li>
+                    <li class="hammer-list__item">
+                        Без ограничения по&nbsp;времени. <br>Говорите столько, сколько вам нужно, чтобы разобраться в&nbsp;ситуации.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="legal-advice__about">
+                <h2 class="legal-advice__heading head-block__heading">Что входит в услугу?</h2>
+
+                <ul class="base-list _dash legal-advice__about-list">
+                    <li>анализ сложившейся ситуации;</li>
+                    <li>ответы на вопросы правового характера;</li>
+                    <li>рекомендации/план дальнейших действий.</li>
+                </ul>
+            </article>
+
+            <article class="legal-advice__conditions">
+                <h2 class="legal-advice__heading head-block__heading">В каких случаях нужно обратиться за&nbsp;консультацией?</h2>
+
+                <div class="legal-advice__conditions-content">
+                    <p class="legal-advice__conditions-text">За одну консультацию вы получите разбор сложившейся ситуации и варианты как максимально грамотно и законно решить проблемы.</p>
+
+                    <ul class="base-list _circle legal-advice__conditions-list">
+                        <li>если есть вопросы по сроку исковой давности кредита / кредитного договора;</li>
+                        <li>есть залоговое имущество или ипотека и нужно подобрать грамотное и поэтапное решение проблемы;</li>
+                        <li>есть кредиты/документы, оформленные незаконным путём (против вашей воли / без вашего согласия).</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="legal-advice__how">
+                <h2 class="legal-advice__heading head-block__heading">Как проходит консультация?</h2>
+
+                <ul class="how-list _horizontal legal-advice__how-list">
+                    {{#each legalAdviceHow}}
+                    {{> how-list-item directory="legal-advice" data=this}}
+                    {{/each}}
+                </ul>
+
+                <p class="legal-advice__how-footnote">* консультация проходит дистанционно по телефону.</p>
+
+                <div class="legal-advice__how-btn">
+                    <a href="legal-advice-statement.html" class="button _primary">Хочу консультацию юриста</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<!--Warning! end-->
+{{/header}}
+
+{{/layout}}

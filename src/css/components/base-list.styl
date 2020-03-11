@@ -1,0 +1,38 @@
+.base-list
+  list-style none
+
+  li
+    display flex
+
+    &:not(:last-child)
+      margin-bottom .5em
+
+    &:before
+      flex 0 0 auto
+      content ''
+      display inline-block
+      vertical-align middle
+
+      background-color $c-white
+
+  &._circle
+    li
+      &:before
+        width 5px
+        height @width
+        margin-right 4px
+
+        border-radius 50%
+
+        -ms-transform translateY(-50%) translateY(.5em) translateY(2.5px)
+        transform translateY(calc(-50% + .5em + 5px*.5))
+
+  &._dash
+    li
+      &:before
+        width 5px
+        height 1px
+        margin-right @width
+
+        -ms-transform translateY(-50%) translateY(.5em) translateY(2.5px)
+        transform translateY(calc(-50% + .5em + 1px*.5))
