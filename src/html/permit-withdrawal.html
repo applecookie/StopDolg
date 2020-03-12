@@ -1,0 +1,66 @@
+{{#> layout page-name="Отзыв согласия на взаимодействие с третьими лицами" block-name="permit-withdrawal"}}
+{{#> header header-name="polygon _reflected" reviews=true}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="permit-withdrawal__banner head-block section">
+    <div class="section__container">
+        <h1 class="permit-withdrawal__title head-block__title">Кредиторы беспокоят:</h1>
+        <div class="section__container-inner">
+            <article class="permit-withdrawal__about">
+
+                <div class="permit-withdrawal__about-content">
+                    <picture class="permit-withdrawal__about-img">
+                        <img src="img/permit-withdrawal/victims.png" alt="">
+                    </picture>
+
+                    <ul class="floating-list _to-right permit-withdrawal__about-list">
+                        <li class="floating-list__item">
+                            <span class="floating-list__text">близких вам людей</span>
+                        </li>
+                        <li class="floating-list__item">
+                            <span class="floating-list__text">родственников</span>
+                        </li>
+                        <li class="floating-list__item">
+                            <span class="floating-list__text">работодателя</span>
+                        </li>
+                        <li class="floating-list__item">
+                            <span class="floating-list__text">знакомых</span>
+                        </li>
+                        <li class="floating-list__item">
+                            <span class="floating-list__text">коллег</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn-block permit-withdrawal__show-more js-show-more-toggle">Хватит это терпеть!</button>
+                <div class="show-more-arrow">
+                    <span></span><span></span><span></span>
+                </div>
+            </article>
+
+            <div class="js-show-more-content">
+                <article class="permit-withdrawal__solution">
+                    <h2 class="permit-withdrawal__solution-heading">Отзыв согласия на&nbsp;взаимодействтие с&nbsp;третьими лицами</h2>
+                    <p class="permit-withdrawal__solution-description">Направив всего одно письмо кредитору, вы можете законно прекратить нежелательные звонки!</p>
+                </article>
+
+                <article class="permit-withdrawal__how">
+                    <h3 class="head-block__heading permit-withdrawal__how-heading">Как воспользоваться?</h3>
+
+                    <ul class="how-list _horizontal permit-withdrawal__how-list _dark">
+                        {{#each permitWithdrawal}}
+                        {{> how-list-item directory="permit-withdrawal" data=this}}
+                        {{/each}}
+                    </ul>
+
+                    <div class="permit-withdrawal__how-btn">
+                        <a href="javascript:void(0);" class="button _primary">Заполнить заявление</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Warning! end-->
+{{/header}}
+{{/layout}}

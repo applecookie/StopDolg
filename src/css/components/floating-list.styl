@@ -1,0 +1,23 @@
+.floating-list
+  list-style none
+
+  &._to-right
+    text-align right
+
+  &__item
+    font-size 32px
+    background-image linear-gradient(90deg, transparent, rgba($c-white,20%))
+
+    @media (max-width 768px)
+      font-size 14px
+
+    &:not(:last-child)
+      margin-bottom .5em
+
+  &__text
+    display inline-block
+    padding .2em 1em
+
+    text-shadow 0 0 1px $c-white
+
+    background-image linear-gradient(90deg, transparent, rgba($c-white,50%))

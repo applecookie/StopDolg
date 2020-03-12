@@ -10,6 +10,13 @@
     @media (max-width 768px)
       flex-wrap wrap
 
+    &._dark
+
+      .how-list__item
+        &:not(:last-child)
+          &:after
+            background-image url(../img/how-list__arrow_dark.svg)
+
     .how-list
       &__item
         flex 1

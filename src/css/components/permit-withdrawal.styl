@@ -1,0 +1,128 @@
+.permit-withdrawal
+  .header:before
+    background-image url(../img/backgrounds/permit-withdrawal.jpg)
+    background-position 50% 0
+    background-size contain
+    background-color #cdcdcd
+
+    @media (max-width 768px)
+      background-image none
+
+  &__banner
+    padding-bottom 109px
+
+    color $c-secondary-4
+
+    @media (max-width 768px)
+      padding 6px 0 45px
+
+  &__title
+    margin-bottom .6em
+
+    font-size 64px
+    font-weight 400
+
+    @media (max-width 768px)
+      font-size 22px
+
+  &__about
+    padding 0 40px
+    margin-bottom 23px
+
+    @media (max-width 768px)
+      padding 0
+
+    &-content
+      display flex
+      justify-content flex-end
+      align-items flex-end
+      position relative
+
+    &-img
+      position absolute
+      top 0
+      left 0
+      bottom 0
+
+      @media (max-width 768px)
+        left -5px
+
+      img
+        display block
+        width auto
+        height 100%
+
+    &-list
+      flex 0 1 60%
+      z-index 1
+      margin-bottom 1.9em
+
+      @media (max-width 768px)
+        margin-bottom .6em
+        //margin-right -20px
+        //flex-basis calc(60% + 20px)
+
+  &__show-more
+    margin-bottom 23px
+
+  &__solution
+    margin-bottom 37px
+
+    text-align center
+
+    @media (max-width 768px)
+      margin-bottom 27px
+
+    &-heading
+      padding 0
+      margin 0 0 .27em
+
+      color inherit
+      font-size 64px
+      font-weight 700
+      text-align inherit
+      text-transform uppercase
+
+      @media (max-width 768px)
+        font-size 24px
+
+    &-description
+      max-width 640px
+      margin 0 auto
+
+      color $c-secondary-3
+      font-size 26px
+
+      @media (max-width 768px)
+        font-size 14px
+
+  &__how
+
+    &-heading
+      font-size 48px
+
+      @media (max-width 768px)
+        font-size 20px
+
+    &-list
+      max-width 620px
+      margin 0 auto
+
+      color $c-secondary-3
+
+      &.how-list
+
+        .how-list
+          &__img
+            margin-bottom 7px
+
+          &__text
+            font-weight 300
+
+    &-btn
+      margin-top 35px
+
+      text-align center
+
+      @media (max-width 768px)
+        margin-top 27px

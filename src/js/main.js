@@ -97,4 +97,10 @@ $(document)
                 $body.removeClass('body-overflow');
                 $(this).closest('.popover').removeClass('_shown');
             });
+
+        $('.js-show-more-toggle').on('click', function () {
+            $('.js-show-more-content').slideDown('slow');
+            $(this).prop("disabled", true);
+            $('.show-more-arrow').addClass('_less');
+        });
     });

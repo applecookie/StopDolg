@@ -1,0 +1,59 @@
+@keyframes pulse
+  0%
+    opacity 0%
+  50%
+    opacity 50%
+  100%
+    opacity 100%
+
+.show-more-arrow
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  position relative
+  padding 10px 0
+
+  transition $d-transition
+
+  @media (max-width 768px)
+    display none
+
+  &._less
+    transform scale(-1)
+
+    span
+      animation-play-state paused
+
+  span
+    display block
+    width 186px
+    height 20px
+
+    background-image url(../img/show-more-arrow.svg)
+    background-repeat no-repeat
+    background-position 50%
+    background-size contain
+
+    opacity 50%
+
+    animation pulse infinite 1s
+    animation-delay .1s
+
+    &:first-child
+    &:last-child
+      position absolute
+
+    &:first-child
+      top 0
+      opacity 100%
+      animation-delay .3s
+
+    &:last-child
+      bottom 0
+      opacity 0
+      animation-direction 0s
+
+.js-show-more-content
+  display none
+

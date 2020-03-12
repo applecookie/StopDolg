@@ -1,0 +1,26 @@
+.btn-block
+  display block
+  border none
+  width 100%
+  padding .5em
+
+  color $c-white
+  font-size 32px
+  letter-spacing -1px
+  line-height 1.2
+  font-weight 700
+  text-transform uppercase
+
+  background-color $c-primary
+
+  cursor pointer
+  transition $d-transition
+
+  @media (max-width 768px)
+    font-size 22px
+    font-weight 400
+
+  &[disabled]
+    cursor default
+    opacity .5
+    filter grayscale(.2)
