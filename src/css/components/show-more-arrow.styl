@@ -1,18 +1,20 @@
 @keyframes pulse
   0%
-    opacity 0%
+    opacity 33%
+    transform translateY(1px)
   50%
-    opacity 50%
+    opacity 66%
+    transform translateY(2px)
   100%
     opacity 100%
+    transform translateY(0)
 
 .show-more-arrow
   display flex
   flex-direction column
   align-items center
-  justify-content center
   position relative
-  padding 10px 0
+  height 40px
 
   transition $d-transition
 
@@ -21,9 +23,10 @@
 
   &._less
     transform scale(-1)
+    transform-origin center
 
     span
-      animation-play-state paused
+      animation-play-state paused !important
 
   span
     display block
@@ -35,24 +38,27 @@
     background-position 50%
     background-size contain
 
-    opacity 50%
-
-    animation pulse infinite 1s
-    animation-delay .1s
+    opacity 66%
+    transition $d-transition
 
     &:first-child
+      animation pulse infinite 1s linear reverse
+
+    &:nth-child(2)
     &:last-child
       position absolute
 
-    &:first-child
-      top 0
-      opacity 100%
-      animation-delay .3s
+    &:nth-child(2)
+      top 10px
+      opacity 33%
+      animation pulse infinite 1s linear
+      animation-delay .1s
 
     &:last-child
       bottom 0
-      opacity 0
-      animation-direction 0s
+      opacity 100%
+      animation pulse infinite 1s linear
+      animation-delay .2s
 
 .js-show-more-content
   display none

@@ -98,9 +98,12 @@ $(document)
                 $(this).closest('.popover').removeClass('_shown');
             });
 
-        $('.js-show-more-toggle').on('click', function () {
-            $('.js-show-more-content').slideDown('slow');
-            $(this).prop("disabled", true);
+        $('.js-show-more-toggle button').on('click', function () {
+            $('.js-show-more-content').slideDown();
+            $('html, body').animate({
+                scrollTop: $(this).offset().top,
+            });
+            $(this).prop('disabled', true);
             $('.show-more-arrow').addClass('_less');
         });
     });
