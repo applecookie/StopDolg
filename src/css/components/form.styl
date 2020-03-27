@@ -4,6 +4,13 @@ $select-caret-size-sm = 12px
 
 .new-form
 
+  &__radio-list
+    margin-bottom 20px
+    padding-left .5em
+
+    @media (max-width 768px)
+      margin-bottom 15px
+
   &__personal-details
     [data-order-sm="last"]
       @media (max-width 768px)
@@ -13,7 +20,7 @@ $select-caret-size-sm = 12px
     margin-bottom 22px
 
     &._row
-      margin-bottom 40px
+      margin-bottom 20px
 
     &._card
       padding 20px 20px 0
@@ -31,13 +38,6 @@ $select-caret-size-sm = 12px
       @media (max-width 768px)
         padding 15px 15px 5px
 
-      .new-form__row
-        &:last-of-type
-          margin-bottom 20px
-
-          @media (max-width 768px)
-            margin-bottom 10px
-
     &-name
       margin 0 0 1.1em
       padding 0
@@ -53,6 +53,12 @@ $select-caret-size-sm = 12px
   &__row
     display flex
     flex-wrap wrap
+
+    & + &
+      margin-bottom 20px
+
+      @media (max-width 768px)
+        margin-bottom 10px
 
     &._reference
       flex-wrap nowrap
@@ -306,7 +312,7 @@ $select-caret-size-sm = 12px
       align-items center
 
     .button
-      border-radius 10px
+      border-radius 20px
 
     &-add
     &-del

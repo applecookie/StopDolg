@@ -53,13 +53,49 @@
     b
       font-size 2em
 
+  &__stock
+    align-self flex-end
+    margin-bottom -.7em
+
+    font-size 18px
+    line-height 1
+    text-align right
+
+    @media (max-width 768px)
+      margin-bottom 1.5em
+
+      font-size 12px
+
+    &-price
+      display inline-block
+
+      &._new
+        padding .3em .7em
+        margin-bottom .5em
+
+        color $c-white
+
+        background-color $c-primary
+
+        b
+          font-size 2em
+
+      &._old
+        display block
+        padding 0 .7em
+
+        color $c-footer-bg
+
+        b
+          font-size 1.33em
+
   &__title
     width 100%
     padding 0
     margin 0 0 25px
 
     color $c-secondary-3
-    font-size 30px
+    font-size 29px
     font-weight 400
     text-align center
 

@@ -1,0 +1,146 @@
+{{#> layout page-name="Кредитные каникулы - Заявление" block-name="credit-vacation-statement" }}
+{{#> header header-name="polygon _reflected"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="credit-vacation-statement__banner head-block section">
+    <div class="section__container">
+        <h1 class="head-block__heading credit-vacation-statement__title">Заявление на предоставление кредитных
+            каникул</h1>
+
+        <div class="credit-vacation-statement__about">
+            <picture class="credit-vacation-statement__img">
+                <img src="img/credit-vacation/legal-expert.png" alt="">
+            </picture>
+            <ul class="credit-vacation-statement__description base-list">
+                <li>Оказались на больничном или финансово пострадали из-за коронавируса?</li>
+                <li>Вы имеете право обратится в ваш банк с заявлением на предоставление кредитных каникул (отсрочку по
+                    погашению кредита и оплате процентов).
+                </li>
+                <li>Оформите заявление на кредитные каникулы всего за пару минут. Наш документ составлен юридически
+                    грамотно и повышает шансы принятия банком положительного решения по предоставлению кредитных
+                    каникул.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <form class="statement new-form">
+        <div class="statement__stock">
+            <span class="statement__stock-price _new ruble">
+                Цена до 25 марта 2020г.:
+                <b>90</b>
+            </span>
+            <span class="statement__stock-price _old ruble">Обычная цена:
+                <b>300</b>
+            </span>
+        </div>
+
+        <h4 class="new-form__fieldset-name">Введите личные данные</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2 new-form__personal-details">
+                <label class="new-form__item">
+                    <span class="new-form__label">ФИО</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item" data-order-sm="last">
+                    <span class="new-form__label">E-mail</span>
+                    <input type="text" class="new-form__input">
+                    <span class="new-form__help-text _to-right">на данную почту вам придёт письмо <br> с подтверждением оплаты <br> и записи на консультацию</span>
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Контактный телефон</span>
+                    <input type="text" class="new-form__input _with-placeholder" placeholder="+7 (XXX) XXX-XXXX">
+                </label>
+            </div>
+        </fieldset>
+
+        <h4 class="new-form__fieldset-name">Данные о кредитах</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item _reference">
+                    <span class="new-form__label">Общая сумма по всем платежам</span>
+                    <input type="text" class="new-form__input">
+                    {{> reference}}
+                </label>
+            </div>
+            <h5 class="new-form__fieldset-name">Причина подачи заявления&nbsp;
+                {{> reference}}
+            </h5>
+            <ul class="base-list new-form__radio-list">
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="cause" checked>
+                        <span class="radio__label">Коронавирус. Отправили домой в неоплачиваемый отпуск.</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="cause">
+                        <span class="radio__label">Проблемы у работодателя – задерживают зарплату.</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="cause">
+                        <span class="radio__label">Был уволен/сокращён.</span>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <h4 class="new-form__fieldset-name">Подробная информация о кредиторах</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Наименование Кредитора или ИНН</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Номер кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Адрес Кредитора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="new-form__repeater">
+            <button type="button" class="button _secondary new-form__repeater-add">
+                <i class="icon icon-plus"></i>Добавить кредитора
+                <small>(+50 руб.)</small>
+            </button>
+
+            <span class="statement__price">
+                    <small>Цена</small>
+                    <b>100</b>
+                    <small>руб.</small>
+                </span>
+
+            <button type="button" class="button _secondary new-form__repeater-del">
+                <i class="icon icon-minus"></i>Убрать
+            </button>
+
+        </div>
+
+        <footer class="new-form__footer">
+            <div class="statement__agreement">
+                <label class="new-form__checkbox statement__agreement-checkbox checkbox">
+                    <input type="checkbox" checked class="checkbox__input">
+                    <span class="checkbox__label">
+                            Я согласен с&nbsp; <a href="javascript:void(0);">Политикой конфиденциальности</a>
+                        </span>
+                </label>
+            </div>
+
+            <button type="submit" class="button _primary">Скачать заявление</button>
+        </footer>
+    </form>
+</section>
+<!--Warning! end-->
+{{/header}}
+{{/layout}}

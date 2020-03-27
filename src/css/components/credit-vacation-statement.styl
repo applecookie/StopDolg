@@ -1,0 +1,43 @@
+.credit-vacation-statement
+  .header:before
+    background-image url(../img/backgrounds/credit-vacation-statement.jpg)
+
+  &__banner
+    padding-bottom 109px
+
+    @media (max-width 768px)
+      padding 6px 20px 44px
+
+  &__title
+    margin-bottom .3em
+
+  &__about
+    display flex
+    align-items center
+
+    @media (max-width 640px)
+      flex-direction column-reverse
+
+  &__img
+    flex 0 0 22%
+    align-self flex-end
+    padding 0 25px
+
+    text-align center
+
+    @media (max-width 640px)
+      align-self center
+
+    img
+      display block
+      width 100%
+      height auto
+
+  &__description
+    flex 1
+    margin-bottom .75em
+
+    font-size 16px
+
+    @media (max-width 768px)
+      font-size 12px
