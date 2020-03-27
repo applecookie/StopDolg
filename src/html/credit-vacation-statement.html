@@ -53,6 +53,28 @@
             </div>
         </fieldset>
 
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Серия и номер паспорта</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Кем выдан паспорт</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата выдачи паспорта</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item _reference">
+                    <span class="new-form__label">Адрес проживания Заявителя</span>
+                    <input type="text" class="new-form__input">
+                    {{> reference}}
+                </label>
+            </div>
+        </fieldset>
+
         <h4 class="new-form__fieldset-name">Данные о кредитах</h4>
         <fieldset class="new-form__fieldset _card">
             <div class="new-form__row _col-2">
@@ -112,19 +134,11 @@
         <div class="new-form__repeater">
             <button type="button" class="button _secondary new-form__repeater-add">
                 <i class="icon icon-plus"></i>Добавить кредитора
-                <small>(+50 руб.)</small>
             </button>
-
-            <span class="statement__price">
-                    <small>Цена</small>
-                    <b>100</b>
-                    <small>руб.</small>
-                </span>
 
             <button type="button" class="button _secondary new-form__repeater-del">
                 <i class="icon icon-minus"></i>Убрать
             </button>
-
         </div>
 
         <footer class="new-form__footer">
