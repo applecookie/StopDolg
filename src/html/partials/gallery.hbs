@@ -1,0 +1,19 @@
+<ul class="gallery">
+    {{#each galleryCard}}
+        <li class="gallery__card">
+            <picture class="gallery__card-img">
+                <img src="img/services/{{image}}.jpg" alt="">
+            </picture>
+
+            <div class="gallery__card-body">
+                <div class="gallery__card-content">
+                    <h2 class="gallery__card-title">{{{title}}}</h2>
+
+                    <p class="gallery__card-description">{{{description}}}</p>
+                </div>
+
+                <a class="gallery__card-more" href="javascript:void(0);">Подробнее</a>
+            </div>
+        </li>
+    {{/each}}
+</ul>

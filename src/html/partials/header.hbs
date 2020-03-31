@@ -99,8 +99,90 @@
         </div>
 
         {{> @partial-block}}
+
     {{else}}
-    <div class="hCenter">
+        {{#if services}}
+            <div class="hCenter">
+                <header class="header__container">
+                <div class="header__info">
+                    <div class="header__logo">
+                        <a href="/">
+                            <picture>
+                                <source srcset="img/logo-white.svg">
+                                <img src="img/logo-white.png" alt="CТОПДОЛГ" width="200" height="22">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="header__tel">
+                        <a href="tel:88007070033">8 800 707 00 33</a>
+                    </div>
+                </div>
+                <div class="header__menu">
+                    <div class="header__menu-mobile"></div>
+                    <div class="header__menu-wrapper">
+                        <div class="menu">
+                            <ul class="menu__list active2">
+                                <li class="menu__item"><a class="menu__item-link" href="/">Главная</a></li>
+                                <li class="menu__item parent active">
+                                    <a href="/services/" class="menu__item-link active">Услуги</a>
+                                    <ul class="menu__inner-list">
+                                        <li class="menu__inner-list-item">
+                                            <a href="/services/bankrotstvo/">Банкротство</a>
+                                        </li>
+                                        <li class="menu__inner-list-item">
+                                            <a href="/services/zashchita-zayomshchikov/">Защита заемщиков</a>
+                                        </li>
+                                        <li class="menu__inner-list-item">
+                                            <a href="/services/zashchita-zayomshchikov/" class="active">Отмена судебного приказа</a>
+                                        </li>
+                                        <li class="menu__inner-list-item">
+                                            <a href="/services/otkaz-ot-vzaimodeystvia/">Отказ от взаимодействия с кредиторами</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item parent">
+                                    <a href="/nashi-dela/" class="menu__item-link">Наши дела</a>
+                                    <ul class="menu__inner-list">
+                                        <li class="menu__inner-list-item"><a href="/nashi-dela/spisano-do-500-tys-rub/">Списано
+                                            до 500 тыс. руб.</a></li>
+                                        <li class="menu__inner-list-item"><a href="/nashi-dela/spisano-500-tys-2-mln-rub/">Списано
+                                            500 тыс. - 2 млн руб.</a></li>
+                                        <li class="menu__inner-list-item"><a href="/nashi-dela/spisano-bolee-2-mln-rub/">
+                                            Списано более 2 млн руб.</a></li>
+                                        <li class="menu__inner-list-item"><a
+                                                href="/nashi-dela/dela-o-zashchite-prav-zayemshchikov/">Дела о защите прав
+                                            заёмщиков</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item parent">
+                                    <a href="/articles/" class="menu__item-link">Статьи</a>
+                                    <ul class="menu__inner-list">
+                                        <li class="menu__inner-list-item"><a href="/articles/bankrot/">Всё о банкротстве</a>
+                                        </li>
+                                        <li class="menu__inner-list-item"><a href="/articles/zashchita-zayemshchikov/">Защита
+                                            заёмщиков</a></li>
+                                        <li class="menu__inner-list-item"><a href="/articles/ipoteka-pri-bankrotstve/">Ипотека </a>
+                                        </li>
+                                        <li class="menu__inner-list-item"><a href="/articles/kollektory/">Коллекторы</a>
+                                        </li>
+                                        <li class="menu__inner-list-item"><a href="/articles/novosti/">Новости</a></li>
+                                        <li class="menu__inner-list-item"><a href="/articles/tema-1/">Сми о нас </a></li>
+                                        <li class="menu__inner-list-item"><a href="/articles/vopros-otvet/">Вопрос-ответ</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__item-link" href="/reviews/">Отзывы</a></li>
+                                <li class="menu__item"><a class="menu__item-link" href="/contacts/">Контакты</a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </header>
+            </div>
+        {{else}}
+        <div class="hCenter">
         {{!
         <header class="header__container">
             <div class="header__info">
@@ -268,5 +350,6 @@
 
         {{> @partial-block}}
     </div>
+        {{/if}}
     {{/if}}
 </div>

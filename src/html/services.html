@@ -1,0 +1,15 @@
+{{#> layout page-name="Услуги" block-name="services" }}
+{{> header services=true}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="section">
+    <div class="section__container">
+        <div class="services__list section__container-inner">
+            {{> gallery this=data}}
+
+            <p class="services__footnote">*получите документ за 5 минут.</p>
+        </div>
+    </div>
+</section>
+<!--Warning! end-->
+{{/layout}}

@@ -1,0 +1,75 @@
+.gallery
+  display flex
+  flex-wrap wrap
+  justify-content center
+  box-sizing border-box
+
+  list-style none
+
+  &__card
+    display flex
+    flex-direction column
+    flex 3 0 auto
+    max-width 230px
+    overflow hidden
+    margin 16px
+    border 1px solid #ababab
+
+    background-color $c-white
+    border-radius 10px
+    box-shadow 0 0 10px rgba($c-black,15%)
+
+    transition $d-transition
+
+    &-img
+      display block
+
+      img
+        display block
+        width 100%
+        height auto
+
+    &-body
+      flex 1
+      display flex
+      flex-direction column
+      padding 10px 19px 19px
+
+    &-content
+      flex 1
+      display flex
+      flex-direction column
+      justify-content space-between
+
+    &-title
+      padding 0
+      margin 0 0 1em
+
+      color $c-secondary
+      font-size 17px
+      font-weight 700
+      text-transform uppercase
+
+    &-description
+      margin 0 0 1.5em
+
+      color #4c4c4c
+      font-size 14px
+
+    &-more
+      align-self flex-start
+      display inline-block
+      padding .625em 1em
+
+      color $c-white
+      font-size 16px
+      text-decoration none
+
+      background linear-gradient(180deg,$c-semi-secondary-light,#539f9d)
+      border-radius 10px
+      box-shadow 0 0 15px rgba($c-black,25%)
+
+      transition $d-transition
+
+      &:hover
+        filter saturate(1.5)

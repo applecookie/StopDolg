@@ -1,0 +1,31 @@
+.services
+  background-color #dadada
+
+  .header:before
+    display none
+
+  .footer
+    background none
+
+  &__list
+    &:before
+      content ''
+      position absolute
+      top 100%
+      display block
+      height 25px
+      width 100%
+
+      background-image url(../img/services/divider-shadow.png)
+      background-repeat no-repeat
+      background-size contain
+
+    section-divider(1px)
+
+  &__footnote
+    padding 1em 0 2em
+    margin 0
+
+    color #4c4c4c
+    font-size 14px
+    text-align center
