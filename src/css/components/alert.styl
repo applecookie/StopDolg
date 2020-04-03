@@ -1,0 +1,22 @@
+.alert
+  display block
+  box-sizing border-box
+  padding 1.25em 1em
+  border 8px solid $c-white
+
+  color $c-white
+  font-size 26px
+  font-weight 700
+  text-align center
+  text-transform uppercase
+
+  background-color #005957
+  border-radius 15px
+
+  @media (max-width 640px)
+    border-left-width 0
+    border-right-width @border-left-width
+
+    font-size 18px
+
+    border-radius 0

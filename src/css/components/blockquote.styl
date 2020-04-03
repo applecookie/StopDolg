@@ -1,0 +1,32 @@
+.blockquote
+  position relative
+  margin 0
+  padding 1.2em 0
+
+  font-size 18px
+  font-weight 700
+  line-height 1.4
+  letter-spacing -1px
+  text-transform uppercase
+
+  @media (max-width 768px)
+    text-align center
+    font-weight 400
+
+  &:before
+    content ''
+    display block
+    width 57px
+    height 45px
+    position absolute
+    right 100%
+    top 0
+
+    background-image url(../img/quote.svg)
+    background-position 0
+    background-size cover
+    background-repeat no-repeat
+
+    @media (max-width 768px)
+      display none
+

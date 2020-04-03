@@ -2,17 +2,13 @@
   display flex
   align-items center
   position relative
-  padding-left 24px
+  margin-left 24px
 
   @media (max-width 768px)
-    padding-left 21px
+    margin-left 21px
 
   &__img
     display block
-    margin-right -33px
-
-    @media (max-width 768px)
-      margin-right -9px
 
     img
       display block
@@ -21,7 +17,7 @@
 
   &__card
     position absolute
-    left 24px
+    left 0
     bottom 52px
     display inline-block
     padding 13px
@@ -40,6 +36,10 @@
     @media (max-width 480px)
       right -20px
       left @right
+
+    &._right
+      left auto
+      right 0
 
   &__position
     margin-bottom .3em

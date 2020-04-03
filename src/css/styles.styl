@@ -4,6 +4,14 @@
 small
   font-size .78em
 
+._lg-hide
+  @media (min-width 768px)
+    display none
+
+._sm-hide
+  @media (max-width 768px)
+    display none
+
 @import "components/vars.styl"
 @import "components/mixins.styl"
 @import "components/icomoon.styl"
@@ -48,10 +56,12 @@ small
 @import "components/schedule.styl"
 @import "components/hammer-list.styl"
 @import "components/floating-list.styl"
-@import "components/br.styl"
 @import "components/btn-block.styl"
 @import "components/show-more-arrow.styl"
 @import "components/gallery.styl"
+@import "components/alert.styl"
+@import "components/video.styl"
+@import "components/blockquote.styl"
 
 @import "components/404.styl"
 @import "components/anti-collector.styl"
@@ -71,6 +81,7 @@ small
 @import "components/borrows-protection.styl"
 @import "components/permit-withdrawal.styl"
 @import "components/services.styl"
+@import "components/insolvency-defence.styl"
 
 @import "components/team.styl"
 @import "components/video-list.styl"

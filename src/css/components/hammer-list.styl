@@ -1,14 +1,29 @@
 .hammer-list
-  $hammer-icon-size = 24px
-  $hammer-font-size = 20px
-  $hammer-font-size-sm = 14px
   list-style none
+
+  &._lg
+
+    .hammer-list
+      &__item
+        font-size 26px
+
+        @media (max-width 768px)
+          font-size 16px
+
+        &:before
+          margin-top -3px
+
+          width 32px
+          height @width
+
+          @media (max-width 768px)
+            margin-top -8px
 
   &__item
     display flex
     margin-bottom 1em
 
-    font-size $hammer-font-size
+    font-size 20px
     font-weight 700
 
     @media (max-width 768px)
@@ -23,10 +38,9 @@
     &:before
       flex 0 0 auto
       content ''
-      //margin-top $hammer-font-size*.5 - $hammer-icon-size*.5
       margin-right 16px
       margin-left 2px
-      width $hammer-icon-size
+      width 24px
       height @width
 
       background url("../img/hammer-list.svg") no-repeat center
@@ -35,6 +49,6 @@
       @media (max-width 768px)
         margin-right 7px
 
-        margin-top $hammer-font-size-sm*.5 - $hammer-icon-size*.5
+        margin-top -5px
 
 

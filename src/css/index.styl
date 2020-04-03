@@ -1,17 +1,22 @@
 .index
 
   &__nav
-    display inline-flex
-    flex-direction column
-    margin 50px auto
+    display flex
+    flex-wrap wrap
+    box-sizing border-box
 
     a
-      display inline-block
+      box-sizing border-box
+      flex 0 2 calc(50% - 10px)
       padding .3em .5em
-      margin-bottom 5px
+      margin 5px
 
       color #fff
       font-size 20px
       text-decoration none
 
       background-color #599c9a
+      transition .24s ease-in
+
+      &:hover
+        filter saturate(2)
