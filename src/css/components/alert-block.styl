@@ -1,0 +1,51 @@
+.alert-block
+  display block
+  box-sizing border-box
+  padding 20px
+  border 4px solid $c-white
+
+  color $c-white
+  text-align center
+
+  background-color #005957
+  border-radius 15px
+
+  @media (max-width 640px)
+    border-left-width 0
+    border-right-width @border-left-width
+    margin-left -20px
+    margin-right @margin-left
+
+    border-radius 0
+
+  &__title
+    padding 0
+    margin-bottom .8em
+
+    color inherit
+    font-size 22px
+    font-weight 700
+    text-transform uppercase
+
+    @media (max-width 640px)
+      font-size 18px
+
+    &-footnote
+      display block
+
+      font-size .7em
+      text-transform none
+
+  &__text
+    font-size 20px
+
+    @media (max-width 640px)
+      font-size 16px
+
+  &__footnote
+    margin .5em 0 0
+
+    font-size 16px
+
+    @media (max-width 640px)
+      font-size 14px

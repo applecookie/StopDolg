@@ -1,0 +1,122 @@
+{{#> layout page-name="Кредитные каникулы" block-name="credit-vacation"}}
+{{#> header header-name="polygon _reflected"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="head-block credit-vacation__banner">
+    <h1 class="head-block__title credit-vacation__title">Кредитные каникулы</h1>
+
+    <div class="credit-vacation__about">
+        <div class="credit-vacation__description">
+            <picture class="credit-vacation__description-img">
+                <img src="img/credit-vacation/calendar.png" alt="">
+            </picture>
+
+            <div class="credit-vacation__description-text">
+                <p>Президент России Владимир Путин подписал закон, который позволяет россиянам воспользоваться
+                    кредитными каникулами в связи с ситуацией с коронавирусом.</p>
+                <p>Теперь заёмщики смогут обратиться к кредитору с требованием установить кредитные каникулы сроком
+                    до шести месяцев, если доходы за предшествующий месяц у них снизились на 30 и более процентов
+                    по сравнению со среднемесячными доходами предыдущего года.</p>
+            </div>
+        </div>
+
+        <div class="credit-vacation__borrows">
+            <h2 class="head-block__heading">Кто может воспользоваться <br> &nbsp; кредитными каникулами?</h2>
+
+            <ul class="hammer-list credit-vacation__borrows-list">
+                <li class="hammer-list__item">Взявшие кредит до&nbsp;3&nbsp;апреля&nbsp;2020&nbsp;года.</li>
+                <li class="hammer-list__item">Заёмщики, у&nbsp;которых за&nbsp;месяц до&nbsp;обращения за&nbsp;предоставлением каникул более
+                    чем на&nbsp;30 процентов упал доход. Он сравнивается со&nbsp;среднемесячным доходом 2019&nbsp;г.
+                </li>
+                <li class="hammer-list__item">Заёмщики, у которых в момент обращения не действуют ипотечные каникулы.</li>
+            </ul>
+        </div>
+
+        <div class="alert-block credit-vacation__about-alert">
+            <h4 class="alert-block__title">Максимальные размеры кредитов,
+                <span class="alert-block__title-footnote"> по которым могут предоставить каникулы</span>
+            </h4>
+
+            <ul class="category-list">
+                <li class="category-list__item">Физические&nbsp;лица
+                    <div class="category-list__value">250 тыс. руб.</div>
+                </li>
+                <li class="category-list__item">ИП
+                    <div class="category-list__value">300 тыс. руб.</div>
+                </li>
+                <li class="category-list__item">Кредитные&nbsp;карты
+                    <div class="category-list__value">100 тыс. руб.</div>
+                </li>
+                <li class="category-list__item">Автозаймы
+                    <div class="category-list__value">600 тыс. руб.</div>
+                </li>
+                <li class="category-list__item">Ипотека
+                    <div class="category-list__value">1,5 млн руб.</div>
+                </li>
+            </ul>
+
+            <p class="alert-block__footnote">Заемщик вправе попросить кредитные каникулы сроком до&nbsp;6&nbsp;месяцев.</p>
+        </div>
+    </div>
+
+    <div class="credit-vacation__how">
+        <h2 class="head-block__heading">Кредитные каникулы можно <br> &nbsp; получить одним из&nbsp;трёх способов</h2>
+
+        <ul class="how-list _horizontal _arrow-free credit-vacation__how-list">
+            {{#each creditVacationHow}}
+            {{> how-list-item directory="credit-vacation" data=this}}
+            {{/each}}
+        </ul>
+
+        <p class="credit-vacation__how-list-footnote">В течении 90 дней необходимо донести справку о снижении дохода
+            на 30%. Или кредитор сам может запросить информацию в гос. органах.</p>
+
+        <div class="note credit-vacation__note">
+            <div class="note__header">
+                <span class="note__title">Важно!</span>
+            </div>
+            <p class="note__text">Кредитор может всячески пытаться уговорить вас не&nbsp;брать <br>
+                кредитные каникулы или использовать тонкости в&nbsp;законодательстве,
+                чтобы официально вам их не&nbsp;предоставить.</p>
+        </div>
+
+        <div class="alert-block credit-vacation__how-alert">
+            <p class="alert-block__text">Вы можете самостоятельно за&nbsp;5 минут оформить заявление для&nbsp;всех
+                кредиторов за&nbsp;90 рублей или получить консультацию юриста, которая увеличит ваши шансы на&nbsp;получение
+                кредитных каникул за&nbsp;900 рублей.</p>
+
+            <div class="credit-vacation__options">
+                <a href="credit-vacation-statement.html" class="button _primary _medium credit-vacation__options-btn">
+                    Оформить заявление</a>
+
+                <span class="credit-vacation__options-text">или</span>
+
+                <a href="legal-advice-statement.html" class="button _primary _medium credit-vacation__options-btn">
+                    Получить консультацию</a>
+            </div>
+        </div>
+
+        <h2 class="head-block__heading">На консультации вы узнаете:</h2>
+
+        <ul class="hammer-list credit-vacation__how-hammer-list">
+            <li class="hammer-list__item">5 схем банков, которые используются, чтобы не дать кредитные каникулы;</li>
+            <li class="hammer-list__item">как грамотно заполнить заявление на кредитные каникулы;</li>
+            <li class="hammer-list__item">как избежать основных ошибок при отправке заявки на каникулы;</li>
+            <li class="hammer-list__item">как правильно собрать документы;</li>
+            <li class="hammer-list__item">что делать, если банк отказал, куда жаловаться.</li>
+        </ul>
+
+        <div class="credit-vacation__options">
+            <a href="credit-vacation-statement.html" class="button _medium _primary credit-vacation__options-btn">
+                Самостоятельно <br> оформить заявление</a>
+
+            <span class="credit-vacation__options-text">или</span>
+
+            <a href="legal-advice-statement.html" class="button _medium _primary credit-vacation__options-btn">
+                Получить персональную <br> консультацию юриста</a>
+        </div>
+    </div>
+</section>
+{{/header}}
+<!--Warning! end-->
+{{/layout}}
