@@ -11,6 +11,7 @@
   border-radius 15px
 
   @media (max-width 640px)
+    padding 15px
     border-left-width 0
     border-right-width @border-left-width
     margin-left -20px
@@ -28,6 +29,8 @@
     text-transform uppercase
 
     @media (max-width 640px)
+      margin-bottom 1.7em
+
       font-size 18px
 
     &-footnote
@@ -36,10 +39,17 @@
       font-size .7em
       text-transform none
 
+      @media (max-width 640px)
+        font-size .9em
+
   &__text
+    margin-bottom 1.7em
+
     font-size 20px
 
     @media (max-width 640px)
+      margin-bottom 2.8em
+
       font-size 16px
 
   &__footnote
@@ -48,4 +58,6 @@
     font-size 16px
 
     @media (max-width 640px)
+      margin-top 1.5em
+
       font-size 14px
