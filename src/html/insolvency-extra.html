@@ -1,0 +1,77 @@
+{{#> layout page-name="Внесудебное банкротство" block-name="insolvency-extra"}}
+{{#> header header-name="polygon _reflected"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="head-block insolvency-extra__banner">
+    <h1 class="head-block__title insolvency-extra__title">Внесудебное&nbsp;<br class="_lg-hide"> или
+        «бесплатное» банкротство</h1>
+
+    <div class="insolvency-extra__about">
+        <p class="insolvency-extra__description">
+            В связи с пандемией коронавируса Президент России В.В. Путин распорядился ускорить принятие поправок об
+            упрощенном внесудебном банкротстве физических лиц. <br class="_lg-hide"> &nbsp;Мы внимательно следим за&nbsp;продвижением законопроекта и
+            ниже рассказываем, кто сможет воспользоваться данной услугой.
+        </p>
+
+        <h2 class="head-block__heading _sm insolvency-extra__heading">Вам подойдёт внесудебное банкротство, если:</h2>
+
+        <ul class="hammer-list insolvency-extra__about-list">
+            <li class="hammer-list__item">Ваш долг до 500 тыс. рублей.</li>
+            <li class="hammer-list__item">Нет имущества, кроме единственного жилья.</li>
+            <li class="hammer-list__item">Низкий доход. Доход на одного члена семьи не более прожиточного минимума.</li>
+            <li class="hammer-list__item">Нет статуса ИП.</li>
+            <li class="hammer-list__item">У вас отсутствуют судимости за&nbsp;преступления экономического характера.</li>
+        </ul>
+
+        <div class="alert-block insolvency-extra__alert">
+            <p class="alert-block__text">Не подходит процедура?&nbsp;<br class="_lg-hide"> Узнайте как подготовиться к&nbsp;внесудебному
+                банкротству и&nbsp;законно списать долги.</p>
+
+            <a href="javascript:void(0);" class="button _primary _medium _wide">Записаться на консультацию</a>
+        </div>
+    </div>
+
+    <div class="insolvency-extra__how">
+        <h2 class="head-block__heading insolvency-extra__heading">Как проходит процедура:</h2>
+
+        <ul class="how-list _horizontal insolvency-extra__how-list">
+            {{#each insolvencyExtraHow}}
+            {{> how-list-item directory="insolvency-extra" data=this}}
+            {{/each}}
+        </ul>
+
+        <h2 class="head-block__heading insolvency-extra__heading">Мифы о внесудебном банкротстве:</h2>
+
+        <dl class="description-list insolvency-extra__fallacy">
+            <div class="description-list__item">
+                <dt class="description-list__title">1. Сделки с недвижимостью (продажа/дарение) можно скрыть.</dt>
+                <dd class="description-list__description">Нет, это не так. Кредитор в любой момент может проверить совершённые вами сделки с недвижимостью.</dd>
+            </div>
+            <div class="description-list__item">
+                <dt class="description-list__title">2. На процедуру внесудебного банкротства можно подавать бесконечное количество раз.</dt>
+                <dd class="description-list__description">Если ответственное лицо (арбитражный управляющий или нотариус) вам отказали, в следующий раз вы
+                    можете подать на процедуру банкротства только спустя 6 месяцев.</dd>
+            </div>
+            <div class="description-list__item">
+                <dt class="description-list__title">3. Процедуру можно пройти самостоятельно.</dt>
+                <dd class="description-list__description">Да, вы можете самостоятельно пройти процедуру, но это очень трудоемкий процесс. Если вы совершите
+                    ошибку в заявлении, то ответственное лицо просто не примет и откажет. Тем самым вы на 6 месяцев
+                    оттянете процесс.</dd>
+            </div>
+        </dl>
+
+        <div class="alert-block insolvency-extra__alert">
+            <p class="alert-block__text">Узнайте, как подготовиться <br> к внесудебному банкротству</p>
+
+            <a href="javascript:void(0);" class="button _primary _medium _wide">Записаться на консультацию</a>
+        </div>
+    </div>
+
+    <div class="insolvency-extra__footnote-link">
+        <a href="javascript:void(0);">Читать статью по этой теме</a>
+    </div>
+
+</section>
+{{/header}}
+<!--Warning! end-->
+{{/layout}}
