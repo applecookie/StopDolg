@@ -38,12 +38,18 @@ $select-caret-size-sm = 12px
       @media (max-width 768px)
         padding 15px 15px 5px
 
+    &-wrap
+      margin-bottom 22px
+
+      &._disabled
+        opacity .5
+
     &-name
       margin 0 0 1.1em
       padding 0
 
       font-size 18px
-      font-weight 400
+      font-weight 700
       color $c-secondary-3
 
       //как label
@@ -53,12 +59,17 @@ $select-caret-size-sm = 12px
   &__row
     display flex
     flex-wrap wrap
+    //для многострочных лейблов
+    align-items flex-end
 
     & + &
       margin-bottom 20px
 
       @media (max-width 768px)
         margin-bottom 10px
+
+    &._reverse
+      justify-content flex-end
 
     &._reference
       flex-wrap nowrap
@@ -310,6 +321,12 @@ $select-caret-size-sm = 12px
     @media (max-width 768px)
       flex-direction column
       align-items center
+
+    &._row
+      margin-bottom 20px
+
+      @media (max-width 768px)
+        margin-bottom 0
 
     .button
       border-radius 20px

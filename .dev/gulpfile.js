@@ -1,49 +1,47 @@
-const gulp = require('gulp');
+const { series, parallel, src, dest, watch } = require('gulp');
 const browserSync = require('browser-sync').create();
-const sourcemaps = require('gulp-sourcemaps');
-const run = require('run-sequence');
 const fork = require('child_process').fork;
 
 const hb = require('gulp-hb');
 const htmlmin = require('gulp-htmlmin');
 
 const stylus = require('gulp-stylus');
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
 const rollup = require('gulp-better-rollup');
 const babel = require('rollup-plugin-babel');
-const uglify = require('rollup-plugin-uglify');
+const { terser } = require('rollup-plugin-terser');
+const sourcemaps = require('gulp-sourcemaps');
 
 const imagemin = require('gulp-imagemin');
 
-const clean = require('gulp-clean');
+const del = require('del');
 
-const srcPath = '../src';
-const destPath = '../dist';
-const buildPath = '../build';
-const src = {
-    templates: `${srcPath}/html`,
-    styles: `${srcPath}/css`,
-    scripts: `${srcPath}/js`,
-    images: `${srcPath}/img`,
-    static: `${srcPath}/static`,
-};
-const dest = {
-    templates: destPath,
-    styles: `${destPath}/css`,
-    scripts: `${destPath}/js`,
-    images: `${destPath}/img`,
+const srcDir = '../src';
+const destDir = '../dist';
+const buildDir = '../build';
+
+const path = {
+    src: {
+        templates: `${srcDir}/html`,
+        styles: `${srcDir}/css`,
+        scripts: `${srcDir}/js`,
+        images: `${srcDir}/img`,
+        static: `${srcDir}/static`,
+    },
+    dest: {
+        templates: destDir,
+        styles: `${destDir}/css`,
+        scripts: `${destDir}/js`,
+        images: `${destDir}/img`,
+    },
 };
 
 let scoServer;
 const startUpErrors = [];
 let started = false;
-const onGulpSuccess = task => {
-    if (started) {
-        scoServer.send({ task, error: false });
-    }
-};
-const onGulpError = (task, error) => {
+const onError = task => error => {
     console.log();
     console.error(error.message);
 
@@ -56,70 +54,21 @@ const onGulpError = (task, error) => {
         });
     }
 };
-const wrapPipe = (task, taskFn) => function(done) {
-    const onSuccess = () => {
-        onGulpSuccess(task);
-        done();
-    };
-    const onError = err => {
-        onGulpError(task, err);
-        done(err);
-    };
-    const outStream = taskFn(onSuccess, onError);
-    if (outStream && typeof outStream.on === 'function') {
-        outStream.on('end', onSuccess);
+const onSuccess = task => () => {
+    if (started) {
+        scoServer.send({ task, error: false });
     }
 };
 
-// SiteConveyer serer
-gulp.task('site-conveyer', done => {
-    scoServer = fork('./panel-server.js', { stdio: 'pipe' });
+const siteConveyer = cb => {
+    scoServer = fork('./panel-server.js', [], { stdio: 'pipe' });
 
-    done();
-});
-
-// Static Server + watching files
-gulp.task('serve', ['makeDist', 'site-conveyer'], () => {
-    started = true;
-    if (startUpErrors.length) {
-        startUpErrors.forEach(scoServer.send.bind(scoServer));
-        // scoServer.send({ error: startUpErrors });
-        startUpErrors.splice(0, startUpErrors.length);
-    }
-
-    browserSync.init({
-        open: false,
-        server: {
-            baseDir: destPath,
-            routes: {
-                '/.dev': './panel',
-            },
-        },
-        snippetOptions: {
-            rule: {
-                match: /<\/body>/i,
-                fn: function(snippet, match) {
-                    return snippet + '<script src="/.dev/js/sco.js"></script>' + match;
-                },
-            },
-        },
-    });
-
-    gulp.watch(`${dest.templates}/*`).on('change', browserSync.reload);
-    gulp.watch(`${src.templates}/**/*`, ['templates']);
-
-    gulp.watch(`${src.styles}/**/*`, ['styles']);
-
-    gulp.watch(`${dest.scripts}/**/*`).on('change', browserSync.reload);
-    gulp.watch(`${src.scripts}/**/*`, ['scripts']);
-
-    gulp.watch(`${dest.images}/**/*`).on('change', browserSync.reload);
-    gulp.watch(`${src.images}/**/*`, ['images']);
-});
+    cb();
+};
 
 // Templates: Handlebars -> Html
-gulp.task('templates', wrapPipe('templates', (success, error) => {
-    const basePath = src.templates;
+const templates = () => {
+    const basePath = path.src.templates;
     const dirs = {
         partials: 'partials',
         helpers: 'helpers',
@@ -127,139 +76,174 @@ gulp.task('templates', wrapPipe('templates', (success, error) => {
         data: 'data',
     };
 
+    const error = onError('templates');
+    const success = onSuccess('templates');
+
     const hbStream = hb().on('error', error)
         .partials(`${basePath}/${dirs.partials}/**/*.{hbs,js}`).on('error', error)
         .helpers(`${basePath}/${dirs.helpers}/**/*.js`).on('error', error)
         .decorators(`${basePath}/${dirs.decorators}/**/*.js`).on('error', error)
         .data(`${basePath}/${dirs.data}/**/*.{js,json}`).on('error', error);
 
-    return gulp
-        .src(`${basePath}/**/*.html`)
+    return src(`${basePath}/**/*.html`)
         .pipe(hbStream)
         .pipe(htmlmin({
             collapseWhitespace: true,
         }).on('error', error))
-        .pipe(gulp.dest(dest.templates));
-}));
+        .pipe(dest(path.dest.templates))
+        .on('end', success);
+};
 
 // Styles: Stylus -> Css & auto-inject into browsers
-gulp.task('styles', () => {
-    const basePath = src.styles;
-    const mapsPath = '../sourcemaps';
-
+const styles = () => {
     let wasError = false;
 
-    return gulp
-        .src(`${basePath}/*.styl`)
+    return src(`${path.src.styles}/*.styl`)
         .pipe(sourcemaps.init())
         .pipe(stylus({
             compress: true,
         }).on('error', function(err) {
-            onGulpError('styles', err);
+            onError('styles')(err);
             wasError = true;
             this.emit('end');
         }))
-        .pipe(autoprefixer({
-            browsers: [
-                "ie 6",
-                // "Edge >= 16",
-                // "ff >= 59",
-                // "Chrome >= 49",
-                // "and_chr >= 66",
-                // "Safari >= 11",
-                // "ios_saf >= 10.3",
-                // ">= 5%"
-            ],
-            cascade: true,
-        }).on('error', function(err) {
-            onGulpError('styles', err);
+        .pipe(postcss([
+            autoprefixer({
+                cascade: true,
+            }),
+        ]).on('error', function(err) {
+            onError('styles')(err);
             wasError = true;
             this.emit('end', true);
         }))
-        .pipe(sourcemaps.write(mapsPath))
-        .pipe(gulp.dest(dest.styles))
+        .pipe(sourcemaps.write('../sourcemaps'))
+        .pipe(dest(path.dest.styles))
         .on('end', () => {
             if (!wasError) {
-                onGulpSuccess('styles');
+                onSuccess('styles')();
             }
         })
         .pipe(browserSync.stream());
-});
+};
 
 // Scripts: ES6 -> JS
-gulp.task('scripts', wrapPipe('scripts', (success, error) => {
-    const basePath = src.scripts;
-    const mapsPath = '../sourcemaps';
-
-    return gulp
-        .src(`${basePath}/*.{js,es}`)
+const scripts = () =>
+    src(`${path.src.scripts}/*.{js,es}`)
         .pipe(sourcemaps.init())
         .pipe(rollup(
             {
                 plugins: [
                     babel(),
-                    uglify(),
+                    terser(),
                 ],
             },
             'umd',
-        ).on('error', error))
-        .pipe(sourcemaps.write(mapsPath))
-        .pipe(gulp.dest(dest.scripts));
-}));
+        ).on('error', onError('scripts')))
+        .pipe(sourcemaps.write('../sourcemaps'))
+        .pipe(dest(path.dest.scripts))
+        .on('end', onSuccess('scripts'));
 
 // Images: optimizing
-gulp.task('images', wrapPipe('images', (success, error) => {
-    const basePath = src.images;
-
-    return gulp
-        .src(`${basePath}/**/*`)
-        .pipe(imagemin().on('error', error))
-        .pipe(gulp.dest(dest.images));
-}));
+const images = () =>
+    src(`${path.src.images}/**/*`)
+        // .pipe(imagemin().on('error', onError('images')))
+        .pipe(dest(path.dest.images))
+        .on('end', onSuccess('images'));
 
 // Static files
-gulp.task('static', () => {
-    return gulp
-        .src(`${src.static}/**/*`, { dot: true })
-        .pipe(gulp.dest(destPath));
-});
+const static = () =>
+    src(`${path.src.static}/**/*`, { dot: true })
+        .pipe(dest(destDir));
 
 // Copy vendors
-gulp.task('vendor-styles', () => {
-    return gulp
-        .src(`${src.styles}/vendor/**/*`)
-        .pipe(gulp.dest(`${dest.styles}/vendor`));
-});
-gulp.task('vendor-scripts', () => {
-    return gulp
-        .src(`${src.scripts}/vendor/**/*`)
-        .pipe(gulp.dest(`${dest.scripts}/vendor`));
-});
-gulp.task('vendor', done => {
-    run(['vendor-styles', 'vendor-scripts'], done);
-});
+const vendorStyles = () =>
+    src(`${path.src.styles}/vendor/**/*`)
+        .pipe(dest(`${path.dest.styles}/vendor`));
+const vendorScripts = () =>
+    src(`${path.src.scripts}/vendor/**/*`)
+        .pipe(dest(`${path.dest.scripts}/vendor`));
+const vendor = parallel(
+    vendorStyles,
+    vendorScripts,
+);
 
-// Clean dist dir
-gulp.task('cleanDist', () => {
-    return gulp.src(destPath, { read: false })
-        .pipe(clean({ force: true }));
-});
+// Clean dirs
+const cleanDist = () => del(destDir, { force: true });
+const cleanBuild = () => del(buildDir, { force: true });
 
-gulp.task('makeDist', ['cleanDist'], done => {
-    run(['templates', 'styles', 'scripts', 'images', 'static', 'vendor'], done);
-});
+const makeDist = series(
+    cleanDist,
+    parallel(
+        templates,
+        styles,
+        scripts,
+        images,
+        static,
+        vendor,
+    ),
+);
 
-// Clean build dir
-gulp.task('cleanBuild', () => {
-    return gulp
-        .src(buildPath, { read: false })
-        .pipe(clean({ force: true }));
-});
-// Build
-gulp.task('build', ['makeDist', 'cleanBuild'], () => {
-    return gulp
-        .src([`${destPath}/**/*`, `!${destPath}/sourcemaps`, `!${destPath}/sourcemaps/**`], { dot: true })
-        .pipe(gulp.dest(buildPath));
-});
+const serve = series(
+    parallel(
+        makeDist,
+        siteConveyer,
+    ),
+    () => {
+        started = true;
+        if (startUpErrors.length) {
+            startUpErrors.forEach(scoServer.send.bind(scoServer));
+            // scoServer.send({ error: startUpErrors });
+            startUpErrors.splice(0, startUpErrors.length);
+        }
 
-gulp.task('default', ['serve']);
+        browserSync.init({
+            open: false,
+            server: {
+                baseDir: destDir,
+                routes: {
+                    '/.dev': './panel',
+                },
+            },
+            snippetOptions: {
+                rule: {
+                    match: /<\/body>/i,
+                    fn: function(snippet, match) {
+                        return snippet + '<script src="/.dev/js/sco.js"></script>' + match;
+                    },
+                },
+            },
+        });
+
+        watch(`${path.dest.templates}/*`).on('change', browserSync.reload);
+        watch(`${path.src.templates}/**/*`, templates);
+
+        watch(`${path.src.styles}/**/*`, styles);
+
+        watch(`${path.dest.scripts}/**/*`).on('change', browserSync.reload);
+        watch(`${path.src.scripts}/**/*`, scripts);
+
+        watch(`${path.dest.images}/**/*`).on('change', browserSync.reload);
+        watch(`${path.src.images}/**/*`, images);
+    },
+);
+
+const build = series(
+    parallel(
+        cleanBuild,
+        makeDist,
+    ),
+    () => {
+        return src(
+            [
+                `${destDir}/**/*`,
+                `!${destDir}/sourcemaps`,
+                `!${destDir}/sourcemaps/**`,
+            ],
+            { dot: true },
+        )
+            .pipe(dest(buildDir));
+    },
+);
+
+exports.build = build;
+exports.default = serve;

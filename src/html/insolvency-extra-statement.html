@@ -1,0 +1,279 @@
+{{#> layout page-name="Внесудебное банкротство - Завление" block-name="insolvency-extra _statement" }}
+{{#> header header-name="polygon _reflected"}}
+<!-- Нужно вставить этот кусок-->
+<!--Warning! start-->
+<section class="insolvency-extra__statement-banner">
+    <form class="statement new-form">
+        <h1 class="statement__title _condensed">Заявление на внесудебное банкротство</h1>
+
+        <div class="new-form__row _col-2 _reverse">
+            <label class="new-form__item">
+                <span class="new-form__label">Фамилия</span>
+                <input type="text" class="new-form__input">
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Email</span>
+                <input type="email" class="new-form__input">
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Имя</span>
+                <input type="text" class="new-form__input">
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Телефон</span>
+                <input type="text" class="new-form__input _with-placeholder" placeholder="+7 (XXX) XXX-XXXX">
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Отчество</span>
+                <input type="text" class="new-form__input">
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Дата рождения</span>
+                <input type="date" class="new-form__input">
+            </label>
+            <label class="new-form__item _reference">
+                <span class="new-form__label">Место рождения</span>
+                <input type="text" class="new-form__input">
+                {{> reference}}
+            </label>
+        </div>
+
+        <div class="new-form__row _col-2">
+            <label class="new-form__item">
+                <span class="new-form__label">
+                    <label class="checkbox">
+                        <input type="checkbox" checked class="checkbox__input">
+                        <span class="checkbox__label">Менлось ли ФИО?</span>
+                    </label>
+                </span>
+                <input type="text" class="new-form__input">
+            </label>
+        </div>
+
+        <div class="new-form__row _col-2">
+            <label class="new-form__item">
+                <span class="new-form__label">Серия и номер паспорта</span>
+                <input type="text" class="new-form__input">
+            </label>
+            <label class="new-form__item _reference">
+                <span class="new-form__label">СНИЛС</span>
+                <input type="text" class="new-form__input">
+                {{> reference}}
+            </label>
+            <label class="new-form__item _reference">
+                <span class="new-form__label">ИНН</span>
+                <input type="text" class="new-form__input">
+                {{> reference}}
+            </label>
+            <label class="new-form__item">
+                <span class="new-form__label">Дата выдачи</span>
+                <input type="date" class="new-form__input">
+            </label>
+        </div>
+
+        <h4 class="new-form__fieldset-name">Данные о регистрации</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Область</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Город (населённый пункт)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Улица</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дом</span>
+                    <input type="number" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Корпус (при наличии)</span>
+                    <input type="number" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Квартира</span>
+                    <input type="number" class="new-form__input">
+                </label>
+            </div>
+        </fieldset>
+
+        <label class="new-form__checkbox checkbox">
+            <input type="checkbox" checked class="checkbox__input">
+            <span class="checkbox__label">Адрес регистрации совпадает с местом пребывания</span>
+        </label>
+
+        <div class="new-form__fieldset-wrap _disabled">
+            <h4 class="new-form__fieldset-name">Данные о месте пребывания</h4>
+            <fieldset class="new-form__fieldset _card">
+                <div class="new-form__row _col-2">
+                    <label class="new-form__item">
+                        <span class="new-form__label">Область</span>
+                        <input type="text" class="new-form__input">
+                    </label>
+                    <label class="new-form__item">
+                        <span class="new-form__label">Город (населённый пункт)</span>
+                        <input type="text" class="new-form__input">
+                    </label>
+                    <label class="new-form__item">
+                        <span class="new-form__label">Улица</span>
+                        <input type="text" class="new-form__input">
+                    </label>
+                    <label class="new-form__item">
+                        <span class="new-form__label">Дом</span>
+                        <input type="number" class="new-form__input">
+                    </label>
+                    <label class="new-form__item">
+                        <span class="new-form__label">Корпус (при наличии)</span>
+                        <input type="number" class="new-form__input">
+                    </label>
+                    <label class="new-form__item">
+                        <span class="new-form__label">Квартира</span>
+                        <input type="number" class="new-form__input">
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+
+        <h5 class="new-form__fieldset-name">Был зарегистрирован в качестве индивидуального предпринимателя?</h5>
+        <ul class="base-list new-form__radio-list">
+            <li>
+                <label class="radio">
+                    <input type="radio" name=""><span class="radio__label">Да</span>
+                </label>
+            </li>
+            <li>
+                <label class="radio">
+                    <input type="radio" name="" checked><span class="radio__label">Нет</span>
+                </label>
+            </li>
+        </ul>
+
+        <h4 class="new-form__fieldset-name">Денежные обязательства</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Наименование кредитора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Номер кредитного договора</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Местонахождение кредитора (адрес регистрации)</span>
+                    <input type="text" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Дата кредитного договора</span>
+                    <input type="date" class="new-form__input">
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Характеристика денежных обязательств</span>
+                    <select class="new-form__input _select">
+                        <option value="" class="select__placeholder">Выберите тип обязательств</option>
+                        <option value="">Lorem ipsum.</option>
+                        <option value="">Lorem ipsum dolor sit amet.</option>
+                    </select>
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Сумма</span>
+                    <input type="number" class="new-form__input">
+                </label>
+            </div>
+
+            <h5 class="new-form__fieldset-name">Долг взят в статусе ИП?</h5>
+            <ul class="base-list new-form__radio-list">
+                <li>
+                    <label class="radio">
+                        <input type="radio" name=""><span class="radio__label">Да</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="" checked><span class="radio__label">Нет</span>
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+
+        <div class="new-form__repeater _row">
+            <button type="button" class="button _secondary new-form__repeater-add">
+                <i class="icon icon-plus"></i>Добавить кредитора
+            </button>
+
+            <button type="button" class="button _secondary new-form__repeater-del">
+                <i class="icon icon-minus"></i>Убрать
+            </button>
+        </div>
+
+        <h4 class="new-form__fieldset-name">Обязательные платежи</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">Характеристика денежных обязательств</span>
+                    <select class="new-form__input _select">
+                        <option value="" class="select__placeholder">Выберите тип обязательств</option>
+                        <option value="">Lorem ipsum.</option>
+                        <option value="">Lorem ipsum dolor sit amet.</option>
+                    </select>
+                </label>
+                <label class="new-form__item">
+                    <span class="new-form__label">Сумма</span>
+                    <input type="number" class="new-form__input">
+                </label>
+            </div>
+
+            <div class="new-form__repeater _row">
+                <button type="button" class="button _secondary new-form__repeater-add">
+                    <i class="icon icon-plus"></i>Добавить платёж
+                </button>
+
+                <button type="button" class="button _secondary new-form__repeater-del">
+                    <i class="icon icon-minus"></i>Убрать
+                </button>
+            </div>
+        </fieldset>
+
+        <h4 class="new-form__fieldset-name">Сведения о кредитных организациях</h4>
+        <fieldset class="new-form__fieldset _card">
+            <div class="new-form__row _col-2">
+                <label class="new-form__item">
+                    <span class="new-form__label">БИК</span>
+                    <input type="text" class="new-form__input">
+                </label>
+
+                <div class="new-form__item">Здесь автоматически появляется название организации при вводе БИК</div>
+            </div>
+
+            <div class="new-form__repeater _row">
+                <button type="button" class="button _secondary new-form__repeater-add">
+                    <i class="icon icon-plus"></i>Добавить кредитную организацию
+                </button>
+
+                <button type="button" class="button _secondary new-form__repeater-del">
+                    <i class="icon icon-minus"></i>Убрать
+                </button>
+            </div>
+        </fieldset>
+
+        <footer class="new-form__footer">
+            <div class="statement__agreement">
+                <label class="new-form__checkbox statement__agreement-checkbox checkbox">
+                    <input type="checkbox" checked class="checkbox__input">
+                    <span class="checkbox__label">
+                        Я согласен с&nbsp; <a href="javascript:void(0);">Политикой конфиденциальности</a>
+                    </span>
+                </label>
+            </div>
+
+            <button type="submit" class="button _primary">Оплатить</button>
+        </footer>
+    </form>
+</section>
+<!--Warning! end-->
+{{/header}}
+{{/layout}}
