@@ -1,0 +1,75 @@
+.insolvency-franchise
+  color #333333
+
+  background-color $c-body-bg
+  background-image url("../img/backgrounds/insolvency-franchise.png")
+
+  @media (max-width 640px)
+    background-image none
+
+  .header:before
+    display none
+
+  .footer
+    background none
+
+  &__title
+    font-size 36px
+    font-weight 300
+    color #4D4D4D
+
+    padding 0
+    margin-bottom .6em
+    border none
+    text-align center
+
+  &__text
+    margin-bottom 2em
+    text-align center
+
+  &__heading
+    font-size 29px
+    font-weight 400
+    color #4C4C4C
+    text-transform uppercase
+
+    padding 0
+    margin-bottom .7em
+    border none
+    text-align center
+
+  &__block
+    section-divider(1px)
+
+    &._about
+      margin-top 50px
+
+    &._contacts
+      &:before
+        content ''
+        position absolute
+        top 100%
+        display block
+        height 25px
+        width 100%
+
+        background-image url(../img/services/divider-shadow.png)
+        background-repeat no-repeat
+        background-size contain
+
+  &__about-list
+    margin 0 auto 2.2em
+    //@media (min-width 641px)
+    max-width 320px
+
+  &__contacts
+
+    &-text
+      margin-bottom .5em
+
+    &-inner-wrap
+      max-width 350px
+      margin 2.2em auto
+
+    &-list
+      margin-bottom 1em

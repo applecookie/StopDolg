@@ -15,6 +15,11 @@
 
       background-color $c-white
 
+  &._dark
+    li
+      &:before
+        background-color #333333
+
   &._circle
     li
       &:before
@@ -36,3 +41,16 @@
 
         -ms-transform translateY(-50%) translateY(.5em) translateY(2.5px)
         transform translateY(calc(-50% + .5em + 1px*.5))
+
+  &._office
+    li
+      align-items baseline
+
+      &:before
+        width 24px
+        height @width
+        margin-right 4px
+
+        background-color transparent
+        background-image url("../img/i-office.svg")
+        background-size contain
