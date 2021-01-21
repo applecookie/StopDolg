@@ -27,7 +27,7 @@
     "rollup-plugin-terser": "^7.0.1",
     "rollup-plugin-uglify": "^6.0.4",
     "run-sequence": "^2.2.0",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.4.0",
     "stylint": "^2.0.0"
   },
   "license": "ISC",
